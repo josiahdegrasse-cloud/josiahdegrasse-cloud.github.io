@@ -1,5 +1,9 @@
 node_modules
 dist
+.openai/
+.claude/
+design-system/
+qa-redesign/
 .env
 .env.local
 .DS_Store

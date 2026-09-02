@@ -24,6 +24,9 @@ npm run test:contrast
 npm run build
 ```
 
+`npm run build:sites` creates the extra server entrypoint used by ChatGPT Sites.
+The default `npm run build` stays clean for GitHub Pages and other static hosts.
+
 ## Assets
 
 Place the seven real image assets in `public/images/` with the exact filenames from the brief:
@@ -48,13 +51,23 @@ Project visuals that are not public screenshots are intentionally built as diagr
 
 ## Deployment
 
-This is a static site and can deploy to Vercel, Netlify, or any static host:
+The production site is published on GitHub Pages:
+
+- Live URL: <https://josiahdegrasse-cloud.github.io/>
+- Source repo: <https://github.com/josiahdegrasse-cloud/josiahdegrasse-cloud.github.io>
+
+Pushes to `main` run `.github/workflows/pages.yml`, which installs
+dependencies, runs the test suite, checks contrast, builds `dist/`, adds the
+single-page app fallback, and deploys the artifact to GitHub Pages.
+
+For manual static hosting elsewhere:
 
 ```bash
 npm run build
 ```
 
-Deploy the generated `dist/` directory. Configure the same environment variables in the hosting platform before publishing.
+Deploy the generated `dist/` directory. Configure the same environment variables
+in the hosting platform before publishing.
 
 ## Verification Notes
 
