@@ -58,7 +58,8 @@ The production site is published on GitHub Pages:
 
 Pushes to `main` run `.github/workflows/pages.yml`, which installs
 dependencies, runs the test suite, checks contrast, builds `dist/`, adds the
-single-page app fallback, and deploys the artifact to GitHub Pages.
+single-page app fallback, and publishes the generated files to the `gh-pages`
+branch. GitHub Pages serves that branch.
 
 For manual static hosting elsewhere:
 
