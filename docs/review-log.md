@@ -6,6 +6,8 @@
 - The existing GitHub repository is public, `main` is its default branch, and the user has admin access. Added a Pages workflow and explicit base-path support for JSX links/assets, the CAD model, client routing, SSR, metadata, sitemap, and robots. No repository visibility change or new repository is required.
 - The build with GitHub's `/josiah-portfolio/` base passes typechecking, nine-route prerendering, all 113 local links, 44 image references, metadata/resource checks, and the original CAD mesh validation. No portfolio browser QA was performed.
 
+Both hosts deployed source `233d9475e5b03232afca4fff717038e831658131` successfully on September 10, 2026. GitHub Pages: https://josiahdegrasse-cloud.github.io/josiah-portfolio/ — workflow run `34539769562`, build and deploy jobs both succeeded. Source was pushed to the existing public repository's `main` without force or visibility changes. Sites version **12** succeeded at **22:56 UTC**: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_6b8e869ffa508191970d315a52189064`, deployment `appgdep_6aa3359751a48191b60f64e3bcd1dfdf`. Its existing owner-only URL and audience remain unchanged. Both host configurations passed the static checks; the stable Sites tab received the updated URL handoff.
+
 ## Plain headline and bright orange — September 10, 2026
 
 - Removed the decorative underline from the homepage headline at Josiah's request. Keep hero typography plain going forward.
