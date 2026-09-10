@@ -58,3 +58,11 @@ The share image is now a real 1200×630 homepage capture. New screenshot and bro
 ### Publication receipt
 
 Version **2** deployed successfully at **2026-09-10 03:10 UTC** to the existing owner-only site: https://josiah-design-portfolio.henrydegrasse.chatgpt.site. Published implementation commit: `cf082780df29aab2b6a053d357ea7b9941e125b3`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_cc73ffdcaea481919d09b3b88c2833db`. Deployment: `appgdep_6aa21f9458d08191927c7afdf63940cb`. Site display title updated to “Josiah deGrasse — AI Engineer · Human Factors.” The review window remains active; inspect this publication before starting the next bounded improvement.
+
+## Mobile project reading order — 03:12–03:21 UTC
+
+- Measured the published homepage at 375 × 900: the first NFI image begins at approximately 1,162 pixels from the document top; the project begins at 670 pixels. The title is followed by substantial copy before the actual artifact appears.
+- Prepared a bounded change in `src/design-home.tsx` and `src/design-editorial.css`: project title, media, then supporting copy in the document and mobile layout. The desktop grid keeps title/copy beside the media. Tablet spacing rules were adjusted for the new grid.
+- TypeScript, production build, and whitespace checks pass. The static checker validates the eight prerendered pages, internal links, image paths, metadata, résumé, sitemap, and 404.
+- **Pending visual verification; not published.** The Mac locked before the updated preview could be inspected; CUA reported that automatic unlock failed and requires the user to unlock it. No after-change position or responsive visual result has been claimed. The live site remains version 2.
+- Next cycle: check whether browser access is restored. Reuse the existing preview tab; verify project order, appearance, first-image position, and document overflow at 320/375/430/768/1024/1440 pixels. Publish only after that review. If still locked, avoid repeating the same user notification; independent source or evidence work may continue. Do not create additional unreviewed visual changes.

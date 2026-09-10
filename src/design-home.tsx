@@ -71,30 +71,9 @@ export function DesignHome() {
                 <span className="folio">{project.year}</span>
               </div>
               <div className="catalogue-project-body">
-                <div className="catalogue-project-copy">
-                  <h3>
-                    <a href={`/work/${project.id}`}>{project.title}</a>
-                  </h3>
-                  <p className="catalogue-subtitle">{project.subtitle}</p>
-                  <p>{project.description}</p>
-                  <dl className="project-evidence">
-                    <div>
-                      <dt>
-                        {project.id === "nfi"
-                          ? "Engineering focus"
-                          : "Research basis"}
-                      </dt>
-                      <dd>
-                        {project.id === "nfi"
-                          ? "Connected evidence. Explicit decisions. Human review."
-                          : "8 interviews. 3 validated opportunities. 2 concepts."}
-                      </dd>
-                    </div>
-                  </dl>
-                  <a className="text-link" href={`/work/${project.id}`}>
-                    Read the case study <ArrowUpRight size={18} />
-                  </a>
-                </div>
+                <h3 className="catalogue-project-title">
+                  <a href={`/work/${project.id}`}>{project.title}</a>
+                </h3>
                 <div className="catalogue-project-media">
                   <a
                     className="project-visual-link"
@@ -130,6 +109,27 @@ export function DesignHome() {
                       ? "Actual product interface. Demonstration data."
                       : "Reconstructed concept comparison. Original Figma artifacts pending."}
                   </p>
+                </div>
+                <div className="catalogue-project-copy">
+                  <p className="catalogue-subtitle">{project.subtitle}</p>
+                  <p>{project.description}</p>
+                  <dl className="project-evidence">
+                    <div>
+                      <dt>
+                        {project.id === "nfi"
+                          ? "Engineering focus"
+                          : "Research basis"}
+                      </dt>
+                      <dd>
+                        {project.id === "nfi"
+                          ? "Connected evidence. Explicit decisions. Human review."
+                          : "8 interviews. 3 validated opportunities. 2 concepts."}
+                      </dd>
+                    </div>
+                  </dl>
+                  <a className="text-link" href={`/work/${project.id}`}>
+                    Read the case study <ArrowUpRight size={18} />
+                  </a>
                 </div>
               </div>
             </article>
