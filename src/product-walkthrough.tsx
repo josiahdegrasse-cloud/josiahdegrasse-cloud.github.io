@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, ImageFigure } from "./design-components";
-const steps = [
+export type WalkthroughStep = {
+  title: string;
+  image: string;
+  alt: string;
+  description: string;
+  focus: string;
+};
+const nfiSteps: WalkthroughStep[] = [
   {
     title: "Compare the evidence",
-    image: "nfi-insights.webp",
-    alt: "The actual NFI Insights screen with sensory analysis and supporting evidence.",
+    image: "nfi-sensory-profile.png",
+    alt: "NFI Insights showing a sensory radar chart, five intensity ratings, and two coconut cheddar prototypes.",
     description:
-      "Inspect the selected prototype alongside its liking score, response count, and evidence status. Separate tabs keep sensory results and concept feedback distinct.",
+      "The prototype selector sits beside a sensory profile. A radar chart and labeled ratings show firmness, tanginess, cheesiness, creaminess, and graininess for the selected sample.",
     focus: "Read each sample in context.",
   },
   {
@@ -26,7 +33,19 @@ const steps = [
     focus: "See what still blocks approval.",
   },
 ];
-export function ProductWalkthrough() {
+export function ProductWalkthrough({
+  steps = nfiSteps,
+  title = "From evidence to release review.",
+  credit = "Actual application · Demonstration data",
+  imageDirectory = "/images/nfi",
+  imageContext = "Captured synthetic demo state; values vary between screens.",
+}: {
+  steps?: WalkthroughStep[];
+  title?: string;
+  credit?: string;
+  imageDirectory?: string;
+  imageContext?: string;
+}) {
   const [current, setCurrent] = useState(0);
   const step = steps[current];
   return (
@@ -38,9 +57,9 @@ export function ProductWalkthrough() {
       <div className="walkthrough-heading">
         <div>
           <p className="eyebrow">Guided screen tour</p>
-          <h2 id="walkthrough-heading">From evidence to release review.</h2>
+          <h2 id="walkthrough-heading">{title}</h2>
         </div>
-        <span className="folio">Actual application · Demonstration data</span>
+        <span className="folio">{credit}</span>
       </div>
       <div
         className="walkthrough-steps"
@@ -68,9 +87,9 @@ export function ProductWalkthrough() {
         </div>
         <ImageFigure
           key={step.image}
-          src={`/images/nfi/${step.image}`}
+          src={`${imageDirectory}/${step.image}`}
           alt={step.alt}
-          caption={`Screen ${current + 1} of ${steps.length}: ${step.title}. Captured synthetic demo state; values vary between screens.`}
+          caption={`Screen ${current + 1} of ${steps.length}: ${step.title}. ${imageContext}`}
         />
       </div>
       <div className="walkthrough-controls">

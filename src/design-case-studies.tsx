@@ -1,4 +1,5 @@
 import { ProductWalkthrough } from "./product-walkthrough";
+import { redHatProject } from "./design-content";
 import { useEffect, useState } from "react";
 import {
   Layout,
@@ -6,7 +7,6 @@ import {
   ImageFigure,
   Metadata,
   ProcessFlow,
-  ConceptComparison,
   AssetPlaceholder,
   NextProject,
   ArrowUpRight,
@@ -178,9 +178,9 @@ export function NfiCaseStudy() {
         <ImageFigure
           priority
           theme="green"
-          src="/images/nfi/nfi-decision.webp"
-          alt="NFI Decision Review, with a GO recommendation, an explicit threshold and the supporting sensory evidence."
-          caption="The actual Decision Review interface. Demonstration data; scores describe the sample product, not project impact."
+          src="/images/nfi/nfi-sensory-profile.png"
+          alt="NFI sensory analysis with a radar chart and intensity ratings for a coconut cheddar prototype, alongside the two project samples."
+          caption="The Sensory Platform’s intensity profile and prototype selector. Synthetic demonstration data."
         />
         <CaseSection
           id="context"
@@ -625,6 +625,33 @@ export function NfiCaseStudy() {
   );
 }
 
+const redHatWalkthrough = [
+  {
+    title: "See deployment status",
+    image: "capstone-deployments.png",
+    alt: "The team’s final prototype showing running, active, and failed model deployments with direct actions.",
+    description:
+      "The deployment list shows status, elapsed time, and an action for each model. Logs and configuration are available across deployment states, rather than only after a failure.",
+    focus: "Start with the model, not another console.",
+  },
+  {
+    title: "Inspect the checks",
+    image: "capstone-diagnostics.png",
+    alt: "The capstone’s deterministic diagnostics drawer showing a failed memory check alongside passing system checks.",
+    description:
+      "Version 3.0 replaces inferred causes with a ten-check diagnostic flow. This simulated failure identifies a memory-allocation problem and keeps the underlying logs accessible.",
+    focus: "Show the check that failed.",
+  },
+  {
+    title: "Review the YAML",
+    image: "capstone-yaml-review.png",
+    alt: "The team’s prototype comparing current and proposed YAML, with changed memory values and an explicit apply control.",
+    description:
+      "Current and proposed configuration sit side by side. The change summary and explicit apply control let the engineer review the fix before redeploying.",
+    focus: "Make the proposed change inspectable.",
+  },
+];
+
 export function RedHatCaseStudy() {
   return (
     <Layout>
@@ -632,260 +659,256 @@ export function RedHatCaseStudy() {
         items={[
           ["context", "Context"],
           ["research", "Research"],
-          ["concepts", "Concepts"],
-          ["validation", "Validation"],
+          ["concepts", "Iterations"],
+          ["walkthrough", "Prototype"],
+          ["validation", "Feedback"],
         ]}
       />
       <article className="container case-study redhat-case">
         <header className="case-hero">
           <p className="eyebrow">02 / Red Hat OpenShift AI</p>
           <h1>
-            Less friction in AI workflows.
-            <br /> <em>More control for people.</em>
+            Making AI deployments{" "}
+            <br />
+            <em>easier to debug.</em>
           </h1>
           <p className="case-deck">
-            How do you make an enterprise AI workflow easier without hiding the
-            decisions that matter? We explored two approaches to find out where
-            assistance helped—and where people wanted a clearer hand on the
-            controls.
+            A five-person Tufts capstone with Red Hat. We brought deployment
+            status, logs, and suggested fixes into one workflow, then refined it
+            with engineers and product leadership.
           </p>
           <Metadata
             items={[
-              ["Role", "Product Designer"],
-              ["Context", "Tufts senior capstone · Red Hat"],
+              ["My role", "UX Designer"],
+              ["Team", "5-person Tufts capstone"],
               ["When", "January — May 2026"],
-              ["Methods", "Interviews · Journey mapping · Figma"],
+              ["Tools", "Figma · Figma Make · User research"],
             ]}
           />
+          <div className="case-prototype-links">
+            <a
+              className="text-link"
+              href={redHatProject.prototypeV3}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Try the final prototype <ArrowUpRight size={18} />
+            </a>
+            <a
+              className="text-link"
+              href={redHatProject.prototypeV2}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Explore the AI version <ArrowUpRight size={18} />
+            </a>
+          </div>
         </header>
+        <ImageFigure
+          priority
+          src="/images/red-hat/capstone-yaml-review.png"
+          alt="The team’s OpenShift AI prototype with side-by-side YAML review and an explicit apply-and-redeploy control."
+          caption="Our final Figma Make prototype. Simulated deployment data; this is a design prototype, not a shipped Red Hat feature."
+        />
         <CaseBrief
           items={[
             [
-              "The question",
-              "Where should AI help—and where do practitioners need direct, visible control?",
+              "My contribution",
+              "UX design and prototype iteration, working with a project manager, two researchers, and a second designer.",
             ],
             [
-              "Research basis",
-              "8 interviews informed 3 validated opportunities and 2 divergent interface concepts.",
+              "Research",
+              "8 discovery interviews, followed by a 4-person concept test and a 5-person stakeholder review.",
             ],
             [
-              "Outcome",
-              "Leadership validated the direction. Original research and Figma artifacts are still being assembled for this study.",
+              "Result",
+              "A refined prototype and a direction validated with Red Hat product leadership. Implementation planning remained a next step.",
             ],
           ]}
         />
-        <ConceptComparison />
         <CaseSection
           id="context"
           number="01"
-          label="The challenge"
-          title="Faster is only useful when it is understandable."
+          label="The starting point"
+          title="A failed deployment shouldn’t mean a second console."
         >
           <p>
-            OpenShift AI practitioners work across onboarding, hardware
-            configuration, troubleshooting, and deployment handoffs. A simpler
-            interface can reduce friction. It can also conceal configuration
-            choices that affect the system.
+            Red Hat’s initial brief asked how model deployment could feel closer
+            to one click. Interviews pointed to a more immediate problem:
+            engineers were switching between OpenShift AI, the OpenShift
+            console, logs, and external assistants just to understand what had
+            gone wrong.
           </p>
           <p>
-            The design challenge was to offer help while preserving visibility,
-            source grounding, and a way back.
+            We focused on three changes: useful deployment feedback,
+            explanations beside unfamiliar settings, and hardware presets that
+            still allow detailed control.
           </p>
         </CaseSection>
         <CaseSection
           id="research"
           number="02"
-          label="Research"
-          title="Start with where people lose the thread."
+          label="Discovery"
+          title="Eight interviews narrowed the problem."
         >
           <div className="research-stats">
             <div>
-              <strong>8</strong>
-              <span>User interviews</span>
+              <strong>5</strong>
+              <span>Participants without RHOAI experience</span>
             </div>
             <div>
               <strong>3</strong>
-              <span>Validated opportunities</span>
+              <span>Red Hat participants with RHOAI experience</span>
             </div>
             <div>
-              <strong>2</strong>
-              <span>Divergent concepts</span>
+              <strong>3</strong>
+              <span>Recurring UX gaps</span>
             </div>
           </div>
           <p>
-            User interviews and stakeholder sessions informed the journey
-            mapping and prototype work. We focused on AI practitioners’ real
-            workflows: what they needed to understand, where they lost trust,
-            and which choices they needed to inspect.
+            We began with students and startup practitioners familiar with model
+            deployment, then interviewed three people at Red Hat. The RHOAI
+            interviews made the product-specific problems clearer: silent or
+            confusing failures, unexplained terminology, and a choice between
+            rigid presets and manual setup.
           </p>
-          <div className="finding-list">
-            <div>
-              <span>01</span>
-              <h3>Show what the system is doing.</h3>
-              <p>
-                Configuration and deployment changes need to remain visible.
-              </p>
-            </div>
-            <div>
-              <span>02</span>
-              <h3>Make the source inspectable.</h3>
-              <p>
-                An answer is more useful when people can examine what supports
-                it.
-              </p>
-            </div>
-            <div>
-              <span>03</span>
-              <h3>Keep control reversible.</h3>
-              <p>Review and rollback belong in the workflow, not outside it.</p>
-            </div>
-          </div>
-          <p className="figure-note">
-            Themes summarized from the existing project narrative. Counts and
-            leadership validation confirmed by Josiah; original research
-            artifacts pending.
-          </p>
-        </CaseSection>
-        <CaseSection
-          id="journey"
-          number="03"
-          label="The journey"
-          title="A workflow crosses more than one screen."
-        >
           <p>
-            Mapping the journey made the handoffs visible. Setup is not an
-            isolated action: the practitioner needs to understand the
-            environment, inspect proposed changes, and know what to do when a
-            step fails.
+            Our team used those findings to update the supplied persona and map
+            the deployment journey.
           </p>
+          <ImageFigure
+            src="/images/red-hat/capstone-journey.jpg"
+            width={1927}
+            height={1522}
+            alt="Original team journey artifact for Alex, showing model discovery, registration, system understanding, app configuration, deployment, and the pain points at each stage."
+            caption="Original team journey-mapping artifact, extracted from the final capstone report, page 6."
+          />
         </CaseSection>
-        <ProcessFlow
-          steps={[
-            {
-              title: "Orient",
-              detail: "Understand the environment and starting requirements.",
-            },
-            {
-              title: "Configure",
-              detail: "Inspect hardware and configuration choices.",
-            },
-            {
-              title: "Troubleshoot",
-              detail: "Find grounded help and review proposed changes.",
-            },
-            {
-              title: "Hand off",
-              detail: "Carry the decision and recovery path into deployment.",
-            },
-          ]}
-          caption="A current reconstruction of the workflow described in project notes, not an original research deliverable."
-        />
         <CaseSection
           id="concepts"
-          number="04"
-          label="Divergent concepts"
-          title="Test the interaction model, not just the layout."
+          number="03"
+          label="Iteration"
+          title="From likely causes to checks an engineer can inspect."
         >
           <p>
-            I designed and tested a source-grounded AI assistant and a
-            rule-based alternative. The comparison explored when people welcomed
-            AI help and when a predictable, bounded workflow gave them more
-            confidence.
+            The first prototype added a troubleshooting drawer beside the
+            deployment list. Logs, events, and YAML stayed in the same workflow.
+            An AI assistant suggested likely causes and linked the engineer to
+            supporting information.
           </p>
-          <div className="hypothesis-grid">
+          <ImageFigure
+            src="/images/red-hat/capstone-first-iteration.png"
+            width={2034}
+            height={744}
+            alt="The team’s original annotated prototype figure connecting the Troubleshoot action to an integrated diagnostics drawer."
+            caption="Original annotated prototype figure from the final report, page 8. The callout was part of the team’s submission."
+          />
+          <p>
+            In the first feedback round, four Red Hat engineers and researchers
+            walked through the Figma prototype using think-aloud feedback and
+            1–7 ratings. They liked the integrated drawer, but wanted actionable
+            fixes, logs for every deployment state, and more visible resource
+            limits.
+          </p>
+          <blockquote className="case-quote">
+            <p>
+              “Would like a suggested fix, something actionable, not just likely
+              causes.”
+            </p>
+            <cite>Concept-test feedback · Final report, page 13</cite>
+          </blockquote>
+          <div className="redhat-iteration-pair">
             <div>
-              <span className="eyebrow">Concept A / AI assistant</span>
-              <h3>Help that can explain itself.</h3>
-              <p>
-                <strong>Hypothesis:</strong> Grounding an answer in sources
-                could make troubleshooting more useful without asking people to
-                trust an opaque response.
-              </p>
+              <p className="eyebrow">v2.0 / AI-assisted analysis</p>
+              <ImageFigure
+                src="/images/red-hat/capstone-ai-assistant.png"
+                alt="Actual v2.0 capstone prototype with an AI troubleshooting assistant listing likely causes."
+                caption="v2.0: likely causes and suggested fixes. Captured from the team’s Figma Make prototype."
+              />
             </div>
             <div>
-              <span className="eyebrow">
-                Concept B / Deterministic workflow
-              </span>
-              <h3>A path people can predict.</h3>
-              <p>
-                <strong>Hypothesis:</strong> Explicit checks and a bounded next
-                step could provide clearer control when the task has
-                well-defined rules.
-              </p>
+              <p className="eyebrow">v3.0 / Deterministic diagnostics</p>
+              <ImageFigure
+                src="/images/red-hat/capstone-diagnostics.png"
+                alt="Actual v3.0 capstone prototype with explicit system checks and a failed resource-allocation check."
+                caption="v3.0: a ten-check diagnostic flow. Captured from the team’s Figma Make prototype."
+              />
             </div>
           </div>
-          <p className="figure-note">
-            Hypotheses paraphrase the documented comparison. No preference
-            percentages are claimed.
+          <p>
+            The second review brought five Red Hat designers, product managers,
+            and leadership stakeholders together. Their feedback led us toward a
+            deterministic version that checks common failure patterns. Both
+            versions keep the proposed YAML change visible before an engineer
+            applies it.
           </p>
         </CaseSection>
-        <div className="prototype-pair">
-          <AssetPlaceholder
-            name="Red Hat concept A Figma prototype"
-            note="Original source-grounded assistant screens."
+        <ProductWalkthrough
+          steps={redHatWalkthrough}
+          title="Inside the final prototype."
+          credit="Team prototype · Simulated data"
+          imageDirectory="/images/red-hat"
+          imageContext="Captured from the team’s v3.0 Figma Make prototype; deployment behavior is simulated."
+        />
+        <CaseSection
+          id="hardware"
+          number="04"
+          label="Configuration"
+          title="A preset is a starting point."
+        >
+          <p>
+            We kept familiar hardware profiles and added editable CPU and memory
+            requests and limits. Feedback on the initial design showed that a
+            separate custom option wasn’t enough: engineers also wanted to
+            adjust a preset after selecting it.
+          </p>
+          <ImageFigure
+            src="/images/red-hat/capstone-hardware.png"
+            alt="Final capstone prototype with a Medium hardware preset selected and editable CPU and memory requests and limits expanded."
+            caption="Our final preset-and-override interaction, captured from the v3.0 prototype. Values are illustrative."
           />
-          <AssetPlaceholder
-            name="Red Hat concept B Figma prototype"
-            note="Original deterministic workflow screens."
-          />
-        </div>
+          <p>
+            We also revised the help popovers so documentation links stayed
+            reachable when a user moved from the question mark into the popover.
+          </p>
+        </CaseSection>
         <CaseSection
           id="validation"
           number="05"
-          label="Validation"
-          title="Trust changed the design direction."
+          label="Outcome"
+          title="A reviewed direction, with clear next steps."
         >
           <p>
-            Testing showed where users lost trust in the assistant. The
-            resulting direction emphasized visibility into changes, source
-            grounding, rollback, and clearer human review.
+            Red Hat leadership said the findings aligned with their existing
+            research. The final direction combined deployment visibility,
+            actionable diagnostics, reviewable YAML changes, and customizable
+            hardware profiles.
           </p>
           <p>
-            The work was validated with Red Hat product leadership. That is
-            evidence of a reviewed design direction, not a claim that the
-            concept shipped or caused a measured business outcome.
+            The feedback rounds involved people with RHOAI experience. Testing
+            the refined design with newcomers, validating the documentation, and
+            planning implementation remained next steps.
           </p>
-          <div className="insight-block">
-            <span className="eyebrow">The design takeaway</span>
+          <div className="redhat-credits">
             <p>
-              Make the recommendation easier to understand, and the decision
-              easier to own.
+              <strong>Team:</strong> Josiah deGrasse — UX Designer; Nancy Yang —
+              Client Liaison & UX Designer; Christie Hao — Project Manager & UX
+              Writer; Joey Marmo and Marlon Ward — UX Researchers.
             </p>
+            <p>
+              Built and iterated in Figma Make, with the team directing and
+              reviewing the interface output. Prototype behavior and diagnostic
+              examples are simulated.
+            </p>
+            <a
+              className="text-link"
+              href={redHatProject.notebook}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Project notebook <ArrowUpRight size={18} />
+            </a>
           </div>
-          <AssetPlaceholder
-            name="Red Hat validation findings"
-            note="Add the original comparison, stakeholder feedback, and decisions made after testing."
-          />
-        </CaseSection>
-        <CaseSection
-          id="final"
-          number="06"
-          label="Final direction"
-          title="Visible reasoning. Deliberate action."
-        >
-          <p>
-            The Figma prototype work covered onboarding, hardware setup,
-            configuration differences, troubleshooting, and deployment handoffs.
-            The revised direction kept review and recovery visible as part of
-            the experience.
-          </p>
-          <AssetPlaceholder
-            name="Red Hat final high-fidelity Figma screens"
-            note="Add desktop screens and a close-up of the review or rollback interaction."
-          />
-        </CaseSection>
-        <CaseSection
-          id="reflection"
-          number="07"
-          label="What I learned"
-          title="The best shortcut still leaves a trail."
-        >
-          <p>
-            I came away thinking less about how many steps an assistant can
-            remove, and more about which steps help people understand the
-            system. A review step can be valuable when it makes a consequence
-            visible and gives someone the chance to change course.
-          </p>
         </CaseSection>
         <NextProject href="/work/nfi" title="New Food Innovation" />
       </article>

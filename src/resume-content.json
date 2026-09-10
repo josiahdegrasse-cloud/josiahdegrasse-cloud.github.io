@@ -24,12 +24,12 @@
     },
     {
       "organization": "Red Hat OpenShift AI",
-      "role": "Product Designer - Senior Capstone",
+      "role": "UX Designer - Senior Capstone",
       "dates": "Jan - May 2026",
       "bullets": [
-        "Conducted 8 user interviews and stakeholder sessions to understand enterprise AI workflows and identify 3 validated design opportunities.",
-        "Designed and tested two concepts: a source-grounded AI assistant and a rule-based workflow, using Figma prototypes.",
-        "Refined the experience around visibility, source grounding, rollback, and human control; validated the design direction with Red Hat product leadership."
+        "Translated 8 discovery interviews into 3 deployment UX priorities as part of a five-person Tufts team.",
+        "Designed Figma Make prototypes for deployment diagnostics, YAML review, and editable hardware presets.",
+        "Iterated AI-assisted and deterministic concepts through a 4-person test and a 5-person Red Hat stakeholder review."
       ]
     },
     {

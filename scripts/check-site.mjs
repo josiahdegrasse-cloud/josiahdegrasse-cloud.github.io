@@ -49,6 +49,10 @@ for (const route of routes) {
   }
   for (const match of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
     const href = match[1];
+    assert.ok(
+      !/^\/(?:portfolio\/)?play(?:[/?#]|$)/.test(href),
+      `${route}: retired game link`,
+    );
     if (!href.startsWith("/") && !href.startsWith("#")) continue;
     const [pathname, hash] = href.split("#");
     const targetPath = (pathname || route).split("?")[0];
@@ -75,6 +79,27 @@ for (const route of routes) {
 assert.ok(await exists("dist/josiah-degrasse-design-resume.pdf"));
 assert.ok(await exists("dist/sitemap.xml"));
 assert.ok(await exists("dist/404.html"));
+for (const retired of ["/play", "/portfolio/play"]) {
+  for (const file of [
+    join("dist", retired, "index.html"),
+    join("dist", retired + ".html"),
+  ]) {
+    const html = await readFile(file, "utf8");
+    assert.ok(
+      html.includes('data-route="/"'),
+      `${retired}: prerendered portfolio recovery`,
+    );
+    assert.ok(
+      html.includes('id="home-title"'),
+      `${retired}: usable without JavaScript`,
+    );
+  }
+}
+const manifest = JSON.parse(await readFile("package.json", "utf8"));
+assert.ok(
+  !manifest.dependencies.three && !manifest.devDependencies["@types/three"],
+  "Three.js removed from dependencies",
+);
 console.log(
   `Validated ${routes.length} prerendered pages, ${links} internal links, ${images} image references, résumé, social metadata, sitemap and 404.`,
 );

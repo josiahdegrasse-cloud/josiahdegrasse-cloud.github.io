@@ -1684,25 +1684,6 @@ a {
 .personal-section .text-link {
   margin-top: 12px;
 }
-.about-experiment {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--line);
-  gap: 48px;
-  padding: 40px 0 72px;
-}
-.about-experiment h2 {
-  font-size: 2rem;
-  margin: 16px 0;
-}
-.about-experiment p:not(.eyebrow) {
-  max-width: 60ch;
-  font-size: 0.9375rem;
-}
-.about-experiment > a {
-  flex-shrink: 0;
-}
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -1859,11 +1840,6 @@ a {
   .personal-section h2 {
     font-size: 2.25rem;
   }
-  .about-experiment {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
   .resume-entry-title {
     flex-direction: column;
     gap: 8px;
@@ -1912,12 +1888,6 @@ a {
   }
   .personal-section h2 {
     font-size: 2.25rem;
-  }
-  .about-experiment {
-    padding: 36px 0 48px;
-  }
-  .about-experiment h2 {
-    font-size: 1.75rem;
   }
   .secondary-case .case-hero {
     padding-top: 24px;

@@ -1,5 +1,4 @@
-import { GameErrorBoundary } from "./game-error-boundary";
-import { lazy, Suspense, useEffect } from "react";
+import { useEffect } from "react";
 import { DesignHome } from "./design-home";
 import { NfiCaseStudy, RedHatCaseStudy } from "./design-case-studies";
 import {
@@ -11,17 +10,14 @@ import {
 import { profile } from "./design-content";
 import "./design-system.css";
 import "./design-editorial.css";
-const LegacyPortfolioPage = lazy(() =>
-  import("./legacy-portfolio-page").then((m) => ({ default: m.PortfolioPage })),
-);
 const titles: Record<string, [string, string]> = {
   nfi: [
     "Designing an AI-assisted decision system for food scientists",
     "New Food Innovation: Human Factors, AI-assisted workflows, and evidence-based decision support.",
   ],
   "red-hat": [
-    "Red Hat OpenShift AI — Less friction, more control",
-    "Eight interviews, two competing concepts, and a design direction focused on trust in enterprise AI workflows.",
+    "Red Hat OpenShift AI — Making deployments easier to debug",
+    "A Tufts capstone with Red Hat: eight discovery interviews, two feedback rounds, and prototypes for diagnostics, YAML review, and editable hardware presets.",
   ],
   headtap: [
     "HeadTap — Music discovery",
@@ -48,28 +44,17 @@ const titles: Record<string, [string, string]> = {
     "Page not found",
     "Return to Josiah deGrasse’s selected design work.",
   ],
-  play: [
-    "Interactive portfolio experiment",
-    "An earlier 3D portfolio experiment by Josiah deGrasse.",
-  ],
 };
 export function PortfolioPage() {
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
-  const query = new URLSearchParams(window.location.search);
-  const legacy =
-    path === "/play" ||
-    path === "/portfolio/play" ||
-    query.has("world") ||
-    query.has("mission");
   const project = path.match(/^\/(?:work|portfolio\/projects)\/([^/]+)$/)?.[1];
   const home = ["/", "/portfolio", "/portfolio/case-studies", "/work"].includes(
     path,
   );
   const about = path === "/about" || path === "/portfolio/about";
   const resume = path === "/resume";
-  const key = legacy
-    ? "play"
-    : project && titles[project]
+  const key =
+    project && titles[project]
       ? project
       : home
         ? "home"
@@ -112,14 +97,16 @@ export function PortfolioPage() {
     setMeta("name", "twitter:description", description);
     const image =
       key === "nfi"
-        ? "/images/nfi/nfi-decision.webp"
-        : key === "lacrosse"
-          ? "/images/lacrosse/lacrosse-head-cad.webp"
-          : key === "about"
-            ? "/images/lacrosse/lacrosse-action.webp"
-            : key === "home"
-              ? "/images/portfolio-preview.png"
-              : null;
+        ? "/images/nfi/nfi-sensory-profile.png"
+        : key === "red-hat"
+          ? "/images/red-hat/capstone-deployments.png"
+          : key === "lacrosse"
+            ? "/images/lacrosse/lacrosse-head-cad.webp"
+            : key === "about"
+              ? "/images/lacrosse/lacrosse-action.webp"
+              : key === "home"
+                ? "/images/portfolio-preview.png"
+                : null;
     for (const [attr, name] of [
       ["property", "og:image"],
       ["name", "twitter:image"],
@@ -131,24 +118,8 @@ export function PortfolioPage() {
     document
       .querySelector('link[rel="canonical"]')
       ?.setAttribute("href", canonical);
-    if (key === "missing" || legacy)
-      setMeta("name", "robots", "noindex,follow");
-  }, [key, path, project, legacy]);
-  if (legacy)
-    return (
-      <GameErrorBoundary>
-        <Suspense
-          fallback={
-            <div className="loading-experience">
-              Loading the interactive experiment…{" "}
-              <a href="/">Return to portfolio</a>
-            </div>
-          }
-        >
-          <LegacyPortfolioPage />
-        </Suspense>
-      </GameErrorBoundary>
-    );
+    if (key === "missing") setMeta("name", "robots", "noindex,follow");
+  }, [key, path, project]);
   if (project === "nfi") return <NfiCaseStudy />;
   if (project === "red-hat") return <RedHatCaseStudy />;
   if (project && ["headtap", "lacrosse", "helfrich"].includes(project))

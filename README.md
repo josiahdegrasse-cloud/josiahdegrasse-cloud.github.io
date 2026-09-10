@@ -1,20 +1,17 @@
-# Josiah deGrasse — Design Portfolio
+# Josiah deGrasse — Portfolio
 
-An editorial Human Factors + AI Product Design portfolio built with React and Vite. NFI and Red Hat are featured; HeadTap, lacrosse and Helfrich are supporting projects. The original Three.js world remains an optional experiment.
+An AI engineering and product portfolio built with React and Vite. NFI and Red Hat lead the selected work; HeadTap, lacrosse, and Helfrich are supporting projects. The presentation uses large project previews, a short introduction, and real product imagery.
 
 ## Develop
 
 ```sh
 npm ci
 npm run dev
-npm run typecheck
 npm test
-npm run build
-node scripts/check-site.mjs
 npm run preview
 ```
 
-Build creates static HTML for the main routes, their metadata, legacy aliases and sitemap. Interactions hydrate in the browser. The development server remains client rendered.
+`npm test` runs TypeScript, the production build, prerendering, and generated-site validation. `npm run build` builds without the additional checks. Build creates static HTML for eight routes, their metadata, compatibility aliases, and sitemap. Interactions hydrate in the browser.
 
 ## Routes
 
@@ -22,15 +19,15 @@ Build creates static HTML for the main routes, their metadata, legacy aliases an
 - `/work/nfi`, `/work/red-hat`: featured studies
 - `/work/headtap`, `/work/lacrosse`, `/work/helfrich`: supporting projects
 - `/about`, `/resume`
-- `/play`, `/portfolio/play`, `?world=machine`, `?world=bedroom`, and original mission queries: optional legacy experience
 - Original `/portfolio/case-studies` and `/portfolio/projects/:id` links remain valid.
+- The Three.js experience has been removed. `/play` and `/portfolio/play` show the portfolio, including without JavaScript. Retired `world` and `mission` query parameters are cleared while retaining the requested portfolio page and unrelated parameters.
 
 ## Content and assets
 
-`src/design-content.ts` contains profile and work summaries. `src/resume-content.json` is shared between the web résumé and `scripts/build-resume.py`. Case-study sections live in `src/design-case-studies.tsx`. Reusable editorial components and tokens are in `src/design-components.tsx` and `src/design-system.css`.
+`src/design-content.ts` contains profile and work summaries. `src/resume-content.json` is shared between the web résumé and `scripts/build-resume.py`. Case studies live in `src/design-case-studies.tsx`, and the screen tour in `src/product-walkthrough.tsx`. Homepage composition is in `src/design-home.tsx` and `src/home.css`. Shared components and tokens are in `src/design-components.tsx`, `src/design-system.css`, and `src/design-editorial.css`.
 
-See [the audit](docs/redesign-audit.md), [asset checklist](docs/asset-checklist.md), [handoff](docs/design-handoff.md), and [future independent case study](docs/future-web-case-study.md).
+See [asset provenance](docs/asset-checklist.md), [handoff](docs/design-handoff.md), [research](docs/ui-ux-research.md), and [review history](docs/review-log.md).
 
-Images in `public/images/nfi` are genuine interface captures with synthetic demonstration data. Do not use those sample metrics as project outcomes. Original portfolio assets and résumé remain preserved; no nonexistent Figma work or research artifact is represented as real.
+NFI images are genuine interface captures with synthetic demonstration data. The current cover shows sensory charts and coconut cheddar prototypes. Sample metrics are not project outcomes. Red Hat uses the team's actual Figma Make prototypes and original report artifacts, with research methods, iteration history, and individual team roles supported by the final report and presentation. Removed game source remains recoverable in Git history.
 
-For another deployment origin, update `profile.origin` in `src/design-content.ts`, the origin in `scripts/prerender.mjs`, and baseline URLs in `index.html` and `public/robots.txt` before building. The Sites preview is private by default.
+For another deployment origin, update `profile.origin`, the origin in `scripts/prerender.mjs`, and baseline URLs in `index.html` and `public/robots.txt` before building. The current Sites deployment is private.

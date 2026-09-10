@@ -31,14 +31,15 @@ try {
       {},
       "Designing an AI-assisted decision system for food scientists — Josiah deGrasse",
       "New Food Innovation: Human Factors, AI-assisted workflows, and evidence-based decision support.",
-      "/images/nfi/nfi-decision.webp",
+      "/images/nfi/nfi-sensory-profile.png",
     ],
     [
       "/work/red-hat",
       cases.RedHatCaseStudy,
       {},
-      "Red Hat OpenShift AI — Josiah deGrasse",
-      "Eight interviews, two competing concepts, and a design direction focused on trust in enterprise AI workflows.",
+      "Red Hat OpenShift AI — Making deployments easier to debug — Josiah deGrasse",
+      "A Tufts capstone with Red Hat: eight discovery interviews, two feedback rounds, and prototypes for diagnostics, YAML review, and editable hardware presets.",
+      "/images/red-hat/capstone-deployments.png",
     ],
     [
       "/about",
@@ -115,6 +116,8 @@ try {
     ["/portfolio", "/"],
     ["/portfolio/case-studies", "/"],
     ["/work", "/"],
+    ["/play", "/"],
+    ["/portfolio/play", "/"],
     ["/portfolio/about", "/about"],
     ...["nfi", "red-hat", "headtap", "lacrosse", "helfrich"].map((id) => [
       `/portfolio/projects/${id}`,
@@ -130,7 +133,7 @@ try {
     await writeFile(dest, aliasHtml);
     await writeFile(join("dist", old + ".html"), aliasHtml);
   }
-  // Static 404 with an accessible recovery path; preserve SPA fallback for legacy experiments.
+  // Static 404 with an accessible recovery path.
   const notFound = template
     .replace(
       /<title>.*?<\/title>/s,
@@ -142,16 +145,6 @@ try {
       `<div id="root" data-route="404">${renderToString(createElement(other.NotFound))}</div>`,
     );
   await writeFile("dist/404.html", notFound);
-  for (const path of ["/play", "/portfolio/play"]) {
-    const dest = join("dist", path, "index.html");
-    await mkdir(dirname(dest), { recursive: true });
-    const playHtml = template.replace(
-      "</head>",
-      '<meta name="robots" content="noindex,follow"/></head>',
-    );
-    await writeFile(dest, playHtml);
-    await writeFile(join("dist", path + ".html"), playHtml);
-  }
   await writeFile(
     "dist/sitemap.xml",
     `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(([p]) => `<url><loc>${origin}${p}</loc></url>`).join("")}</urlset>`,

@@ -16,56 +16,52 @@ export function AboutPage() {
         <header className="about-hero">
           <p className="eyebrow">A little about me</p>
           <h1>
-            I’m interested in the space
-            <br /> between a capable system
-            <br /> <em>and a person using it.</em>
+            Engineer, designer,
+            <br /> <em>and hands-on maker.</em>
           </h1>
           <div className="about-intro">
             <span className="about-signature">Josiah.</span>
             <div>
               <p>
-                I studied Human Factors because technically capable systems can
-                still be difficult for people to use. Understanding how people
-                think, work, and make decisions felt like a good place to start.
+                I’m Josiah, an AI Product Engineer at New Food Innovation and a
+                Human Factors Engineering graduate from Tufts University.
               </p>
               <p>
-                AI makes that question even more interesting. My work now
-                focuses on how people understand, trust, control, and make
-                decisions with AI.
+                I work across research, interface design, and implementation.
+                Recently, that’s meant building tools for food scientists and
+                studying enterprise AI workflows with Red Hat.
               </p>
             </div>
           </div>
         </header>
         <section className="about-background">
-          <p className="eyebrow">A few things that shaped me</p>
+          <p className="eyebrow">Background</p>
           <div>
             <div>
-              <span>01 / A Human Factors foundation</span>
-              <h2>Start with the person.</h2>
+              <span>01 / Tufts University</span>
+              <h2>Human Factors Engineering</h2>
               <p>
-                At Tufts, I studied Human Factors Engineering: a way of looking
-                at systems through the people using them. Research, task
-                analysis, and testing ground the design decisions I make.
+                Research, task analysis, usability testing, and product design.
+                My Red Hat capstone explored how AI practitioners work with
+                complex tools.
               </p>
             </div>
             <div>
-              <span>02 / Working through complexity</span>
-              <h2>Make the reasoning visible.</h2>
+              <span>02 / New Food Innovation</span>
+              <h2>AI Product Engineer</h2>
               <p>
-                As an AI Product Engineer at New Food Innovation, I build
-                AI-assisted research and decision workflows. My Red Hat capstone
-                explored trust in enterprise AI. Both ask the same question:
-                what does someone need to understand before they act?
+                I build research and decision workflows for food scientists,
+                working across product design, AI-assisted implementation, and
+                testing.
               </p>
             </div>
             <div>
-              <span>03 / Turning ideas into things</span>
-              <h2>Learn by making.</h2>
+              <span>03 / Tools & practice</span>
+              <h2>From prototype to product</h2>
               <p>
-                I use Figma and AI development tools to take products from an
-                idea to something people can try. Technical literacy helps me
-                understand constraints and communicate design decisions through
-                implementation.
+                Figma for interfaces and prototypes. React, TypeScript, and AI
+                development tools for implementation. CAD for the things that
+                need to exist off screen.
               </p>
             </div>
           </div>
@@ -80,9 +76,7 @@ export function AboutPage() {
               loading="lazy"
               decoding="async"
             />
-            <figcaption>
-              Tufts lacrosse · A different kind of systems thinking.
-            </figcaption>
+            <figcaption>On the field with Tufts lacrosse.</figcaption>
           </figure>
           <div>
             <p className="eyebrow">Away from the screen</p>
@@ -95,28 +89,10 @@ export function AboutPage() {
               I played college lacrosse, helped start a team newspaper, and
               coach younger players.
             </p>
-            <p>
-              Different materials. Different people. The same curiosity about
-              how things could work a little better.
-            </p>
             <a className="text-link" href="/work/lacrosse">
               Made for the field <ArrowUpRight size={18} />
             </a>
           </div>
-        </section>
-        <section className="about-experiment">
-          <div>
-            <p className="eyebrow">An earlier experiment</p>
-            <h2>A portfolio you can play.</h2>
-            <p>
-              I also explored a 3D world as a way to connect my projects and
-              interests. It’s an optional detour into the more playful side of
-              my work.
-            </p>
-          </div>
-          <a className="text-link" href="/play">
-            Explore the experiment <ArrowUpRight size={18} />
-          </a>
         </section>
       </div>
     </Layout>

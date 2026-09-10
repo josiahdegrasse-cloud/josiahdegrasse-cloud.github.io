@@ -76,14 +76,11 @@ export function Footer() {
     <footer className="site-footer" id="contact">
       <div className="container">
         <div className="footer-intro">
-          <p className="eyebrow">A good place to start</p>
-          <h2>
-            Let’s make something
-            <br /> <em>make sense.</em>
-          </h2>
+          <p className="eyebrow">Contact</p>
+          <h2>Have something in mind?</h2>
           <a
             className="contact-link"
-            href={`mailto:${profile.email}?subject=Design%20portfolio%20inquiry`}
+            href={`mailto:${profile.email}?subject=Portfolio%20inquiry`}
           >
             Get in touch <ArrowUpRight />
           </a>
@@ -202,7 +199,7 @@ export function ImageFigure({
 }: {
   src: string;
   alt: string;
-  caption: string;
+  caption: ReactNode;
   priority?: boolean;
   theme?: string;
   width?: number;

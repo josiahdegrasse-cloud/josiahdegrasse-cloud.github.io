@@ -3,8 +3,21 @@ import { PortfolioPage } from "./portfolio-page";
 import "./index.css";
 
 const root = document.getElementById("root")!;
-const query = new URLSearchParams(window.location.search);
-const dynamic = query.has("world") || query.has("mission");
+// Retired experience links resolve to the portfolio without reloading the page.
+const url = new URL(window.location.href);
+const retiredPath = ["/play", "/portfolio/play"].includes(
+  url.pathname.replace(/\/+$/, ""),
+);
+if (
+  retiredPath ||
+  url.searchParams.has("world") ||
+  url.searchParams.has("mission")
+) {
+  if (retiredPath) url.pathname = "/";
+  url.searchParams.delete("world");
+  url.searchParams.delete("mission");
+  window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+}
 const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
 const canonicalPath = [
   "/portfolio",
@@ -17,6 +30,6 @@ const canonicalPath = [
     : pathname.replace(/^\/portfolio\/projects\//, "/work/");
 const matchesPrerender =
   root.dataset.route === canonicalPath || root.dataset.route === "404";
-if (root.hasChildNodes() && !dynamic && matchesPrerender)
+if (root.hasChildNodes() && matchesPrerender)
   hydrateRoot(root, <PortfolioPage />);
 else createRoot(root).render(<PortfolioPage />);
