@@ -4,7 +4,10 @@ export const profile = {
   email: "Josiah.deGrasse@tufts.edu",
   linkedin: "https://www.linkedin.com/in/josiahdegrasse",
   github: "https://github.com/josiahdegrasse-cloud",
-  origin: "https://josiah-design-portfolio.henrydegrasse.chatgpt.site",
+  origin: (
+    import.meta.env.VITE_SITE_ORIGIN ||
+    "https://josiah-design-portfolio.henrydegrasse.chatgpt.site"
+  ).replace(/\/$/, ""),
 };
 export const redHatProject = {
   prototypeV2: "https://patron-asset-93273794.figma.site/",
@@ -27,24 +30,24 @@ export const selectedWork = [
     alt: "NFI sensory analysis with a radar chart, intensity ratings, and two coconut cheddar prototypes.",
   },
   {
-    id: "headtap",
-    number: "02",
-    title: "HeadTap",
-    subtitle: "The next show starts with your taste.",
-    category: "Founder / Product design",
-    year: "2025",
-    description:
-      "An independent app that turns listening taste into a shortlist of live shows. Music profiles, concert matches, and practical filters in one place.",
-  },
-  {
     id: "red-hat",
-    number: "03",
+    number: "02",
     title: "Red Hat OpenShift AI",
     subtitle: "Less friction. More control.",
     category: "UX research & prototyping",
     year: "2026",
     description:
       "A Tufts capstone with Red Hat: deployment diagnostics, reviewable YAML changes, and hardware presets shaped by two rounds of feedback.",
+  },
+  {
+    id: "headtap",
+    number: "03",
+    title: "HeadTap",
+    subtitle: "The next show starts with your taste.",
+    category: "Founder / Product design",
+    year: "2025",
+    description:
+      "An independent app that turns listening taste into a shortlist of live shows. Music profiles, concert matches, and practical filters in one place.",
   },
 ];
 export const secondaryWork = [

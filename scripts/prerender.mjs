@@ -6,6 +6,7 @@ import { renderToString } from "react-dom/server";
 
 const server = await createServer({
   configFile: false,
+  base: process.env.VITE_SITE_BASE || "/",
   cacheDir: "node_modules/.vite-prerender",
   optimizeDeps: { noDiscovery: true, include: [] },
   server: { middlewareMode: true },
@@ -16,7 +17,12 @@ try {
   const cases = await server.ssrLoadModule("/src/design-case-studies.tsx");
   const other = await server.ssrLoadModule("/src/design-about.tsx");
   const objects = await server.ssrLoadModule("/src/design-objects.tsx");
-  const origin = "https://josiah-design-portfolio.henrydegrasse.chatgpt.site";
+  const origin = (
+    process.env.VITE_SITE_ORIGIN ||
+    "https://josiah-design-portfolio.henrydegrasse.chatgpt.site"
+  ).replace(/\/$/, "");
+  const base = (process.env.VITE_SITE_BASE || "/").replace(/\/$/, "");
+  const publicUrl = (path) => origin + base + path;
   const routes = [
     [
       "/",
@@ -105,9 +111,9 @@ try {
       )
       .replace(
         /<link\s+rel="canonical"[^>]*>/,
-        `<link rel="canonical" href="${origin}${path}" />`,
+        `<link rel="canonical" href="${publicUrl(path)}" />`,
       );
-    const head = `<meta name="description" content="${escape(description)}"/><meta property="og:type" content="website"/><meta property="og:title" content="${escape(title)}"/><meta property="og:description" content="${escape(description)}"/><meta property="og:url" content="${origin}${path}"/><meta name="twitter:title" content="${escape(title)}"/><meta name="twitter:description" content="${escape(description)}"/><meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}"/>${image ? `<meta property="og:image" content="${origin}${image}"/><meta name="twitter:image" content="${origin}${image}"/>` : ""}`;
+    const head = `<meta name="description" content="${escape(description)}"/><meta property="og:type" content="website"/><meta property="og:title" content="${escape(title)}"/><meta property="og:description" content="${escape(description)}"/><meta property="og:url" content="${publicUrl(path)}"/><meta name="twitter:title" content="${escape(title)}"/><meta name="twitter:description" content="${escape(description)}"/><meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}"/>${image ? `<meta property="og:image" content="${publicUrl(image)}"/><meta name="twitter:image" content="${publicUrl(image)}"/>` : ""}`;
     html = html
       .replace("</head>", `${head}</head>`)
       .replace(
@@ -154,8 +160,13 @@ try {
   await writeFile("dist/404.html", notFound);
   await writeFile(
     "dist/sitemap.xml",
-    `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(([p]) => `<url><loc>${origin}${p}</loc></url>`).join("")}</urlset>`,
+    `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.map(([p]) => `<url><loc>${publicUrl(p)}</loc></url>`).join("")}</urlset>`,
   );
+  await writeFile(
+    "dist/robots.txt",
+    `User-agent: *\nAllow: /\nSitemap: ${publicUrl("/sitemap.xml")}\n`,
+  );
+  await writeFile("dist/.nojekyll", "");
   console.log(
     `Prerendered ${routes.length} portfolio pages, legacy aliases, and 404.`,
   );

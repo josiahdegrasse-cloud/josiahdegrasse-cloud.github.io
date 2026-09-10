@@ -1,3 +1,4 @@
+import { sitePath } from "./site-path";
 import { ProductWalkthrough } from "./product-walkthrough";
 import { redHatProject } from "./design-content";
 import { useEffect, useState } from "react";
@@ -43,14 +44,14 @@ function CaseNav({ items }: { items: [string, string][] }) {
   return (
     <nav className="case-nav" aria-label="Case study sections">
       <div className="container">
-        <a href="/#work">
+        <a href={sitePath("/#work")}>
           <ArrowLeft size={14} /> All work
         </a>
         <div>
           {items.map(([id, label]) => (
             <a
               key={id}
-              href={`#${id}`}
+              href={sitePath(`#${id}`)}
               aria-current={active === id ? "location" : undefined}
             >
               {label}
@@ -178,7 +179,7 @@ export function NfiCaseStudy() {
         <ImageFigure
           priority
           theme="green"
-          src="/images/nfi/nfi-sensory-profile.png"
+          src={sitePath("/images/nfi/nfi-sensory-profile.png")}
           alt="NFI sensory analysis with a radar chart and intensity ratings for a coconut cheddar prototype, alongside the two project samples."
           caption="The Sensory Platform’s intensity profile and prototype selector. Synthetic demonstration data."
         />
@@ -302,7 +303,7 @@ export function NfiCaseStudy() {
           caption="A reconstructed workflow diagram. AI can assist within the steps; responsibility stays with the reviewer."
         />
         <ImageFigure
-          src="/images/nfi/nfi-overview-desktop.webp"
+          src={sitePath("/images/nfi/nfi-overview-desktop.webp")}
           alt="The live NFI project overview, with stage progress, current position, evidence coverage and a next action."
           caption="Captured from the live synthetic demo. A project path connects stage status with the next action."
         />
@@ -447,7 +448,7 @@ export function NfiCaseStudy() {
           />
         </section>
         <ImageFigure
-          src="/images/nfi/nfi-decision.webp"
+          src={sitePath("/images/nfi/nfi-decision.webp")}
           alt="Decision Review with a recommendation above a threshold bar and evidence details below it."
           caption="Decision Review: direction first, then evidence. The demo explicitly notes when instrument evidence was not collected."
         />
@@ -460,7 +461,7 @@ export function NfiCaseStudy() {
           result="A shared view connects the comparison to the underlying research evidence."
         />
         <ImageFigure
-          src="/images/nfi/nfi-insights.webp"
+          src={sitePath("/images/nfi/nfi-insights.webp")}
           alt="NFI Insights workspace comparing prototypes and showing sensory evidence with sample context."
           caption="The actual Insights workspace, using demonstration data. Large comparisons provide an entry point to deeper analysis."
         />
@@ -473,7 +474,7 @@ export function NfiCaseStudy() {
           result="Concept testing and report review retain the limitations behind the research."
         />
         <ImageFigure
-          src="/images/nfi/nfi-concepts.webp"
+          src={sitePath("/images/nfi/nfi-concepts.webp")}
           alt="NFI concept testing interface displaying a prepared product concept and synthetic response results."
           caption="Concept validation in the working product. Demonstration responses illustrate the workflow, not a measured business outcome."
         />
@@ -512,7 +513,7 @@ export function NfiCaseStudy() {
           </div>
         </CaseSection>
         <ImageFigure
-          src="/images/nfi/nfi-report-review.webp"
+          src={sitePath("/images/nfi/nfi-report-review.webp")}
           alt="The live report review screen showing review status, disabled approval and the reasons release is blocked."
           caption="A real approval boundary in the synthetic demo: incomplete reviews and demonstration evidence prevent release. This screen is not a client report."
         />
@@ -619,7 +620,10 @@ export function NfiCaseStudy() {
             </li>
           </ol>
         </CaseSection>
-        <NextProject href="/work/red-hat" title="Red Hat OpenShift AI" />
+        <NextProject
+          href={sitePath("/work/red-hat")}
+          title="Red Hat OpenShift AI"
+        />
       </article>
     </Layout>
   );
@@ -668,8 +672,7 @@ export function RedHatCaseStudy() {
         <header className="case-hero">
           <p className="eyebrow">02 / Red Hat OpenShift AI</p>
           <h1>
-            Making AI deployments{" "}
-            <br />
+            Making AI deployments <br />
             <em>easier to debug.</em>
           </h1>
           <p className="case-deck">
@@ -706,7 +709,7 @@ export function RedHatCaseStudy() {
         </header>
         <ImageFigure
           priority
-          src="/images/red-hat/capstone-yaml-review.png"
+          src={sitePath("/images/red-hat/capstone-yaml-review.png")}
           alt="The team’s OpenShift AI prototype with side-by-side YAML review and an explicit apply-and-redeploy control."
           caption="Our final Figma Make prototype. Simulated deployment data; this is a design prototype, not a shipped Red Hat feature."
         />
@@ -777,7 +780,7 @@ export function RedHatCaseStudy() {
             the deployment journey.
           </p>
           <ImageFigure
-            src="/images/red-hat/capstone-journey.jpg"
+            src={sitePath("/images/red-hat/capstone-journey.jpg")}
             width={1927}
             height={1522}
             alt="Original team journey artifact for Alex, showing model discovery, registration, system understanding, app configuration, deployment, and the pain points at each stage."
@@ -797,7 +800,7 @@ export function RedHatCaseStudy() {
             supporting information.
           </p>
           <ImageFigure
-            src="/images/red-hat/capstone-first-iteration.png"
+            src={sitePath("/images/red-hat/capstone-first-iteration.png")}
             width={2034}
             height={744}
             alt="The team’s original annotated prototype figure connecting the Troubleshoot action to an integrated diagnostics drawer."
@@ -821,7 +824,7 @@ export function RedHatCaseStudy() {
             <div>
               <p className="eyebrow">v2.0 / AI-assisted analysis</p>
               <ImageFigure
-                src="/images/red-hat/capstone-ai-assistant.png"
+                src={sitePath("/images/red-hat/capstone-ai-assistant.png")}
                 alt="Actual v2.0 capstone prototype with an AI troubleshooting assistant listing likely causes."
                 caption="v2.0: likely causes and suggested fixes. Captured from the team’s Figma Make prototype."
               />
@@ -829,7 +832,7 @@ export function RedHatCaseStudy() {
             <div>
               <p className="eyebrow">v3.0 / Deterministic diagnostics</p>
               <ImageFigure
-                src="/images/red-hat/capstone-diagnostics.png"
+                src={sitePath("/images/red-hat/capstone-diagnostics.png")}
                 alt="Actual v3.0 capstone prototype with explicit system checks and a failed resource-allocation check."
                 caption="v3.0: a ten-check diagnostic flow. Captured from the team’s Figma Make prototype."
               />
@@ -863,7 +866,7 @@ export function RedHatCaseStudy() {
             adjust a preset after selecting it.
           </p>
           <ImageFigure
-            src="/images/red-hat/capstone-hardware.png"
+            src={sitePath("/images/red-hat/capstone-hardware.png")}
             alt="Final capstone prototype with a Medium hardware preset selected and editable CPU and memory requests and limits expanded."
             caption="Our final preset-and-override interaction, captured from the v3.0 prototype. Values are illustrative."
           />
@@ -910,7 +913,7 @@ export function RedHatCaseStudy() {
             </a>
           </div>
         </CaseSection>
-        <NextProject href="/work/nfi" title="New Food Innovation" />
+        <NextProject href={sitePath("/work/nfi")} title="New Food Innovation" />
       </article>
     </Layout>
   );

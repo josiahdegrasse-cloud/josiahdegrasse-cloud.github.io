@@ -1,3 +1,4 @@
+import { sitePath } from "./site-path";
 import "./headtap.css";
 
 export function HeadTapCover() {
@@ -8,7 +9,7 @@ export function HeadTapCover() {
         <span>Independent product</span>
       </div>
       <img
-        src="/images/headtap/headtap-concerts.png"
+        src={sitePath("/images/headtap/headtap-concerts.png")}
         alt="HeadTap’s original concert discovery interface, showing sample artist matches, venues, dates, and prices."
         width={1280}
         height={720}

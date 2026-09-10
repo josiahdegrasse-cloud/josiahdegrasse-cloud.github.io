@@ -1,5 +1,11 @@
 # Portfolio review log
 
+## GitHub Pages, project order, and interests — September 10, 2026
+
+- User requested GitHub Pages hosting in addition to Sites, the order NFI → Red Hat → HeadTap, and the interest list coffee, lacrosse, sewing, surfing/snowboarding, and cheese. Updated homepage, About, résumé content, and its PDF aliases. The regenerated one-page résumé was visually inspected.
+- The existing GitHub repository is public, `main` is its default branch, and the user has admin access. Added a Pages workflow and explicit base-path support for JSX links/assets, the CAD model, client routing, SSR, metadata, sitemap, and robots. No repository visibility change or new repository is required.
+- The build with GitHub's `/josiah-portfolio/` base passes typechecking, nine-route prerendering, all 113 local links, 44 image references, metadata/resource checks, and the original CAD mesh validation. No portfolio browser QA was performed.
+
 ## Plain headline and bright orange — September 10, 2026
 
 - Removed the decorative underline from the homepage headline at Josiah's request. Keep hero typography plain going forward.

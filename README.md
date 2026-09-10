@@ -1,6 +1,6 @@
 # Josiah deGrasse — Portfolio
 
-An AI engineering and product portfolio built with React and Vite. NFI, HeadTap, and Red Hat are featured projects; lacrosse, Moka, and Helfrich provide additional design work. The presentation uses cream-white surfaces, restrained orange accents, large project previews, a short introduction, and real product imagery.
+An AI engineering and product portfolio built with React and Vite. NFI, Red Hat, and HeadTap are featured projects; lacrosse, Moka, and Helfrich provide additional design work. The presentation uses cream-white surfaces, restrained orange accents, large project previews, a short introduction, and real product imagery.
 
 ## Develop
 
@@ -35,3 +35,7 @@ The homepage Objects gallery rotates the original lacrosse mesh as the card pass
 NFI images are genuine interface captures with synthetic demonstration data. The current cover shows sensory charts and coconut cheddar prototypes. Sample metrics are not project outcomes. Red Hat uses the team's actual Figma Make prototypes and original report artifacts, with research methods, iteration history, and individual team roles supported by the final report and presentation. Removed game source remains recoverable in Git history.
 
 For another deployment origin, update `profile.origin`, the origin in `scripts/prerender.mjs`, and baseline URLs in `index.html` and `public/robots.txt` before building. The current Sites deployment is private.
+
+## GitHub Pages
+
+GitHub Pages also serves the portfolio at https://josiahdegrasse-cloud.github.io/josiah-portfolio/. The Pages workflow builds and publishes every push to `main`. `VITE_SITE_BASE=/josiah-portfolio/` and `VITE_SITE_ORIGIN=https://josiahdegrasse-cloud.github.io` configure links, images, fonts, the CAD model, routing, and social/canonical metadata. The normal build continues to target Sites at the root path. Run `npm test` with either environment to validate its static output.

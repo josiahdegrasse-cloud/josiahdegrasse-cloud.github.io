@@ -1,3 +1,4 @@
+import { routePath, sitePath } from "./site-path";
 import { useEffect } from "react";
 import { DesignHome } from "./design-home";
 import { NfiCaseStudy, RedHatCaseStudy } from "./design-case-studies";
@@ -51,7 +52,7 @@ const titles: Record<string, [string, string]> = {
   ],
 };
 export function PortfolioPage() {
-  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+  const path = routePath(window.location.pathname);
   const project = path.match(/^\/(?:work|portfolio\/projects)\/([^/]+)$/)?.[1];
   const home = ["/", "/portfolio", "/portfolio/case-studies", "/work"].includes(
     path,
@@ -76,13 +77,15 @@ export function PortfolioPage() {
         : `${title} — Josiah deGrasse`;
     const canonical =
       profile.origin +
-      (key === "home"
-        ? "/"
-        : project && titles[project]
-          ? `/work/${project}`
-          : key === "missing"
-            ? path
-            : `/${key}`);
+      sitePath(
+        key === "home"
+          ? "/"
+          : project && titles[project]
+            ? `/work/${project}`
+            : key === "missing"
+              ? path
+              : `/${key}`,
+      );
     const setMeta = (attribute: string, name: string, content: string) => {
       let el = document.querySelector<HTMLMetaElement>(
         `meta[${attribute}="${name}"]`,
@@ -116,7 +119,7 @@ export function PortfolioPage() {
       ["property", "og:image"],
       ["name", "twitter:image"],
     ]) {
-      if (image) setMeta(attr, name, profile.origin + image);
+      if (image) setMeta(attr, name, profile.origin + sitePath(image));
       else document.querySelector(`meta[${attr}="${name}"]`)?.remove();
     }
     setMeta("name", "twitter:card", image ? "summary_large_image" : "summary");

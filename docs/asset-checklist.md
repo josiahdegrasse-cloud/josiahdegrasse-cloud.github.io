@@ -60,7 +60,7 @@ The [physical design showcase](object-assets.md) uses only the supplied lacrosse
 - Red Hat's report now supports the interview split (5 without RHOAI experience, 3 at Red Hat with it), three UX gaps, a 4-person concept test, and a 5-person stakeholder review. The last two rounds are not an additional unique-participant total. Rating means are not supplied. The report supports the leadership-alignment statement and the pivot to deterministic checks. Refined-design testing with newcomers and implementation planning remained next steps.
 - Still needed: NFI participant count, number and nature of improvements, original protocol and session findings. No preference percentage, revenue impact, shipped Red Hat outcome or production-wide usability rate is claimed.
 - Positioning is AI Engineer · Human Factors, and the NFI résumé role is AI Product Engineer. AI development tools are acknowledged; independent complex production coding ownership is not claimed.
-- Clothing/sewing, sourdough, lacrosse and making are supported by the brief/résumé. The Machu Picchu detail was only suggested, so it was omitted pending confirmation.
+- Josiah explicitly updated his interests to coffee, lacrosse, sewing, surfing/snowboarding, and cheese. This replaces prior interest lists. The Machu Picchu detail was only suggested, so it was omitted pending confirmation.
 
 ## Replacing an asset
 

@@ -2,6 +2,18 @@ import { readFile, stat } from "node:fs/promises";
 import { join } from "node:path";
 import assert from "node:assert/strict";
 import { checkCadModel } from "./check-cad-model.mjs";
+const origin = (
+  process.env.VITE_SITE_ORIGIN ||
+  "https://josiah-design-portfolio.henrydegrasse.chatgpt.site"
+).replace(/\/$/, "");
+const base = (process.env.VITE_SITE_BASE || "/").replace(/\/$/, "");
+const localPath = (path) => {
+  assert.ok(
+    !base || path === base || path.startsWith(base + "/"),
+    `Unprefixed local URL: ${path}`,
+  );
+  return base ? path.slice(base.length) || "/" : path;
+};
 const routes = [
   "/",
   "/work/nfi",
@@ -32,9 +44,7 @@ for (const route of routes) {
   );
   assert.ok(html.includes('<meta name="description"'), `${route}: description`);
   assert.ok(
-    html.includes(
-      `<link rel="canonical" href="https://josiah-design-portfolio.henrydegrasse.chatgpt.site${route}"`,
-    ),
+    html.includes(`<link rel="canonical" href="${origin}${base}${route}"`),
     `${route}: canonical`,
   );
   assert.ok(
@@ -45,7 +55,10 @@ for (const route of routes) {
     const src = tag[0].match(/src="([^"]+)"/)?.[1];
     assert.ok(tag[0].includes('alt="'), `${route}: image alt`);
     if (src?.startsWith("/")) {
-      assert.ok(await exists(join("dist", src)), `${route}: missing ${src}`);
+      assert.ok(
+        await exists(join("dist", localPath(src))),
+        `${route}: missing ${src}`,
+      );
       images++;
     }
   }
@@ -57,7 +70,7 @@ for (const route of routes) {
     );
     if (!href.startsWith("/") && !href.startsWith("#")) continue;
     const [pathname, hash] = href.split("#");
-    const targetPath = (pathname || route).split("?")[0];
+    const targetPath = (pathname ? localPath(pathname) : route).split("?")[0];
     const direct = join("dist", targetPath);
     const target = (await exists(direct)) ? direct : join(direct, "index.html");
     assert.ok(await exists(target), `${route}: broken link ${href}`);
@@ -71,12 +84,21 @@ for (const route of routes) {
   for (const match of html.matchAll(
     /<meta [^>]*(?:property="og:image"|name="twitter:image")[^>]*content="([^"]+)"/g,
   )) {
-    const imagePath = new URL(match[1]).pathname;
+    const imagePath = localPath(new URL(match[1]).pathname);
     assert.ok(
       await exists(join("dist", imagePath)),
       `${route}: missing social image`,
     );
   }
+}
+const homeHtml = await readFile("dist/index.html", "utf8");
+for (const match of homeHtml.matchAll(
+  /<(?:script|link)\b[^>]*(?:src|href)="(\/[^\"]+)"/g,
+)) {
+  assert.ok(
+    await exists(join("dist", localPath(match[1]))),
+    `Missing build resource: ${match[1]}`,
+  );
 }
 assert.ok(await exists("dist/josiah-degrasse-design-resume.pdf"));
 assert.ok(await exists("dist/sitemap.xml"));

@@ -1,3 +1,4 @@
+import { sitePath } from "./site-path";
 import { useEffect, useRef, useState } from "react";
 
 const vertexShader = `#version 300 es
@@ -84,7 +85,7 @@ export function CadTurntable({ compact = false }: { compact?: boolean }) {
     };
     target.addEventListener("webglcontextlost", onLost);
     const setup = async () => {
-      const response = await fetch("/models/lacrosse-head.mesh", {
+      const response = await fetch(sitePath("/models/lacrosse-head.mesh"), {
         signal: abort.signal,
       });
       if (!response.ok) throw new Error("Model unavailable");
@@ -262,7 +263,7 @@ export function CadTurntable({ compact = false }: { compact?: boolean }) {
           {(!ready || failed) && (
             <img
               className="cad-poster"
-              src="/images/objects/lacrosse-source.png"
+              src={sitePath("/images/objects/lacrosse-source.png")}
               width={640}
               height={480}
               alt="Original saved SolidWorks preview of the lacrosse head."
@@ -296,7 +297,7 @@ export function CadTurntable({ compact = false }: { compact?: boolean }) {
           {(!ready || failed) && (
             <img
               className="cad-poster"
-              src="/images/objects/lacrosse-source.png"
+              src={sitePath("/images/objects/lacrosse-source.png")}
               width={640}
               height={480}
               alt="Original saved SolidWorks preview of the lacrosse head."

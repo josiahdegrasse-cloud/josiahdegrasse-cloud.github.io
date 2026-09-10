@@ -1,3 +1,4 @@
+import { routePath, sitePath } from "./site-path";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { PortfolioPage } from "./portfolio-page";
 import "./index.css";
@@ -6,19 +7,19 @@ const root = document.getElementById("root")!;
 // Retired experience links resolve to the portfolio without reloading the page.
 const url = new URL(window.location.href);
 const retiredPath = ["/play", "/portfolio/play"].includes(
-  url.pathname.replace(/\/+$/, ""),
+  routePath(url.pathname),
 );
 if (
   retiredPath ||
   url.searchParams.has("world") ||
   url.searchParams.has("mission")
 ) {
-  if (retiredPath) url.pathname = "/";
+  if (retiredPath) url.pathname = sitePath("/");
   url.searchParams.delete("world");
   url.searchParams.delete("mission");
   window.history.replaceState(null, "", url.pathname + url.search + url.hash);
 }
-const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+const pathname = routePath(window.location.pathname);
 const canonicalPath = [
   "/portfolio",
   "/portfolio/case-studies",

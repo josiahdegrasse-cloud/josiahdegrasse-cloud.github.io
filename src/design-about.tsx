@@ -1,3 +1,4 @@
+import { sitePath } from "./site-path";
 import {
   Layout,
   ArrowUpRight,
@@ -69,7 +70,7 @@ export function AboutPage() {
         <section className="personal-section">
           <figure>
             <img
-              src="/images/lacrosse/lacrosse-action.webp"
+              src={sitePath("/images/lacrosse/lacrosse-action.webp")}
               width="1600"
               height="882"
               alt="Josiah playing lacrosse for Tufts."
@@ -80,16 +81,13 @@ export function AboutPage() {
           </figure>
           <div>
             <p className="eyebrow">Away from the screen</p>
-            <h2>
-              I like making things
-              <br /> <em>with my hands, too.</em>
-            </h2>
+            <h2>Off the clock.</h2>
             <p>
-              I sew clothing, bake sourdough, and enjoy physical product design.
-              I played college lacrosse, helped start a team newspaper, and
-              coach younger players.
+              Coffee, lacrosse, sewing, surfing/snowboarding, and cheese. I
+              played college lacrosse, helped start a team newspaper, and coach
+              younger players.
             </p>
-            <a className="text-link" href="/work/lacrosse">
+            <a className="text-link" href={sitePath("/work/lacrosse")}>
               Made for the field <ArrowUpRight size={18} />
             </a>
           </div>
@@ -191,7 +189,7 @@ export function SecondaryProject({ id }: { id: string }) {
   return (
     <Layout>
       <article className="container secondary-case">
-        <a className="back-link" href="/#work">
+        <a className="back-link" href={sitePath("/#work")}>
           <ArrowLeft size={16} /> All work
         </a>
         <header className="case-hero">
@@ -212,7 +210,7 @@ export function SecondaryProject({ id }: { id: string }) {
         </header>
         {p.image && (
           <ImageFigure
-            src={p.image}
+            src={sitePath(p.image)}
             alt={p.alt!}
             caption={p.caption!}
             width={id === "headtap" ? 1280 : 1154}
@@ -231,7 +229,7 @@ export function SecondaryProject({ id }: { id: string }) {
             <p>{s.body}</p>
             {id === "headtap" && i === 1 && (
               <ImageFigure
-                src="/images/headtap/headtap-profile.png"
+                src={sitePath("/images/headtap/headtap-profile.png")}
                 alt="HeadTap’s original music profile screen showing a sample listener personality."
                 caption="Original HeadTap music profile · Sample listening history."
                 width={1280}
@@ -240,7 +238,7 @@ export function SecondaryProject({ id }: { id: string }) {
             )}
           </CaseSection>
         ))}
-        <a className="text-link secondary-back" href="/#work">
+        <a className="text-link secondary-back" href={sitePath("/#work")}>
           Back to selected work <ArrowUpRight size={18} />
         </a>
       </article>
@@ -259,7 +257,7 @@ export function ResumePage() {
           </div>
           <a
             className="text-link"
-            href="/josiah-degrasse-design-resume.pdf"
+            href={sitePath("/josiah-degrasse-design-resume.pdf")}
             download
           >
             Download PDF <ArrowUpRight size={18} />
@@ -267,7 +265,7 @@ export function ResumePage() {
         </header>
         <p className="resume-summary">{resume.summary}</p>
         <div className="resume-contact">
-          <a href={`mailto:${profile.email}`}>{profile.email}</a>
+          <a href={sitePath(`mailto:${profile.email}`)}>{profile.email}</a>
           <a href={profile.linkedin} target="_blank" rel="noreferrer">
             LinkedIn <ArrowUpRight size={14} />
           </a>
@@ -333,7 +331,7 @@ export function NotFound() {
           This page isn’t part of the portfolio. The selected work is a good
           place to start.
         </p>
-        <a className="text-link" href="/">
+        <a className="text-link" href={sitePath("/")}>
           Back to the portfolio <ArrowUpRight size={18} />
         </a>
       </div>

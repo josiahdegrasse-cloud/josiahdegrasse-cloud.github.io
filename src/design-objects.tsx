@@ -1,3 +1,4 @@
+import { sitePath } from "./site-path";
 import {
   Layout,
   ArrowLeft,
@@ -40,9 +41,12 @@ export function ObjectGallery() {
             {object.id === "lacrosse" ? (
               <CadTurntable compact />
             ) : (
-              <a href={`/work/${object.id}`} className="object-card-image">
+              <a
+                href={sitePath(`/work/${object.id}`)}
+                className="object-card-image"
+              >
                 <img
-                  src={object.image}
+                  src={sitePath(object.image)}
                   alt={object.alt}
                   width={640}
                   height={480}
@@ -53,7 +57,10 @@ export function ObjectGallery() {
                 </span>
               </a>
             )}
-            <a className="object-card-title" href={`/work/${object.id}`}>
+            <a
+              className="object-card-title"
+              href={sitePath(`/work/${object.id}`)}
+            >
               <h3>{object.name}</h3>
               <ArrowUpRight size={22} />
             </a>
@@ -74,7 +81,7 @@ export function ObjectCaseStudy({ id }: { id: "lacrosse" | "moka-pot" }) {
   return (
     <Layout>
       <article className="container object-case">
-        <a className="back-link" href="/#objects-heading">
+        <a className="back-link" href={sitePath("/#objects-heading")}>
           <ArrowLeft size={16} /> All work
         </a>
         <header className="object-hero">
@@ -94,7 +101,7 @@ export function ObjectCaseStudy({ id }: { id: "lacrosse" | "moka-pot" }) {
         ) : (
           <div className="object-original-preview">
             <ImageFigure
-              src={object.image}
+              src={sitePath(object.image)}
               alt={object.alt}
               width={640}
               height={480}
@@ -158,7 +165,7 @@ export function ObjectCaseStudy({ id }: { id: "lacrosse" | "moka-pot" }) {
               </p>
               <a
                 className="text-link"
-                href="/drawings/lacrosse-head.pdf"
+                href={sitePath("/drawings/lacrosse-head.pdf")}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -166,7 +173,7 @@ export function ObjectCaseStudy({ id }: { id: "lacrosse" | "moka-pot" }) {
               </a>
             </div>
             <ImageFigure
-              src="/images/objects/lacrosse-drawing.png"
+              src={sitePath("/images/objects/lacrosse-drawing.png")}
               width={2400}
               height={1698}
               alt="Josiah deGrasse’s original Shooter Head v9 engineering drawing showing five views."

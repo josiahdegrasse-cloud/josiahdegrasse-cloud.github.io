@@ -1,3 +1,4 @@
+import { sitePath } from "./site-path";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
   ArrowDown,
@@ -19,7 +20,11 @@ export function Navigation({ page = "work" }: { page?: string }) {
       </a>
       <header className="site-header">
         <div className="container nav-inner">
-          <a className="wordmark" href="/" aria-label="Josiah deGrasse, home">
+          <a
+            className="wordmark"
+            href={sitePath("/")}
+            aria-label="Josiah deGrasse, home"
+          >
             Josiah deGrasse
             <span className="wordmark-dot" aria-hidden="true">
               .
@@ -40,20 +45,20 @@ export function Navigation({ page = "work" }: { page?: string }) {
             aria-label="Main navigation"
           >
             <a
-              href="/#work"
+              href={sitePath("/#work")}
               aria-current={page === "work" ? "page" : undefined}
               onClick={() => setOpen(false)}
             >
               Work
             </a>
             <a
-              href="/about"
+              href={sitePath("/about")}
               aria-current={page === "about" ? "page" : undefined}
             >
               About
             </a>
             <a
-              href="/resume"
+              href={sitePath("/resume")}
               aria-current={page === "resume" ? "page" : undefined}
             >
               Résumé <ArrowUpRight size={14} />
@@ -80,7 +85,9 @@ export function Footer() {
           <h2>Have something in mind?</h2>
           <a
             className="contact-link"
-            href={`mailto:${profile.email}?subject=Portfolio%20inquiry`}
+            href={sitePath(
+              `mailto:${profile.email}?subject=Portfolio%20inquiry`,
+            )}
           >
             Get in touch <ArrowUpRight />
           </a>
@@ -91,7 +98,7 @@ export function Footer() {
             <a href={profile.linkedin} target="_blank" rel="noreferrer">
               LinkedIn <ArrowUpRight />
             </a>
-            <a href="/resume">
+            <a href={sitePath("/resume")}>
               Résumé <ArrowUpRight />
             </a>
             <a href={profile.github} target="_blank" rel="noreferrer">
@@ -235,7 +242,7 @@ export function ImageFigure({
         }}
       >
         <img
-          src={src}
+          src={sitePath(src)}
           alt={alt}
           width={width}
           height={height}
@@ -270,7 +277,7 @@ export function ImageFigure({
           role="region"
           aria-label="Scrollable enlarged image"
         >
-          <img src={src} alt={alt} loading="lazy" />
+          <img src={sitePath(src)} alt={alt} loading="lazy" />
         </div>
         <p>{caption}</p>
       </dialog>
@@ -340,7 +347,7 @@ export function ConceptComparison({ compact = false }: { compact?: boolean }) {
 }
 export function NextProject({ href, title }: { href: string; title: string }) {
   return (
-    <a className="next-project" href={href}>
+    <a className="next-project" href={sitePath(href)}>
       <div>
         <span className="eyebrow">Next case study</span>
         <h2>{title}</h2>

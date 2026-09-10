@@ -1,3 +1,4 @@
+import { sitePath } from "./site-path";
 import { Layout, ArrowUpRight, ArrowDown } from "./design-components";
 import { selectedWork, secondaryWork, redHatProject } from "./design-content";
 import { ObjectGallery } from "./design-objects";
@@ -43,7 +44,7 @@ export function DesignHome() {
             >
               <header className="work-card-heading">
                 <h3>
-                  <a href={`/work/${project.id}`}>{project.title}</a>
+                  <a href={sitePath(`/work/${project.id}`)}>{project.title}</a>
                 </h3>
                 <span className="folio">
                   {project.number} / {project.year}
@@ -51,7 +52,7 @@ export function DesignHome() {
               </header>
               <a
                 className="work-card-visual"
-                href={`/work/${project.id}`}
+                href={sitePath(`/work/${project.id}`)}
                 aria-label={`View ${project.title} case study`}
               >
                 {project.id === "headtap" ? (
@@ -65,7 +66,7 @@ export function DesignHome() {
                     <div className="nfi-screen-composition">
                       <img
                         className="nfi-main-screen"
-                        src={project.image}
+                        src={sitePath(project.image)}
                         alt={project.alt}
                         width={1280}
                         height={720}
@@ -84,7 +85,7 @@ export function DesignHome() {
                       <span>Tufts capstone / 2026</span>
                     </div>
                     <img
-                      src={redHatProject.cover}
+                      src={sitePath(redHatProject.cover)}
                       alt="The team’s OpenShift AI capstone prototype showing running, active, and failed model deployments."
                       width={1280}
                       height={720}
@@ -110,7 +111,10 @@ export function DesignHome() {
                 </div>
                 <div className="work-card-summary">
                   <p>{project.description}</p>
-                  <a className="text-link" href={`/work/${project.id}`}>
+                  <a
+                    className="text-link"
+                    href={sitePath(`/work/${project.id}`)}
+                  >
                     View project <ArrowUpRight size={18} />
                   </a>
                 </div>
@@ -127,7 +131,11 @@ export function DesignHome() {
           {secondaryWork
             .filter((p) => !["lacrosse", "headtap"].includes(p.id))
             .map((p, i) => (
-              <a className="more-work-row" href={`/work/${p.id}`} key={p.id}>
+              <a
+                className="more-work-row"
+                href={sitePath(`/work/${p.id}`)}
+                key={p.id}
+              >
                 <span className="folio">0{i + 4}</span>
                 <h3>{p.name}</h3>
                 <p>{p.summary}</p>
@@ -138,11 +146,11 @@ export function DesignHome() {
         <section className="home-about" aria-labelledby="about-heading">
           <a
             className="home-about-photo"
-            href="/about"
+            href={sitePath("/about")}
             aria-label="About Josiah"
           >
             <img
-              src="/images/lacrosse/lacrosse-action.webp"
+              src={sitePath("/images/lacrosse/lacrosse-action.webp")}
               alt="Josiah playing lacrosse for Tufts."
               width={1600}
               height={882}
@@ -152,12 +160,12 @@ export function DesignHome() {
           </a>
           <div>
             <p className="eyebrow">Off screen</p>
-            <h2 id="about-heading">Usually making something.</h2>
+            <h2 id="about-heading">Off the clock.</h2>
             <p>
-              I sew, bake sourdough, and design things for the lacrosse field. I
-              played at Tufts; now I coach.
+              Coffee, lacrosse, sewing, surfing/snowboarding, and cheese. I
+              played lacrosse at Tufts; now I coach.
             </p>
-            <a className="text-link" href="/about">
+            <a className="text-link" href={sitePath("/about")}>
               More about me <ArrowUpRight size={18} />
             </a>
           </div>
