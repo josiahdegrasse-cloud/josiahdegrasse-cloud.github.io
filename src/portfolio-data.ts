@@ -26,7 +26,7 @@ export const portfolioProjects: PortfolioProject[] = [
     subtitle: "Concert discovery platform",
     logline:
       "A music discovery system that turns listening history into nearby shows worth leaving the house for.",
-    role: "Founder, product designer, developer",
+    role: "Founder / Product Design",
     year: "2025",
     color: "red",
     skills: ["Product strategy", "UX design", "API integration", "Python", "JavaScript"],
@@ -48,7 +48,7 @@ export const portfolioProjects: PortfolioProject[] = [
           "The hard part was not collecting more music data. It was deciding which signals deserved attention and translating an algorithm into choices that still felt personal.",
       },
     ],
-    outcome: "A working full-stack platform for personalized, location-aware concert discovery.",
+    outcome: "A working prototype for personalized, location-aware concert discovery.",
   },
   {
     id: "nfi",
@@ -58,14 +58,14 @@ export const portfolioProjects: PortfolioProject[] = [
     subtitle: "Evidence-to-commercialization platform",
     logline:
       "A connected workspace that helps food R&D teams move from machine measurements and sensory panels to a defensible commercialization decision.",
-    role: "AI Product Engineer",
+    role: "Human Factors / AI Product Design",
     year: "Jan 2026–present",
     color: "blue",
-    skills: ["Human factors", "Product architecture", "React", "Supabase", "Data visualization"],
+    skills: ["Human Factors", "Workflow design", "Decision support", "Prototyping", "Data visualization"],
     evidence: [
-      "Built core workflow from scratch",
+      "Connected research workflow",
       "GO / TWEAK / STOP decision engine",
-      "79-test automated suite",
+      "Explicit human review",
     ],
     story: [
       {
@@ -76,7 +76,7 @@ export const portfolioProjects: PortfolioProject[] = [
       {
         heading: "The product journey",
         body:
-          "I built the platform around a single evidence chain: import E-Tongue, GC-MS/GC-O, and chemical data; map CSVs with AI assistance; assign panelists; configure surveys; compare human and instrumental signals; then issue a transparent GO, TWEAK, or STOP recommendation.",
+          "I designed the platform around a single evidence chain: import E-Tongue, GC-MS/GC-O, and chemical data; map CSVs with AI assistance; assign panelists; configure surveys; compare human and instrumental signals; then issue a transparent GO, TWEAK, or STOP recommendation.",
       },
       {
         heading: "Human control",
@@ -90,7 +90,7 @@ export const portfolioProjects: PortfolioProject[] = [
       },
     ],
     outcome:
-      "A deployed React, TypeScript, and Supabase product that turns disconnected research activities into one traceable lab-to-market journey.",
+      "A deployed product that connects research activities into one traceable lab-to-decision journey. Prototyping and implementation use AI development tools.",
   },
   {
     id: "red-hat",

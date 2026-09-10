@@ -31,7 +31,7 @@ export const machineCases: MachineCase[] = [
     order: 2,
     title: "Evidence before appetite",
     project: "New Food Innovation",
-    role: "AI Product Engineer",
+    role: "Human Factors / AI Product Design",
     year: "2026",
     briefing: "Coconut Cheddar v3.0 smells promising. The draft report wants to call it launch-ready. One important layer of evidence is still missing.",
     question: "What decision should the platform issue?",

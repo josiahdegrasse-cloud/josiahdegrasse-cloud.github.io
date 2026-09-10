@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /play
+Disallow: /portfolio/play
+Sitemap: https://josiah-design-portfolio.henrydegrasse.chatgpt.site/sitemap.xml

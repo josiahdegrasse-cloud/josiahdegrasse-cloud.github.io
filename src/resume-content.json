@@ -1,0 +1,57 @@
+{
+  "name": "Josiah deGrasse",
+  "title": "Human Factors + AI Product Designer",
+  "summary": "I turn complex AI and technical workflows into clear, useful experiences. My work combines Human Factors research, interaction design, and rapid prototyping with AI development tools.",
+  "email": "Josiah.deGrasse@tufts.edu",
+  "linkedin": "https://www.linkedin.com/in/josiahdegrasse",
+  "education": {
+    "school": "Tufts University",
+    "degree": "Bachelor of Science in Human Factors Engineering",
+    "date": "May 2026"
+  },
+  "experience": [
+    {
+      "organization": "New Food Innovation",
+      "role": "Human Factors / AI Product Design",
+      "dates": "Jan 2026 - Present",
+      "context": "Functional focus; position originally titled AI Product Engineer.",
+      "bullets": [
+        "Hired by the project sponsor to develop a Tufts capstone into a working sensory-intelligence platform for food-development teams.",
+        "Designed a connected journey across instrument evidence, sensory studies, insights, product decisions, concept testing, and reports.",
+        "Translated complex methodology into an explainable GO / TWEAK / STOP decision framework with evidence context and explicit human review.",
+        "Shaped role-specific workflows and reviewable AI assistance; used AI development tools to prototype and iterate on the working product."
+      ]
+    },
+    {
+      "organization": "Red Hat OpenShift AI",
+      "role": "Product Designer - Senior Capstone",
+      "dates": "Jan - May 2026",
+      "bullets": [
+        "Conducted 8 user interviews and stakeholder sessions to understand enterprise AI workflows and identify 3 validated design opportunities.",
+        "Designed and tested two concepts: a source-grounded AI assistant and a rule-based workflow, using Figma prototypes.",
+        "Refined the experience around visibility, source grounding, rollback, and human control; validated the design direction with Red Hat product leadership."
+      ]
+    },
+    {
+      "organization": "Helfrich Brothers Boiler Works",
+      "role": "Mechanical Engineer",
+      "dates": "Jun - Aug 2024",
+      "bullets": [
+        "Designed production fixtures for robotic welders and CNC machinery, improving boiler-head throughput from 3 heads per 3-hour run to 8 per 45 minutes.",
+        "Created 1,000+ SolidWorks components and digital twins to support fabrication, documentation, and shop-floor decisions."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "label": "Design & research",
+      "text": "Human Factors, UX research, task analysis, stakeholder interviews, journey mapping, information architecture, interaction design, prototyping, usability testing, Figma."
+    },
+    {
+      "label": "AI & making",
+      "text": "Human-in-the-loop design, evidence-based decision support, AI-assisted prototyping, data visualization, SolidWorks, CAD, 3D printing."
+    }
+  ],
+  "community": "Tufts men's lacrosse: contributed to three consecutive NCAA Division III national championships; founded a weekly team newspaper. Volunteer youth coach in Ridgefield and with Bronx Lacrosse.",
+  "interests": "Sewing, sourdough baking, snowboarding, surfing, backgammon, and music technology."
+}

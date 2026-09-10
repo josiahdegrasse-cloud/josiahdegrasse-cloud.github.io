@@ -386,7 +386,7 @@ export function LittleMachinePage() {
                     <Score label="Trust" value={score.trust} icon={ShieldCheck} />
                     <Score label="Systems" value={score.systems} icon={Gauge} />
                   </div>
-                  <a href="mailto:Josiah.deGrasse@tufts.edu?subject=The%20Little%20Machine">Interview the engineer <ArrowRight /></a>
+                  <a href="mailto:Josiah.deGrasse@tufts.edu?subject=The%20Little%20Machine">Get in touch <ArrowRight /></a>
                 </div>
               )}
               <div className="lm-case-list">
