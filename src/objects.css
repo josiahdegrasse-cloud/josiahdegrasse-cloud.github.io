@@ -116,7 +116,7 @@
 }
 .cad-stage {
   position: relative;
-  background: radial-gradient(ellipse at 48% 40%, #3a3732, #212120 75%);
+  background: #fff;
   height: min(60vh, 650px);
   min-height: 360px;
   overflow: hidden;
@@ -140,7 +140,7 @@
 .cad-corner-label,
 .cad-angle {
   position: absolute;
-  color: #d1ccc3;
+  color: var(--muted);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   bottom: 24px;
@@ -195,6 +195,8 @@
   margin-top: 12px;
 }
 .cad-preview .cad-stage {
+  background: #fff;
+  border: 1px solid var(--line);
   aspect-ratio: 4 / 3;
   height: auto;
   min-height: 0;
@@ -202,37 +204,6 @@
 .cad-preview canvas {
   position: absolute;
   inset: 0;
-}
-.cad-preview-controls {
-  position: absolute;
-  inset: auto 16px 10px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #f5f3ee;
-  font-size: 0.875rem;
-}
-.cad-preview-controls span {
-  white-space: nowrap;
-}
-.cad-preview-controls input {
-  min-width: 0;
-  width: 100%;
-  min-height: 44px;
-  accent-color: #d0d7ee;
-}
-.cad-preview-controls button {
-  background: transparent;
-  border: 0;
-  color: inherit;
-  min-height: 44px;
-  padding: 0 8px;
-  cursor: pointer;
-  font-size: inherit;
-}
-.cad-preview-controls :focus-visible {
-  outline: 2px solid #f5f3ee;
-  outline-offset: 2px;
 }
 .object-notes {
   display: grid;

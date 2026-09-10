@@ -1,6 +1,7 @@
 import { Layout, ArrowUpRight, ArrowDown } from "./design-components";
 import { selectedWork, secondaryWork, redHatProject } from "./design-content";
 import { ObjectGallery } from "./design-objects";
+import { HeadTapCover } from "./headtap-cover";
 import "./home.css";
 
 export function DesignHome() {
@@ -53,7 +54,9 @@ export function DesignHome() {
                 href={`/work/${project.id}`}
                 aria-label={`View ${project.title} case study`}
               >
-                {project.image ? (
+                {project.id === "headtap" ? (
+                  <HeadTapCover />
+                ) : project.image ? (
                   <div className="nfi-project-stage">
                     <div className="stage-label">
                       <span>NFI / Sensory Platform</span>
@@ -98,9 +101,11 @@ export function DesignHome() {
                 <div>
                   <p className="work-card-category">{project.category}</p>
                   <p className="work-card-provenance">
-                    {project.id === "nfi"
-                      ? "Product screens · Synthetic demo data"
-                      : "Team’s Figma Make prototype · UX design capstone"}
+                    {project.id === "headtap"
+                      ? "Working app · Sample music and concerts"
+                      : project.id === "nfi"
+                        ? "Product screens · Synthetic demo data"
+                        : "Team’s Figma Make prototype · UX design capstone"}
                   </p>
                 </div>
                 <div className="work-card-summary">
@@ -120,10 +125,10 @@ export function DesignHome() {
             <span className="folio">Digital & physical</span>
           </div>
           {secondaryWork
-            .filter((p) => p.id !== "lacrosse")
+            .filter((p) => !["lacrosse", "headtap"].includes(p.id))
             .map((p, i) => (
               <a className="more-work-row" href={`/work/${p.id}`} key={p.id}>
-                <span className="folio">0{i + 3}</span>
+                <span className="folio">0{i + 4}</span>
                 <h3>{p.name}</h3>
                 <p>{p.summary}</p>
                 <ArrowUpRight size={22} />

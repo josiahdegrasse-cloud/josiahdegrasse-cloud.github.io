@@ -256,7 +256,7 @@ export function CadTurntable({ compact = false }: { compact?: boolean }) {
           <canvas
             ref={canvas}
             className={ready && !failed ? "is-ready" : ""}
-            aria-label="Original lacrosse head model. Scroll the page to rotate it, or use the rotation slider."
+            aria-label="Original three-dimensional lacrosse head model."
             role="img"
           />
           {(!ready || failed) && (
@@ -267,37 +267,6 @@ export function CadTurntable({ compact = false }: { compact?: boolean }) {
               height={480}
               alt="Original saved SolidWorks preview of the lacrosse head."
             />
-          )}
-          {ready && !failed && (
-            <div className="cad-preview-controls">
-              <span>
-                {scrollEnabled && !reducedMotion
-                  ? "Scroll to rotate"
-                  : "Explore the form"}
-              </span>
-              <input
-                type="range"
-                aria-label="Rotate lacrosse head"
-                min="0"
-                max="360"
-                step="1"
-                value={Math.round(angle % 360)}
-                onChange={(event) => choose(Number(event.target.value))}
-              />
-              {!reducedMotion && (
-                <button
-                  type="button"
-                  aria-label={
-                    scrollEnabled
-                      ? "Pause scroll rotation"
-                      : "Resume scroll rotation"
-                  }
-                  onClick={() => setScrollEnabled(!scrollEnabled)}
-                >
-                  {scrollEnabled ? "Pause" : "Resume"}
-                </button>
-              )}
-            </div>
           )}
         </div>
       </section>

@@ -27,8 +27,18 @@ export const selectedWork = [
     alt: "NFI sensory analysis with a radar chart, intensity ratings, and two coconut cheddar prototypes.",
   },
   {
-    id: "red-hat",
+    id: "headtap",
     number: "02",
+    title: "HeadTap",
+    subtitle: "The next show starts with your taste.",
+    category: "Founder / Product design",
+    year: "2025",
+    description:
+      "An independent app that turns listening taste into a shortlist of live shows. Music profiles, concert matches, and practical filters in one place.",
+  },
+  {
+    id: "red-hat",
+    number: "03",
     title: "Red Hat OpenShift AI",
     subtitle: "Less friction. More control.",
     category: "UX research & prototyping",

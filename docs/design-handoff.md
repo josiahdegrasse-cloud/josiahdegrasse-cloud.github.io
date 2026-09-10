@@ -4,7 +4,7 @@
 
 AI Engineer · Human Factors. The September 10 user direction removes the Three.js game and asks for a professional, cool, less preachy portfolio, informed by Karolis Kosas, Matt Fredette, and Jastin Design. This supersedes the original brief's instruction to preserve the game.
 
-The homepage now leads with a short introduction, generous project previews, and concise descriptions. Large sans-serif typography replaces the previous manifesto-style hero; the separate philosophy section is removed. About and contact copy are direct and factual. Case-study evidence, résumé, and real personal imagery remain.
+The homepage now leads with a short introduction and featured NFI, HeadTap, and Red Hat projects, in that order. The current visual direction is cream white (#fbf7ef), warm ink, and restrained orange (#ad4515) accents. Shared frames, navigation, footer, case-study surfaces, and focus states use this palette. Large sans-serif typography replaces the previous manifesto-style hero; the separate philosophy section is removed. About and contact copy are direct and factual. Case-study evidence, résumé, and real personal imagery remain.
 
 ## Main files
 
@@ -15,7 +15,7 @@ The homepage now leads with a short introduction, generous project previews, and
 - `src/design-about.tsx`: About, résumé, supporting projects, and 404.
 - `src/design-content.ts`, `src/resume-content.json`: shared factual content.
 - `src/portfolio-page.tsx`, `src/main.tsx`: routing, metadata, hydration, and retired-link recovery.
-- `scripts/prerender.mjs`, `scripts/check-site.mjs`: eight static pages, compatibility aliases, metadata, and site checks.
+- `scripts/prerender.mjs`, `scripts/check-site.mjs`: nine static pages, compatibility aliases, metadata, and site checks.
 - `scripts/build-resume.py`: matching one-page PDF.
 
 All 46 unreachable game source, style, and test files were removed with Three.js, its types, and the game-only test runner. The old play routes resolve to the portfolio. Git history retains the original work.
@@ -37,6 +37,10 @@ These informed composition and tone; no reference-site imagery, biography, or pr
 The supplied final report, May 7 presentation, and project notebook replace the earlier reconstructed story. Seven original artifacts now show the team's deployment list, deterministic diagnostics, side-by-side YAML review, AI assistant, editable hardware presets, journey map, and first annotated iteration. Live prototype captures are unaltered 1280×720 viewports; report images retain their original dimensions. See `asset-checklist.md` for provenance and prototype links. Interim official Red Hat documentation images were superseded and removed.
 
 The case study credits Josiah as UX Designer in a five-person team. Discovery involved five participants without RHOAI experience and three Red Hat participants with it. Subsequent rounds involved four experienced users and five stakeholders; these are separate rounds, not 17 unique participants. The narrative explains the move from AI-inferred causes to deterministic checks following stakeholder review. It makes no aggregate rating, shipped-feature, or production-performance claim.
+
+## HeadTap imagery
+
+HeadTap is now featured second on the homepage and has original product screens in its case study. `headtap-concerts.png` and `headtap-profile.png` are unchanged 1280×720 captures from the user-provided local app at port 3000 on September 10. The app explicitly runs in demo mode with sample music and concert listings. Preserve these qualifiers. The local URL is not a public demo link and must not be placed in visitor-facing navigation. No HeadTap hosting or app code was changed.
 
 ## Verification and remaining evidence
 

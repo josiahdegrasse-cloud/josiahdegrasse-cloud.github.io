@@ -1,16 +1,16 @@
 /* Editorial identity: expressive display type, a quiet reading surface,
    and conventional, inspectable navigation. Research rationale: docs/ui-ux-research.md. */
 :root {
-  --paper: #f8f7f4;
-  --ink: #272320;
-  --muted: #68605b;
-  --line: #d9d3cc;
-  --accent: #773f43;
-  --soft: #eeeae5;
+  --paper: #fbf7ef;
+  --ink: #29251f;
+  --muted: #6b6258;
+  --line: #ded6ca;
+  --accent: #ad4515;
+  --soft: #f2ebdf;
 }
 ::selection {
-  background: #e6c9cb;
-  color: #272320;
+  background: #f4d8bf;
+  color: #29251f;
 }
 .site-header {
   border-bottom-color: var(--ink);
@@ -38,7 +38,7 @@
   letter-spacing: 0.025em;
 }
 .site-footer {
-  background: #eae5df;
+  background: var(--soft);
   border-top: 1px solid var(--ink);
 }
 .footer-intro h2 {
@@ -47,8 +47,8 @@
   letter-spacing: -0.025em;
 }
 .footer-bottom {
-  color: #61564e;
-  border-color: #c9bfb6;
+  color: var(--muted);
+  border-color: var(--line);
 }
 .case-hero h1,
 .about-hero h1 {

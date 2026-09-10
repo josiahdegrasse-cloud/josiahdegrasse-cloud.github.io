@@ -119,6 +119,10 @@ const experiments: Record<
     category: "Music discovery",
     role: "Founder / Product Design",
     date: "2025",
+    image: "/images/headtap/headtap-concerts.png",
+    alt: "Original HeadTap concert recommendations with sample artist matches, venue details, dates, and prices.",
+    caption:
+      "Captured from the working HeadTap app. Sample music and concerts; these are not live event listings.",
     sections: [
       {
         title: "Good shows were getting lost in the noise.",
@@ -126,11 +130,11 @@ const experiments: Record<
       },
       {
         title: "Design around taste, time, and place.",
-        body: "I designed a discovery flow that considers listening taste, artist similarity, venue, distance, and date. The aim was to make a recommendation feel relevant to someone’s life, rather than simply popular.",
+        body: "HeadTap brings a music profile and concert discovery into one flow. The profile groups listening patterns into artists, genres, and musical traits; the concert view presents matches with venue, date, and price information. Search, sorting, and filters help narrow the shortlist.",
       },
       {
-        title: "More data is not always a better decision.",
-        body: "This project taught me to think carefully about which signals deserve attention. The product’s job is to turn a large set of possibilities into a choice that still feels personal.",
+        title: "A working flow, with clear boundaries.",
+        body: "The working demo uses sample listening history and concert listings. It lets someone move from their music profile to a practical concert shortlist without treating sample events as live availability. The next step is validating recommendation quality with real listeners and live event data.",
       },
     ],
   },
@@ -191,7 +195,10 @@ export function SecondaryProject({ id }: { id: string }) {
           <ArrowLeft size={16} /> All work
         </a>
         <header className="case-hero">
-          <p className="eyebrow">Other things I’ve made / {p.category}</p>
+          <p className="eyebrow">
+            {id === "headtap" ? "Selected work" : "Other things I’ve made"} /{" "}
+            {p.category}
+          </p>
           <h1>
             {p.title}
             <br /> <em>{p.subtitle}</em>
@@ -208,8 +215,8 @@ export function SecondaryProject({ id }: { id: string }) {
             src={p.image}
             alt={p.alt!}
             caption={p.caption!}
-            width={1154}
-            height={982}
+            width={id === "headtap" ? 1280 : 1154}
+            height={id === "headtap" ? 720 : 982}
             priority
           />
         )}
@@ -222,6 +229,15 @@ export function SecondaryProject({ id }: { id: string }) {
             title={s.title}
           >
             <p>{s.body}</p>
+            {id === "headtap" && i === 1 && (
+              <ImageFigure
+                src="/images/headtap/headtap-profile.png"
+                alt="HeadTap’s original music profile screen showing a sample listener personality."
+                caption="Original HeadTap music profile · Sample listening history."
+                width={1280}
+                height={720}
+              />
+            )}
           </CaseSection>
         ))}
         <a className="text-link secondary-back" href="/#work">

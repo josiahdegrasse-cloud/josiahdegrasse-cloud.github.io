@@ -1,5 +1,17 @@
 # Portfolio review log
 
+## Cream palette and featured HeadTap — September 10, 2026
+
+- User requested cream white with hints of orange throughout the portfolio and greater prominence for HeadTap. Updated shared colors, project frames, diagrams, image surrounds, navigation states, and footer. Orange is used for selected accents and a thin hero underline; body text remains warm ink.
+- Promoted HeadTap to the second featured project, ahead of Red Hat, and removed its duplicate supporting row. Used the actual app supplied at `http://127.0.0.1:3000` to capture its music-profile and concert recommendation screens. Both PNGs retain the original 1280×720 viewport and UI. Demo/sample-data labels and captions remain explicit.
+- Added the actual HeadTap cover and music-profile image to its case study. No local-only URL is exposed to visitors, and no app code, data source, or HeadTap hosting was changed. The temporary typographic cover was replaced before publication.
+- Portfolio source compilation, build, and static checks pass: nine routes, 113 internal links, 44 image references, and the original 48,882 CAD triangles. Calculated ink, muted text, and orange contrast on cream, soft cream, and white exceeds 4.5:1. Source-app screenshots were inspected to obtain authentic assets; no portfolio browser QA was performed.
+
+## Clean homepage object display — September 10, 2026
+
+- User requested no visible rotation bar and a white background. Removed the entire controls overlay from the homepage lacrosse viewer and gave its stage a white background matching the Moka image frame.
+- Scroll-driven rotation and reduced-motion support remain active. The original mesh and material are unchanged. Detailed project-page controls remain available.
+
 ## Homepage scroll rotation — September 10, 2026
 
 - User clarified that the actual lacrosse head should rotate while scrolling on the main page. Replaced its static Objects thumbnail with a compact instance of the existing original CAD viewer.
