@@ -1,3 +1,4 @@
+import { GamePostcard } from "./game-postcard";
 import { useCallback, useEffect, useState } from "react";
 import {
   ArrowUpRight,
@@ -276,6 +277,8 @@ export function BedroomWorldPage() {
               <small>{hud.objective}</small>
             </div>
             <div className="pq4-hud-actions">
+              <a className="pq4-portfolio-return" href="/">Portfolio <ArrowUpRight size={16} /></a>
+              <GamePostcard room={hud.room} onPause={() => setPaused(true)} onResume={() => setPaused(false)} />
               <button
                 type="button"
                 onClick={() => {
@@ -368,6 +371,7 @@ export function BedroomWorldPage() {
 
       {!started && (
         <section className="pq4-title">
+          <a className="pq4-start-return" href="/">← Return to portfolio</a>
           <div className="pq4-title-copy">
             <p>A playable autobiography by Josiah deGrasse</p>
             <h1>
@@ -585,7 +589,7 @@ export function BedroomWorldPage() {
                     <ArrowUpRight />
                   </button>
                 ))}
-                <a href="/josiah-degrasse-resume.pdf" target="_blank" rel="noreferrer">
+                <a href="/josiah-degrasse-design-resume.pdf" target="_blank" rel="noreferrer">
                   Open résumé <ArrowUpRight />
                 </a>
                 <a href="mailto:Josiah.deGrasse@tufts.edu?subject=Portfolio%20inquiry">
@@ -641,7 +645,7 @@ export function BedroomWorldPage() {
                 <Play aria-hidden="true" />
                 Keep exploring
               </button>
-              <a href="/josiah-degrasse-resume.pdf" target="_blank" rel="noreferrer">
+              <a href="/josiah-degrasse-design-resume.pdf" target="_blank" rel="noreferrer">
                 Open résumé <ArrowUpRight aria-hidden="true" />
               </a>
               <a href="/portfolio/case-studies">

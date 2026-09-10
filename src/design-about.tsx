@@ -52,19 +52,19 @@ export function AboutPage() {
               <span>02 / Working through complexity</span>
               <h2>Make the reasoning visible.</h2>
               <p>
-                At New Food Innovation, I work on AI-assisted research and
-                decision workflows. My Red Hat capstone explored trust in
-                enterprise AI. Both ask the same question: what does someone
-                need to understand before they act?
+                As an AI Product Engineer at New Food Innovation, I build
+                AI-assisted research and decision workflows. My Red Hat capstone
+                explored trust in enterprise AI. Both ask the same question:
+                what does someone need to understand before they act?
               </p>
             </div>
             <div>
               <span>03 / Turning ideas into things</span>
               <h2>Learn by making.</h2>
               <p>
-                I use Figma and AI development tools to move from an idea to
-                something people can try. Technical literacy helps me understand
-                constraints and communicate design decisions through
+                I use Figma and AI development tools to take products from an
+                idea to something people can try. Technical literacy helps me
+                understand constraints and communicate design decisions through
                 implementation.
               </p>
             </div>

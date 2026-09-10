@@ -633,6 +633,7 @@ export function PortfolioGame({
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (pausedRef.current || document.hidden) return;
       if (!openingComplete && event.code !== "Escape") {
         skipOpening();
         return;
@@ -648,6 +649,7 @@ export function PortfolioGame({
     const handleKeyUp = (event: KeyboardEvent) => keys.delete(event.code);
     const handleVirtualInput = (event: Event) => {
       const custom = event as CustomEvent<{ code: string; active: boolean }>;
+      if (pausedRef.current && custom.detail.active) return;
       if (custom.detail.code === "KeyE" && custom.detail.active) {
         interact();
         return;
@@ -672,6 +674,17 @@ export function PortfolioGame({
       renderer.setSize(mount.clientWidth, mount.clientHeight);
     };
 
+    const capturePostcard = () => {
+      try {
+        renderer.render(scene, camera);
+        window.dispatchEvent(new CustomEvent("portfolio-postcard-ready", { detail: renderer.domElement.toDataURL("image/png") }));
+      } catch {
+        window.dispatchEvent(new CustomEvent("portfolio-postcard-ready", { detail: null }));
+      }
+    };
+    const clearInput = () => keys.clear();
+    window.addEventListener("portfolio-take-postcard", capturePostcard);
+    window.addEventListener("blur", clearInput);
     document.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
@@ -684,6 +697,8 @@ export function PortfolioGame({
       frame = requestAnimationFrame(animate);
       const delta = Math.min(clock.getDelta(), 1 / 30);
       const elapsed = clock.elapsedTime;
+      if (document.hidden) { keys.clear(); return; }
+      if (pausedRef.current) keys.clear();
 
       // Layout-review cameras (?cam=plan top-down, ?cam=iso angled) — temporary
       // interior-design aid; renders the room from a fixed overview and stops here.
@@ -1073,6 +1088,8 @@ export function PortfolioGame({
       window.clearInterval(autosave);
       document.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("portfolio-take-postcard", capturePostcard);
+      window.removeEventListener("blur", clearInput);
       window.removeEventListener("keyup", handleKeyUp);
       window.removeEventListener("portfolio-game-input", handleVirtualInput);
       window.removeEventListener("portfolio-travel", handleTravel);

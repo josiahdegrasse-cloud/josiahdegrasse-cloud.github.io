@@ -6,6 +6,8 @@ import { renderToString } from "react-dom/server";
 
 const server = await createServer({
   configFile: false,
+  cacheDir: "node_modules/.vite-prerender",
+  optimizeDeps: { noDiscovery: true, include: [] },
   server: { middlewareMode: true },
   appType: "custom",
 });
@@ -19,9 +21,9 @@ try {
       "/",
       home.DesignHome,
       {},
-      "Josiah deGrasse — Human Factors + AI Product Designer",
-      "I turn complex AI and technical workflows into clear, useful experiences. Selected design work by Josiah deGrasse.",
-      "/images/portfolio-preview.jpg",
+      "Josiah deGrasse — AI Engineer · Human Factors",
+      "I build AI-assisted products that connect evidence, explain decisions, and keep people in control. Selected design work by Josiah deGrasse.",
+      "/images/portfolio-preview.png",
     ],
     [
       "/work/nfi",
@@ -51,7 +53,7 @@ try {
       other.ResumePage,
       {},
       "Résumé — Josiah deGrasse",
-      "Human Factors + AI Product Designer",
+      "AI Engineer · Human Factors",
     ],
     [
       "/work/headtap",

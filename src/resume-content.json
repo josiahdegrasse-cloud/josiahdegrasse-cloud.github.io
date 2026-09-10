@@ -1,7 +1,7 @@
 {
   "name": "Josiah deGrasse",
-  "title": "Human Factors + AI Product Designer",
-  "summary": "I turn complex AI and technical workflows into clear, useful experiences. My work combines Human Factors research, interaction design, and rapid prototyping with AI development tools.",
+  "title": "AI Engineer · Human Factors",
+  "summary": "I build AI-assisted products that connect evidence, explain decisions, and keep people in control. My work combines Human Factors, product design, and implementation with AI development tools.",
   "email": "Josiah.deGrasse@tufts.edu",
   "linkedin": "https://www.linkedin.com/in/josiahdegrasse",
   "education": {
@@ -12,9 +12,9 @@
   "experience": [
     {
       "organization": "New Food Innovation",
-      "role": "Human Factors / AI Product Design",
+      "role": "AI Product Engineer",
       "dates": "Jan 2026 - Present",
-      "context": "Functional focus; position originally titled AI Product Engineer.",
+      "context": "Product development, Human Factors, and AI-assisted decision workflows.",
       "bullets": [
         "Hired by the project sponsor to develop a Tufts capstone into a working sensory-intelligence platform for food-development teams.",
         "Designed a connected journey across instrument evidence, sensory studies, insights, product decisions, concept testing, and reports.",

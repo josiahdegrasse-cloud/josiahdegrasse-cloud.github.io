@@ -773,3 +773,24 @@
 .bg-roll { background: #d82f24; color: #fff9e9; border: none; padding: 9px 20px; border-radius: 8px; font-weight: 900; cursor: pointer; box-shadow: 0 3px 0 #0006; }
 .bg-pips { font-size: 12px; opacity: .82; }
 .bg-pips b { color: #f6c83f; }
+
+/* Optional postcard camera: a native modal above the game, never the portfolio. */
+.game-postcard { width: min(920px, calc(100vw - 40px)); max-height: 90svh; overflow: auto; border: 0; padding: 24px; background: #f8f7f4; color: #272320; font: 400 15px/1.6 "DM Sans", Arial, sans-serif; box-shadow: 0 24px 90px #0006; }
+.game-postcard::backdrop { background: #12100de6; }
+.game-postcard header { display: flex; justify-content: space-between; align-items: start; gap: 24px; margin-bottom: 20px; }
+.game-postcard header p { font-size: 12px; margin: 0 0 6px; color: #68605b; }
+.game-postcard h2 { margin: 0; font: 400 36px/1.1 "Instrument Serif", Georgia, serif; }
+.game-postcard header button { background: transparent !important; border: 1px solid #d9d3cc !important; color: #272320 !important; min-width: 44px; min-height: 44px; display: grid; place-items: center; }
+.game-postcard > img { display: block; width: 100%; height: auto; }
+.game-postcard footer { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-top: 20px; font-size: 13px; }
+.game-postcard footer a { display: inline-flex; gap: 10px; align-items: center; min-height: 44px; white-space: nowrap; color: #773f43; text-decoration: underline; text-underline-offset: 4px; }
+.game-postcard :focus-visible { outline: 2px solid #773f43; outline-offset: 4px; }
+.pq4-hud-actions .pq4-portfolio-return { color: inherit; display: inline-flex; gap: 6px; align-items: center; min-height: 44px; text-decoration: none; font-size: 13px; padding: 8px 12px; background: #171818c7; border: 1px solid #ffffff40; border-radius: 8px; }
+.pq4-start-return { position: absolute; top: 24px; left: 24px; color: #fff4e1; text-decoration: none; border-bottom: 1px solid #fff4e180; padding: 10px 0; font-size: 14px; z-index: 2; }
+@media (max-width:700px) { .game-postcard { padding: 16px; } .game-postcard h2 { font-size: 28px; } .game-postcard footer { display: block; } .game-postcard footer a { margin-top: 10px; } .pq4-hud-actions { flex-wrap: wrap; justify-content: flex-end; } .pq4-start-return { top: 12px; left: 20px; } }
+.game-postcard { margin: auto; inset: 0; }
+@media (max-width:760px) {
+ .pq4-hud { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+ .pq4-hud-actions { justify-content: flex-start; flex-wrap: wrap; }
+ .pq4-hud-actions .pq4-portfolio-return { color: #fff4e1; }
+}

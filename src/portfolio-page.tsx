@@ -1,3 +1,4 @@
+import { GameErrorBoundary } from "./game-error-boundary";
 import { lazy, Suspense, useEffect } from "react";
 import { DesignHome } from "./design-home";
 import { NfiCaseStudy, RedHatCaseStudy } from "./design-case-studies";
@@ -9,6 +10,7 @@ import {
 } from "./design-about";
 import { profile } from "./design-content";
 import "./design-system.css";
+import "./design-editorial.css";
 const LegacyPortfolioPage = lazy(() =>
   import("./legacy-portfolio-page").then((m) => ({ default: m.PortfolioPage })),
 );
@@ -40,7 +42,7 @@ const titles: Record<string, [string, string]> = {
   resume: ["Résumé", profile.title],
   home: [
     profile.title,
-    "I turn complex AI and technical workflows into clear, useful experiences. Selected work by Josiah deGrasse.",
+    "I build AI-assisted products that connect evidence, explain decisions, and keep people in control. Selected work by Josiah deGrasse.",
   ],
   missing: [
     "Page not found",
@@ -116,7 +118,7 @@ export function PortfolioPage() {
           : key === "about"
             ? "/images/lacrosse/lacrosse-action.webp"
             : key === "home"
-              ? "/images/portfolio-preview.jpg"
+              ? "/images/portfolio-preview.png"
               : null;
     for (const [attr, name] of [
       ["property", "og:image"],
@@ -134,16 +136,18 @@ export function PortfolioPage() {
   }, [key, path, project, legacy]);
   if (legacy)
     return (
-      <Suspense
-        fallback={
-          <div className="loading-experience">
-            Loading the interactive experiment…{" "}
-            <a href="/">Return to portfolio</a>
-          </div>
-        }
-      >
-        <LegacyPortfolioPage />
-      </Suspense>
+      <GameErrorBoundary>
+        <Suspense
+          fallback={
+            <div className="loading-experience">
+              Loading the interactive experiment…{" "}
+              <a href="/">Return to portfolio</a>
+            </div>
+          }
+        >
+          <LegacyPortfolioPage />
+        </Suspense>
+      </GameErrorBoundary>
     );
   if (project === "nfi") return <NfiCaseStudy />;
   if (project === "red-hat") return <RedHatCaseStudy />;

@@ -10,7 +10,7 @@ from reportlab.lib.pagesizes import letter
 root=Path(__file__).resolve().parent.parent
 data=json.loads((root/'src/resume-content.json').read_text())
 out=root/'public/josiah-degrasse-design-resume.pdf'
-ink=colors.HexColor('#1a211e'); muted=colors.HexColor('#505b53'); green=colors.HexColor('#2b604b'); line=colors.HexColor('#d9ded8')
+ink=colors.HexColor('#272320'); muted=colors.HexColor('#68605b'); green=colors.HexColor('#773f43'); line=colors.HexColor('#d9d3cc')
 styles={
 'name':ParagraphStyle('name',fontName='Times-Roman',fontSize=29,leading=31,textColor=ink),
 'title':ParagraphStyle('title',fontName='Helvetica',fontSize=11,leading=15,textColor=green),

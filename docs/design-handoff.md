@@ -59,3 +59,8 @@ The visual system uses DM Sans and Instrument Serif, a crisp neutral background,
 The strongest remaining gap is original visual design evidence, particularly Red Hat Figma screens, iteration history and research artifacts. NFI now has actual interface imagery, but its testing story needs the participant count, improvement log and matched before/after screens. Web-specific brand/content storytelling and documented experimentation are still thin compared with the OpenAI role.
 
 Priorities: (1) original Red Hat designs, (2) NFI usability and before/after evidence, (3) the real independent web-design project documented in `future-web-case-study.md`, (4) targeted mobile/prototype footage and personal imagery. See `asset-checklist.md` for exact assets and facts to supply. Do not send a case-study page with asset-needed placeholders as a finished referral portfolio.
+
+
+## Research and engineering update
+
+The current direction is AI Engineer with a Human Factors foundation, following the latest positioning instruction. See `ui-ux-research.md` for the 13-paper evidence review and `review-log.md` for the four-hour scheduled improvement window. The editorial identity is in `src/design-editorial.css`; the NFI tour is in `src/product-walkthrough.tsx`; the game camera and failure fallback are in `src/game-postcard.tsx` and `src/game-error-boundary.tsx`. The résumé uses the actual NFI AI Product Engineer title. Licensed fonts are local in `public/fonts`, and the share image is an actual homepage capture.

@@ -1,3 +1,5 @@
+import { ProductWalkthrough } from "./product-walkthrough";
+import { useEffect, useState } from "react";
 import {
   Layout,
   CaseSection,
@@ -12,6 +14,32 @@ import {
 } from "./design-components";
 
 function CaseNav({ items }: { items: [string, string][] }) {
+  const [active, setActive] = useState("");
+  const sectionIds = items.map(([id]) => id).join(",");
+  useEffect(() => {
+    const sections = sectionIds
+      .split(",")
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => !!el);
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const passed = sections.filter(
+        (el) => el.getBoundingClientRect().top <= 190,
+      );
+      const current = passed[passed.length - 1];
+      setActive(current?.id ?? "");
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(frame);
+    };
+  }, [sectionIds]);
   return (
     <nav className="case-nav" aria-label="Case study sections">
       <div className="container">
@@ -20,13 +48,29 @@ function CaseNav({ items }: { items: [string, string][] }) {
         </a>
         <div>
           {items.map(([id, label]) => (
-            <a key={id} href={`#${id}`}>
+            <a
+              key={id}
+              href={`#${id}`}
+              aria-current={active === id ? "location" : undefined}
+            >
               {label}
             </a>
           ))}
         </div>
       </div>
     </nav>
+  );
+}
+function CaseBrief({ items }: { items: [string, string][] }) {
+  return (
+    <section className="case-brief" aria-label="Case study at a glance">
+      {items.map(([title, text]) => (
+        <div key={title}>
+          <h2>{title}</h2>
+          <p>{text}</p>
+        </div>
+      ))}
+    </section>
   );
 }
 function Principle({
@@ -88,7 +132,7 @@ export function NfiCaseStudy() {
       <CaseNav
         items={[
           ["context", "Context"],
-          ["workflow", "Workflow"],
+          ["walkthrough", "Walkthrough"],
           ["decisions", "Design"],
           ["testing", "Testing"],
           ["reflection", "Reflection"],
@@ -108,13 +152,29 @@ export function NfiCaseStudy() {
           </p>
           <Metadata
             items={[
-              ["Role", "Human Factors / Product Design"],
+              ["Role", "AI Product Engineer"],
               ["Context", "New Food Innovation"],
               ["When", "January 2026 — ongoing"],
               ["Focus", "AI workflows · Decision support · UX"],
             ]}
           />
         </header>
+        <CaseBrief
+          items={[
+            [
+              "The shift",
+              "From disconnected research and sensory data to a shared evidence-to-decision workflow.",
+            ],
+            [
+              "My contribution",
+              "Information architecture, decision interfaces, AI review patterns, and iterative product design.",
+            ],
+            [
+              "Current state",
+              "Ongoing product work. The screens below show the actual application with demonstration data.",
+            ],
+          ]}
+        />
         <ImageFigure
           priority
           theme="green"
@@ -245,6 +305,7 @@ export function NfiCaseStudy() {
           alt="The live NFI project overview, with stage progress, current position, evidence coverage and a next action."
           caption="Captured from the live synthetic demo. A project path connects stage status with the next action."
         />
+        <ProductWalkthrough />
         <CaseSection
           id="principles"
           number="04"
@@ -306,6 +367,48 @@ export function NfiCaseStudy() {
             documentation.
           </p>
         </CaseSection>
+        <section
+          className="implementation-note"
+          id="implementation"
+          aria-labelledby="implementation-heading"
+        >
+          <p className="eyebrow">Under the interface</p>
+          <h2 id="implementation-heading">
+            A working system, beyond the screen.
+          </h2>
+          <p>
+            The platform connects a typed React client to Supabase-backed
+            project data and access controls. Its research layer keeps retrieved
+            evidence scoped to the tenant and organized by source sections.
+          </p>
+          <dl>
+            <div>
+              <dt>Application</dt>
+              <dd>React · TypeScript · TanStack Query</dd>
+            </div>
+            <div>
+              <dt>Data & access</dt>
+              <dd>Postgres · Auth · Row Level Security</dd>
+            </div>
+            <div>
+              <dt>Research</dt>
+              <dd>Hybrid retrieval · Evidence Assist</dd>
+            </div>
+          </dl>
+          <p>
+            I use AI development tools as part of implementation and iteration.
+            The product’s documentation describes its architecture, operational
+            checks, and current boundaries.
+          </p>
+          <a
+            className="text-link"
+            href="https://github.com/josiahdegrasse-cloud/Sensory-Platform"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Explore the implementation <ArrowUpRight size={18} />
+          </a>
+        </section>
         <CaseSection
           id="exploration"
           number="06"
@@ -554,6 +657,22 @@ export function RedHatCaseStudy() {
             ]}
           />
         </header>
+        <CaseBrief
+          items={[
+            [
+              "The question",
+              "Where should AI help—and where do practitioners need direct, visible control?",
+            ],
+            [
+              "Research basis",
+              "8 interviews informed 3 validated opportunities and 2 divergent interface concepts.",
+            ],
+            [
+              "Outcome",
+              "Leadership validated the direction. Original research and Figma artifacts are still being assembled for this study.",
+            ],
+          ]}
+        />
         <ConceptComparison />
         <CaseSection
           id="context"

@@ -1,6 +1,6 @@
 export const profile = {
   name: "Josiah deGrasse",
-  title: "Human Factors + AI Product Designer",
+  title: "AI Engineer · Human Factors",
   email: "Josiah.deGrasse@tufts.edu",
   linkedin: "https://www.linkedin.com/in/josiahdegrasse",
   github: "https://github.com/josiahdegrasse-cloud",
@@ -12,10 +12,10 @@ export const selectedWork = [
     number: "01",
     title: "New Food Innovation",
     subtitle: "From scattered evidence to a clear decision.",
-    category: "AI product design · Human Factors",
+    category: "AI product engineering · Decision systems",
     year: "2026 — ongoing",
     description:
-      "Designing a shared workspace for food scientists to connect research, sensory evidence, and human judgment.",
+      "Building a shared workspace for food scientists to connect research, sensory evidence, and human judgment.",
     image: "/images/nfi/nfi-decision.webp",
     alt: "The actual NFI Decision Review interface showing a recommendation, threshold and supporting evidence.",
   },
