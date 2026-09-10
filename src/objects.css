@@ -194,6 +194,46 @@
   color: var(--muted);
   margin-top: 12px;
 }
+.cad-preview .cad-stage {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  min-height: 0;
+}
+.cad-preview canvas {
+  position: absolute;
+  inset: 0;
+}
+.cad-preview-controls {
+  position: absolute;
+  inset: auto 16px 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #f5f3ee;
+  font-size: 0.875rem;
+}
+.cad-preview-controls span {
+  white-space: nowrap;
+}
+.cad-preview-controls input {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  accent-color: #d0d7ee;
+}
+.cad-preview-controls button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  min-height: 44px;
+  padding: 0 8px;
+  cursor: pointer;
+  font-size: inherit;
+}
+.cad-preview-controls :focus-visible {
+  outline: 2px solid #f5f3ee;
+  outline-offset: 2px;
+}
 .object-notes {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

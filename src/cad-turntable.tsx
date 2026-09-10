@@ -31,7 +31,7 @@ void main() {
   color = vec4(pow(lit, vec3(0.8)), 1.0);
 }`;
 
-export function CadTurntable() {
+export function CadTurntable({ compact = false }: { compact?: boolean }) {
   const section = useRef<HTMLElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
   const draw = useRef<((angle: number) => void) | null>(null);
@@ -218,8 +218,16 @@ export function CadTurntable() {
         frame = 0;
         const rect = section.current!.getBoundingClientRect();
         if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-        const distance = Math.max(1, rect.height - window.innerHeight * 0.78);
-        const progress = Math.min(1, Math.max(0, (80 - rect.top) / distance));
+        const distance = compact
+          ? rect.height + window.innerHeight
+          : Math.max(1, rect.height - window.innerHeight * 0.78);
+        const progress = Math.min(
+          1,
+          Math.max(
+            0,
+            ((compact ? window.innerHeight : 80) - rect.top) / distance,
+          ),
+        );
         updateAngle(35 + progress * 360);
       });
     };
@@ -231,12 +239,70 @@ export function CadTurntable() {
       window.removeEventListener("resize", scroll);
       cancelAnimationFrame(frame);
     };
-  }, [ready, scrollEnabled, reducedMotion]);
+  }, [ready, scrollEnabled, reducedMotion, compact]);
 
   const choose = (value: number) => {
     setScrollEnabled(false);
     updateAngle(value);
   };
+  if (compact) {
+    return (
+      <section
+        ref={section}
+        className="cad-preview"
+        aria-label="Lacrosse head in 3D"
+      >
+        <div className="cad-stage">
+          <canvas
+            ref={canvas}
+            className={ready && !failed ? "is-ready" : ""}
+            aria-label="Original lacrosse head model. Scroll the page to rotate it, or use the rotation slider."
+            role="img"
+          />
+          {(!ready || failed) && (
+            <img
+              className="cad-poster"
+              src="/images/objects/lacrosse-source.png"
+              width={640}
+              height={480}
+              alt="Original saved SolidWorks preview of the lacrosse head."
+            />
+          )}
+          {ready && !failed && (
+            <div className="cad-preview-controls">
+              <span>
+                {scrollEnabled && !reducedMotion
+                  ? "Scroll to rotate"
+                  : "Explore the form"}
+              </span>
+              <input
+                type="range"
+                aria-label="Rotate lacrosse head"
+                min="0"
+                max="360"
+                step="1"
+                value={Math.round(angle % 360)}
+                onChange={(event) => choose(Number(event.target.value))}
+              />
+              {!reducedMotion && (
+                <button
+                  type="button"
+                  aria-label={
+                    scrollEnabled
+                      ? "Pause scroll rotation"
+                      : "Resume scroll rotation"
+                  }
+                  onClick={() => setScrollEnabled(!scrollEnabled)}
+                >
+                  {scrollEnabled ? "Pause" : "Resume"}
+                </button>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
   return (
     <section
       ref={section}

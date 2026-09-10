@@ -36,29 +36,29 @@ export function ObjectGallery() {
       </div>
       <div className="object-gallery-grid">
         {objects.map((object) => (
-          <a
-            className="object-card"
-            href={`/work/${object.id}`}
-            key={object.id}
-          >
-            <div className="object-card-image">
-              <img
-                src={object.image}
-                alt={object.alt}
-                width={640}
-                height={480}
-                loading="lazy"
-              />
-              <span aria-hidden="true">
-                <ArrowUpRight size={22} />
-              </span>
-            </div>
-            <div className="object-card-title">
+          <article className="object-card" key={object.id}>
+            {object.id === "lacrosse" ? (
+              <CadTurntable compact />
+            ) : (
+              <a href={`/work/${object.id}`} className="object-card-image">
+                <img
+                  src={object.image}
+                  alt={object.alt}
+                  width={640}
+                  height={480}
+                  loading="lazy"
+                />
+                <span aria-hidden="true">
+                  <ArrowUpRight size={22} />
+                </span>
+              </a>
+            )}
+            <a className="object-card-title" href={`/work/${object.id}`}>
               <h3>{object.name}</h3>
-              <span className="folio">{object.number}</span>
-            </div>
+              <ArrowUpRight size={22} />
+            </a>
             <p>{object.detail}</p>
-          </a>
+          </article>
         ))}
       </div>
       <p className="object-gallery-credit">

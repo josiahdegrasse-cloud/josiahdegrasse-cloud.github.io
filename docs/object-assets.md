@@ -4,7 +4,7 @@
 
 Josiah explicitly requested the actual lacrosse head and moka pot, without remaking them. The AI studio interpretations and their prompt files have been removed from the current checkout and publication. Their prior existence is recorded in Git history only. Do not generate replacement product images or approximate the geometry.
 
-The gallery uses each native PreviewPNG unchanged at its actual 640×480 aspect ratio. The lacrosse page leads with the saved model geometry and its original Nylon 101 base color (RGB 0.79607844, 0.8235294, 0.9372549), read from the native appearance records. Display lighting is provided by the viewer. Moka uses the unchanged saved assembly preview, preserving its transparent CAD display state and original handle and lid details.
+The homepage uses the original lacrosse mesh in a compact scroll-controlled viewer. Moka and the lacrosse loading/error fallback use each native PreviewPNG unchanged at its actual 640×480 aspect ratio. The lacrosse page leads with the saved model geometry and its original Nylon 101 base color (RGB 0.79607844, 0.8235294, 0.9372549), read from the native appearance records. Display lighting is provided by the viewer. Moka uses the unchanged saved assembly preview, preserving its transparent CAD display state and original handle and lid details.
 
 ## Original CAD material
 
@@ -32,3 +32,5 @@ It contains the saved preview, part placements and bounds, but no complete suppo
 ## Interaction
 
 The lacrosse page has a native WebGL2 turntable with a passive scroll listener, manual front/side/back/three-quarter buttons, rotation and tilt sliders, and a scroll-motion toggle. It draws on demand rather than running a continuous animation loop. It loads the mesh only near the viewport, limits pixel ratio to 2, releases GPU resources on unmount, and keeps an original-preview fallback when rendering is unavailable. Reduced-motion preferences disable automatic rotation and sticky scroll height while retaining manual controls. Short-height screens use normal document flow so controls remain reachable. The game remains removed; no Three.js dependency was restored.
+
+The homepage viewer rotates one complete turn over the card’s passage through the viewport, without sticky positioning or extra scroll height. Pause/resume and a manual rotation slider remain outside project links; reduced-motion preferences keep the object still until the visitor adjusts the slider. The dedicated lacrosse page retains its existing scroll sequence and full angle controls.

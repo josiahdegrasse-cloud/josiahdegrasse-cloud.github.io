@@ -1,5 +1,12 @@
 # Portfolio review log
 
+## Homepage scroll rotation — September 10, 2026
+
+- User clarified that the actual lacrosse head should rotate while scrolling on the main page. Replaced its static Objects thumbnail with a compact instance of the existing original CAD viewer.
+- The compact viewer maps the card's passage through the viewport to one full revolution, without adding a sticky section or extra scroll height. Retained lazy mesh loading, render-on-demand, pause/resume, a manual slider, reduced-motion handling, and the original saved-preview fallback. Project navigation remains a separate title link so it does not interfere with controls.
+- The existing project-page viewer, geometry, material color, and Moka preview remain unchanged. No model recreation or game dependency was introduced.
+- Typecheck, build, and static validation pass: nine routes, 111 internal links, 39 image references, and 48,882 CAD triangles. No browser-interaction QA was performed for this change.
+
 ## Original object correction — September 10, 2026
 
 - Josiah requested the actual lacrosse head and moka pot, without remaking either design. Removed both generated studio images, source PNGs, prompt files, and their frontend references.
