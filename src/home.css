@@ -19,13 +19,6 @@
   letter-spacing: -0.065em;
   line-height: 1.05;
 }
-.home-intro h1 span {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-decoration-thickness: 0.035em;
-  text-underline-offset: 0.12em;
-}
 .home-intro-copy {
   padding-bottom: 5px;
 }
@@ -73,7 +66,7 @@
   line-height: 1.2;
 }
 .work-card-heading h3 a:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .work-card-heading > span {
   flex-shrink: 0;
@@ -180,7 +173,7 @@
 }
 .more-work-row:hover h3,
 .more-work-row:hover svg {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .home-about {
   display: grid;

@@ -1,5 +1,10 @@
 # Portfolio review log
 
+## Plain headline and bright orange — September 10, 2026
+
+- Removed the decorative underline from the homepage headline at Josiah's request. Keep hero typography plain going forward.
+- Changed graphic accents from muted rust to bright orange (#ff6a00). Small orange text uses #bd3f00 for readability; cream surfaces and the featured project order remain.
+
 ## Cream palette and featured HeadTap — September 10, 2026
 
 - User requested cream white with hints of orange throughout the portfolio and greater prominence for HeadTap. Updated shared colors, project frames, diagrams, image surrounds, navigation states, and footer. Orange is used for selected accents and a thin hero underline; body text remains warm ink.

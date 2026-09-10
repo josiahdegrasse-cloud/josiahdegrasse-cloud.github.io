@@ -2,9 +2,9 @@
 
 ## Current direction
 
-AI Engineer · Human Factors. The September 10 user direction removes the Three.js game and asks for a professional, cool, less preachy portfolio, informed by Karolis Kosas, Matt Fredette, and Jastin Design. This supersedes the original brief's instruction to preserve the game.
+AI Engineer · Human Factors. The September 10 user direction removes the Three.js game and asks for a professional, cool, less preachy portfolio, informed by Karolis Kosas, Matt Fredette, and Jastin Design. This supersedes the original brief's instruction to preserve the game. The user explicitly rejected decorative headline underlines; keep the hero typography plain.
 
-The homepage now leads with a short introduction and featured NFI, HeadTap, and Red Hat projects, in that order. The current visual direction is cream white (#fbf7ef), warm ink, and restrained orange (#ad4515) accents. Shared frames, navigation, footer, case-study surfaces, and focus states use this palette. Large sans-serif typography replaces the previous manifesto-style hero; the separate philosophy section is removed. About and contact copy are direct and factual. Case-study evidence, résumé, and real personal imagery remain.
+The homepage now leads with a short introduction and featured NFI, HeadTap, and Red Hat projects, in that order. The current visual direction is cream white (#fbf7ef), warm ink, and bright orange (#ff6a00) accents, with #bd3f00 for small orange text. Shared frames, navigation, footer, case-study surfaces, and focus states use this palette. Large sans-serif typography replaces the previous manifesto-style hero; the separate philosophy section is removed. About and contact copy are direct and factual. Case-study evidence, résumé, and real personal imagery remain.
 
 ## Main files
 
