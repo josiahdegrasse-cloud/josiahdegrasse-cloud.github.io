@@ -267,7 +267,12 @@ export function ImageFigure({
           <X />
           Close
         </button>
-        <div className="image-dialog-scroll">
+        <div
+          className="image-dialog-scroll"
+          tabIndex={0}
+          role="region"
+          aria-label="Scrollable enlarged image"
+        >
           <img src={src} alt={alt} loading="lazy" />
         </div>
         <p>{caption}</p>

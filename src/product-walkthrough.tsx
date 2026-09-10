@@ -42,7 +42,11 @@ export function ProductWalkthrough() {
         </div>
         <span className="folio">Actual application · Demonstration data</span>
       </div>
-      <div className="walkthrough-steps" aria-label="Walkthrough steps">
+      <div
+        className="walkthrough-steps"
+        role="group"
+        aria-label="Walkthrough steps"
+      >
         {steps.map((item, index) => (
           <button
             key={item.title}

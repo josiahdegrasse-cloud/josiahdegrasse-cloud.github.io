@@ -200,6 +200,7 @@ export function NfiCaseStudy() {
           </p>
           <div
             className="fragmented-sources"
+            role="group"
             aria-label="Previously disconnected evidence sources"
           >
             {[

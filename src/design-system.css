@@ -886,13 +886,19 @@ a {
   line-height: 1.6;
 }
 .image-dialog {
+  margin: auto;
+  inset: 0;
   border: 0;
-  padding: 54px 20px 24px;
+  padding: 64px 20px 24px;
   max-width: 96vw;
   width: 1440px;
   max-height: 92svh;
   background: var(--paper);
   color: var(--ink);
+}
+.image-dialog[open] {
+  display: flex;
+  flex-direction: column;
 }
 .image-dialog::backdrop {
   background: #142119d9;
@@ -903,6 +909,7 @@ a {
   height: auto;
 }
 .image-dialog p {
+  flex-shrink: 0;
   font-size: 0.875rem;
   padding-top: 16px;
 }
@@ -913,7 +920,7 @@ a {
   position: absolute;
   top: 10px;
   right: 14px;
-  min-height: 36px;
+  min-height: 44px;
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -1960,6 +1967,7 @@ a {
   }
 }
 .image-dialog-scroll {
+  min-height: 0;
   overflow: auto;
   max-height: 72svh;
   overscroll-behavior: contain;
