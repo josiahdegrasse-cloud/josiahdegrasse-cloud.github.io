@@ -8,6 +8,7 @@ import {
   NotFound,
 } from "./design-about";
 import { profile } from "./design-content";
+import { ObjectCaseStudy } from "./design-objects";
 import "./design-system.css";
 import "./design-editorial.css";
 const titles: Record<string, [string, string]> = {
@@ -24,8 +25,12 @@ const titles: Record<string, [string, string]> = {
     "Designing discovery around listening taste, time, and place.",
   ],
   lacrosse: [
-    "Made for the field — Lacrosse & physical design",
-    "A maker’s perspective shaped by physical design, teamwork, and years of playing.",
+    "Lacrosse head — Physical design",
+    "A nylon lacrosse head study with original CAD geometry and a scroll-controlled turntable.",
+  ],
+  "moka-pot": [
+    "Moka pot — Assembly study",
+    "A SolidWorks study in facets, proportion, and assembly, with studio imagery and the original CAD preview.",
   ],
   helfrich: [
     "Helfrich Brothers — Manufacturing design",
@@ -122,7 +127,9 @@ export function PortfolioPage() {
   }, [key, path, project]);
   if (project === "nfi") return <NfiCaseStudy />;
   if (project === "red-hat") return <RedHatCaseStudy />;
-  if (project && ["headtap", "lacrosse", "helfrich"].includes(project))
+  if (project === "lacrosse" || project === "moka-pot")
+    return <ObjectCaseStudy id={project} />;
+  if (project && ["headtap", "helfrich"].includes(project))
     return <SecondaryProject id={project} />;
   if (home) return <DesignHome />;
   if (about) return <AboutPage />;

@@ -1,5 +1,6 @@
 import { Layout, ArrowUpRight, ArrowDown } from "./design-components";
 import { selectedWork, secondaryWork, redHatProject } from "./design-content";
+import { ObjectGallery } from "./design-objects";
 import "./home.css";
 
 export function DesignHome() {
@@ -112,19 +113,22 @@ export function DesignHome() {
             </article>
           ))}
         </section>
+        <ObjectGallery />
         <section className="more-work" aria-labelledby="more-heading">
           <div className="work-heading">
             <h2 id="more-heading">More work</h2>
             <span className="folio">Digital & physical</span>
           </div>
-          {secondaryWork.map((p, i) => (
-            <a className="more-work-row" href={`/work/${p.id}`} key={p.id}>
-              <span className="folio">0{i + 3}</span>
-              <h3>{p.name}</h3>
-              <p>{p.summary}</p>
-              <ArrowUpRight size={22} />
-            </a>
-          ))}
+          {secondaryWork
+            .filter((p) => p.id !== "lacrosse")
+            .map((p, i) => (
+              <a className="more-work-row" href={`/work/${p.id}`} key={p.id}>
+                <span className="folio">0{i + 3}</span>
+                <h3>{p.name}</h3>
+                <p>{p.summary}</p>
+                <ArrowUpRight size={22} />
+              </a>
+            ))}
         </section>
         <section className="home-about" aria-labelledby="about-heading">
           <a

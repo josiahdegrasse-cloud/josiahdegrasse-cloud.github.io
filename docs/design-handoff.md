@@ -40,6 +40,8 @@ The case study credits Josiah as UX Designer in a five-person team. Discovery in
 
 ## Verification and remaining evidence
 
+The physical-design update adds studio images for the lacrosse head and moka pot, an Objects gallery, a dedicated `/work/moka-pot` route, and the lacrosse CAD turntable. See `object-assets.md` for exact image prompts, source provenance, extraction, and limitations. The site now has nine prerendered routes. The lacrosse viewer uses original saved mesh data with manual rotation/tilt and reduced-motion support. It is unrelated to the removed game and adds no Three.js dependency. Moka rotation requires the three missing component files or an assembled export; the current Moka page is a complete still-image study without an invented mesh.
+
 See the latest entry in `review-log.md` for checks and publication receipts. `npm test` runs typechecking, build, prerendering, and static validation; browser tests cover responsive layouts, retired-link recovery, interactions, and automated accessibility scans.
 
 Red Hat's original screens and research artifacts are now included. Testing its refined design with newcomers and planning implementation remained next steps in the final report. NFI's participant count, testing protocol, improvement log, and matched before/after screens are not supplied. Preserve those qualifiers; the demo's synthetic panel counts cannot stand in for usability participants. The portfolio acknowledges the team's use of Figma Make and AI development tools.

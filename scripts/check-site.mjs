@@ -1,6 +1,7 @@
 import { readFile, stat } from "node:fs/promises";
 import { join } from "node:path";
 import assert from "node:assert/strict";
+import { checkCadModel } from "./check-cad-model.mjs";
 const routes = [
   "/",
   "/work/nfi",
@@ -9,6 +10,7 @@ const routes = [
   "/resume",
   "/work/headtap",
   "/work/lacrosse",
+  "/work/moka-pot",
   "/work/helfrich",
 ];
 let links = 0,
@@ -96,10 +98,12 @@ for (const retired of ["/play", "/portfolio/play"]) {
   }
 }
 const manifest = JSON.parse(await readFile("package.json", "utf8"));
+const model = await checkCadModel();
+assert.ok(await exists("dist/drawings/lacrosse-head.pdf"));
 assert.ok(
   !manifest.dependencies.three && !manifest.devDependencies["@types/three"],
   "Three.js removed from dependencies",
 );
 console.log(
-  `Validated ${routes.length} prerendered pages, ${links} internal links, ${images} image references, résumé, social metadata, sitemap and 404.`,
+  `Validated ${routes.length} prerendered pages, ${links} internal links, ${images} image references, ${model.triangles} CAD triangles, résumé, social metadata, sitemap and 404.`,
 );

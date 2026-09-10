@@ -1,5 +1,15 @@
 # Portfolio review log
 
+## Physical product showcase — September 10, 2026
+
+- User supplied a lacrosse engineering drawing, the native SolidWorks part, and a moka pot assembly, requesting polished product images and scroll-based views.
+- Created two studio interpretations with the built-in image tool, one per object. Preserved full-resolution PNGs and exact prompts in `output/product-images`; optimized site copies total approximately 121 KB. Public captions identify them as AI studio interpretations. Original previews and the lacrosse drawing accompany them.
+- Extracted the original lacrosse saved display mesh: 67,692 vertices, 48,882 triangles. A reproducible standard-library Python script validates source CRC, descriptor channels, triangle strips, and normals before uniform normalization and rigid reorientation. Independent cadmpeg inspection agrees with the display-mesh totals. Inspected offline front/back/side/angled projections against the original drawing and CAD preview.
+- Added an Objects gallery, a rebuilt lacrosse page, and `/work/moka-pot`. The lacrosse WebGL2 turntable supports scroll rotation, front/side/back/three-quarter views, manual rotation and tilt, pause, reduced-motion handling, near-viewport loading, a saved-preview fallback, and GPU cleanup. No game or Three.js dependency was reintroduced.
+- The supplied Moka assembly refers to `MOKA Bottom.SLDPRT`, `MOKA Top.SLDPRT`, and `MOKA lid.SLDPRT`, which are not included and were not found locally. Its exact turntable is incomplete pending those parts or an assembled STEP/GLB export. Its still-image study is ready and contains no invented mesh.
+- Typecheck, build, prerender, link/image/metadata checks, and mesh integrity checks pass: nine routes, 110 internal links, 41 image references, and all 48,882 CAD triangles. Main JavaScript is 214.28 KB (67.99 KB gzip), CSS 51.85 KB (11.05 KB gzip). The 2.21 MB geometry file loads only near the lacrosse viewer. No browser-interaction QA was performed in this pass; the Sites skill requires an explicit browser-testing request. Original geometry projections and generated product images were visually inspected outside the browser.
+- Owner-only publication uses the existing Site and preserves its access policy. The expired automation remains paused. See `object-assets.md` for provenance, prompts, source limitations, and the Moka follow-up.
+
 ## Review window
 
 Automation: `portfolio-craft-and-engineering-review`, attached to this task. Every five minutes through **2026-09-10 06:47 UTC / 02:47 AM Eastern**. The final eligible cycle should report and pause during the last five minutes. No edits after the deadline. An active turn should finish its coherent change before another review begins; inspect current task state and this log to avoid duplicate work.

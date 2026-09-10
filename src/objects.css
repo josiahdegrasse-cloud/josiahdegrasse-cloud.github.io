@@ -1,0 +1,344 @@
+.object-gallery {
+  padding: 12px 0 60px;
+}
+.object-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding-top: 24px;
+}
+.object-card-image {
+  position: relative;
+  overflow: hidden;
+  background: #252422;
+}
+.object-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+.object-card-image > span {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+}
+.object-card:hover img {
+  transform: scale(1.035);
+}
+.object-card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  margin-top: 18px;
+}
+.object-card-title h3 {
+  font-family: var(--sans);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+.object-card > p {
+  font-size: 0.875rem;
+  margin-top: 8px;
+  color: var(--muted);
+}
+.object-gallery-credit {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 24px;
+}
+.object-case {
+  padding-top: 28px;
+}
+.object-hero {
+  padding: 48px 0 36px;
+}
+.object-hero > div {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin: 24px 0;
+}
+.object-hero h1 {
+  font-size: clamp(3.3rem, 7.8vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.object-hero > div > p {
+  max-width: 42ch;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.object-studio {
+  margin: 0;
+}
+.object-studio > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.object-studio figcaption {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  padding-top: 12px;
+}
+.cad-scroll-section {
+  margin-top: 90px;
+}
+.cad-scroll-section.is-scroll-driven {
+  min-height: 190vh;
+}
+.cad-sticky {
+  position: sticky;
+  top: 80px;
+}
+.cad-stage-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.cad-stage-heading h2 {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  margin-top: 12px;
+  letter-spacing: -0.035em;
+}
+.cad-stage {
+  position: relative;
+  background: radial-gradient(ellipse at 48% 40%, #3a3732, #212120 75%);
+  height: min(60vh, 650px);
+  min-height: 360px;
+  overflow: hidden;
+}
+.cad-stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+}
+.cad-stage canvas.is-ready {
+  opacity: 1;
+}
+.cad-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.cad-corner-label,
+.cad-angle {
+  position: absolute;
+  color: #d1ccc3;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  bottom: 24px;
+}
+.cad-corner-label {
+  left: 24px;
+}
+.cad-angle {
+  right: 24px;
+  font-variant-numeric: tabular-nums;
+}
+.cad-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+}
+.cad-controls button {
+  min-height: 44px;
+  font-size: 0.875rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.cad-controls button:hover {
+  background: var(--soft);
+}
+.cad-view-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cad-slider {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.875rem;
+}
+.cad-slider input {
+  width: 130px;
+  min-height: 44px;
+  accent-color: var(--accent);
+}
+.cad-caption {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.object-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  padding: 64px 0;
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+}
+.object-notes h2 {
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+  margin: 20px 0 16px;
+}
+.object-notes > div > p:last-child {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.object-source {
+  padding: 56px 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 0.8fr 1.7fr;
+  gap: 60px;
+}
+.object-source h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.15;
+  margin: 16px 0;
+  letter-spacing: -0.025em;
+}
+.object-source p {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.object-source .eyebrow {
+  font-size: 0.75rem;
+}
+.object-source .image-figure {
+  margin: 0;
+}
+.object-source .text-link {
+  margin-top: 24px;
+}
+@media (max-width: 900px) {
+  .object-hero > div {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .object-notes {
+    gap: 24px;
+  }
+  .object-source {
+    gap: 28px;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  .cad-stage {
+    height: 50vh;
+  }
+}
+@media (max-width: 600px) {
+  .object-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .object-gallery {
+    padding-bottom: 42px;
+  }
+  .object-hero {
+    padding-top: 32px;
+  }
+  .object-hero > div {
+    gap: 20px;
+    margin-top: 18px;
+  }
+  .object-notes {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 0;
+  }
+  .object-notes h2 {
+    margin: 12px 0;
+  }
+  .object-source {
+    grid-template-columns: 1fr;
+    padding: 36px 0;
+  }
+  .cad-scroll-section {
+    margin-top: 56px;
+  }
+  .cad-stage-heading > .folio {
+    display: none;
+  }
+  .cad-sticky {
+    top: 70px;
+  }
+  .cad-stage {
+    min-height: 270px;
+    height: 43svh;
+  }
+  .cad-controls {
+    gap: 10px;
+  }
+  .cad-controls button {
+    padding: 8px 10px;
+  }
+  .cad-slider {
+    flex: 1;
+  }
+  .cad-slider input {
+    width: 90px;
+  }
+  .cad-motion-toggle {
+    font-size: 0.75rem !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .object-card-image img {
+    transition: none;
+  }
+  .object-card:hover img {
+    transform: none;
+  }
+  .cad-scroll-section.is-scroll-driven {
+    min-height: auto;
+  }
+  .cad-sticky {
+    position: static;
+  }
+}
+@media print {
+  .cad-controls,
+  .cad-stage canvas {
+    display: none;
+  }
+  .cad-scroll-section.is-scroll-driven {
+    min-height: auto;
+  }
+  .cad-sticky {
+    position: static;
+  }
+  .cad-stage {
+    display: none;
+  }
+}
+@media (max-height: 720px) {
+  .cad-sticky {
+    position: relative;
+    top: 0;
+  }
+  .cad-scroll-section.is-scroll-driven {
+    min-height: auto;
+  }
+}

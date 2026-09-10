@@ -15,6 +15,7 @@ try {
   const home = await server.ssrLoadModule("/src/design-home.tsx");
   const cases = await server.ssrLoadModule("/src/design-case-studies.tsx");
   const other = await server.ssrLoadModule("/src/design-about.tsx");
+  const objects = await server.ssrLoadModule("/src/design-objects.tsx");
   const origin = "https://josiah-design-portfolio.henrydegrasse.chatgpt.site";
   const routes = [
     [
@@ -65,11 +66,18 @@ try {
     ],
     [
       "/work/lacrosse",
-      other.SecondaryProject,
+      objects.ObjectCaseStudy,
       { id: "lacrosse" },
-      "Made for the field — Josiah deGrasse",
-      "Physical design, teamwork, and a maker’s perspective.",
+      "Lacrosse head — Physical design — Josiah deGrasse",
+      "A nylon lacrosse head study with original CAD geometry and a scroll-controlled turntable.",
       "/images/lacrosse/lacrosse-head-cad.webp",
+    ],
+    [
+      "/work/moka-pot",
+      objects.ObjectCaseStudy,
+      { id: "moka-pot" },
+      "Moka pot — Assembly study — Josiah deGrasse",
+      "A SolidWorks study in facets, proportion, and assembly, with studio imagery and the original CAD preview.",
     ],
     [
       "/work/helfrich",
@@ -119,10 +127,9 @@ try {
     ["/play", "/"],
     ["/portfolio/play", "/"],
     ["/portfolio/about", "/about"],
-    ...["nfi", "red-hat", "headtap", "lacrosse", "helfrich"].map((id) => [
-      `/portfolio/projects/${id}`,
-      `/work/${id}`,
-    ]),
+    ...["nfi", "red-hat", "headtap", "lacrosse", "moka-pot", "helfrich"].map(
+      (id) => [`/portfolio/projects/${id}`, `/work/${id}`],
+    ),
   ]) {
     const dest = join("dist", old, "index.html");
     await mkdir(dirname(dest), { recursive: true });
