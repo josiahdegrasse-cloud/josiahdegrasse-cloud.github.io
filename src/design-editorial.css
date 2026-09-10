@@ -817,7 +817,7 @@
   grid-template-columns: 1fr 1.5fr;
   gap: 40px;
   padding: 28px 0;
-  min-height: 133px;
+  min-height: 152px;
 }
 .walkthrough-copy h3 {
   font-size: 1.25rem;
@@ -870,6 +870,8 @@
     margin-top: 14px;
   }
   .walkthrough-steps button {
+    display: grid;
+    align-content: start;
     padding: 12px 8px;
     font-size: 0.8125rem;
     line-height: 1.4;

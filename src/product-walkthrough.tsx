@@ -2,28 +2,28 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, ImageFigure } from "./design-components";
 const steps = [
   {
-    title: "Orient the team",
-    image: "nfi-overview-desktop.webp",
-    alt: "The NFI project overview with project navigation and current evidence context.",
-    description:
-      "Start with a shared project context. Research, sensory studies, and decisions belong to the same workflow rather than separate documents.",
-    focus: "A common starting point for different roles.",
-  },
-  {
-    title: "Inspect the evidence",
+    title: "Compare the evidence",
     image: "nfi-insights.webp",
     alt: "The actual NFI Insights screen with sensory analysis and supporting evidence.",
     description:
-      "Inspect the signals behind a recommendation. Keep the evidence available so a person can question the interpretation before acting on it.",
-    focus: "Evidence stays close to the interpretation.",
+      "Inspect the selected prototype alongside its liking score, response count, and evidence status. Separate tabs keep sensory results and concept feedback distinct.",
+    focus: "Read each sample in context.",
   },
   {
     title: "Review the decision",
     image: "nfi-decision.webp",
     alt: "The NFI Decision Review screen with a recommendation, threshold, and evidence.",
     description:
-      "Bring the recommendation, decision threshold, and supporting evidence together. The interface supports the next judgment without hiding its basis.",
-    focus: "A clear next step, with the reasoning in view.",
+      "The decision screen pairs GO, TWEAK, or STOP with a threshold and evidence detail. In this demo state, the text explicitly says instrument QC evidence was not collected.",
+    focus: "Read the limits beside the recommendation.",
+  },
+  {
+    title: "Check release readiness",
+    image: "nfi-report-review.webp",
+    alt: "NFI report review with a demonstration-data warning, disabled approval control, and outstanding evidence and calculation checks.",
+    description:
+      "The report exposes its review status, disabled approval control, and outstanding checks. This captured state retains evidence and calculation issues, so the reader can see why approval is blocked.",
+    focus: "See what still blocks approval.",
   },
 ];
 export function ProductWalkthrough() {
@@ -38,7 +38,7 @@ export function ProductWalkthrough() {
       <div className="walkthrough-heading">
         <div>
           <p className="eyebrow">Guided screen tour</p>
-          <h2 id="walkthrough-heading">From evidence to a decision.</h2>
+          <h2 id="walkthrough-heading">From evidence to release review.</h2>
         </div>
         <span className="folio">Actual application · Demonstration data</span>
       </div>
@@ -66,7 +66,7 @@ export function ProductWalkthrough() {
           key={step.image}
           src={`/images/nfi/${step.image}`}
           alt={step.alt}
-          caption={`Screen ${current + 1} of ${steps.length}: ${step.title}. This is a guided tour of captured product screens, not a live product session.`}
+          caption={`Screen ${current + 1} of ${steps.length}: ${step.title}. Captured synthetic demo state; values vary between screens.`}
         />
       </div>
       <div className="walkthrough-controls">
