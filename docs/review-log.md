@@ -25,7 +25,10 @@ Current direction: **AI Engineer · Human Factors**. The latest user steering su
 - Browser checks verify the new Red Hat images, both prototype links, all three tour states and previous/next boundaries, enlarged-image Escape dismissal and focus return at 320, 375, and 1440 pixels. No overflow, missing images, or runtime errors were detected. Fixed a missing space in the Red Hat heading when the decorative line break is hidden on mobile.
 - The shared NFI tour and mobile navigation still pass, with all eight routes fitting at 320 pixels. Nineteen page/menu/tour/dialog axe scans and three additional Red Hat scans detected no violations. Existing incomplete contrast checks involve background content obscured by the menu or modal; these checks are not a full accessibility certification. Inspected desktop/mobile Red Hat screenshots and the one-page résumé.
 - Evidence: `/tmp/portfolio-qa/redhat-primary-review.cjs`, `redhat-primary-results.json`, `redhat-primary-*.png`, `interaction-final.cjs`, and `accessibility-results.json`. Early QA-script errors came from a whitespace expectation and an attempt to scroll a hidden dialog image; corrected the checks to target visible figures and verify meaningful heading spacing.
-- Publication receipt follows below.
+
+### Project imagery and Red Hat publication receipt
+
+Version **7** deployed successfully at **13:06 UTC** on September 10, with owner-only access verified before publication. Source: `5b1b62490f4a055399875861dd3c01b3bd78679d`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_b339f11f6b3481919b74571e523c14cc`. Deployment: `appgdep_6aa2ab5a8c0c8191bf6956614fe0d88e`. The existing private URL is unchanged. The original game removal, restrained homepage, chart-led NFI cover, actual Red Hat case study, and aligned résumé are published together. The expired automation remains paused.
 
 ## Initial research and implementation pass — September 10, 2026
 
