@@ -7,6 +7,8 @@
 - The existing project-page viewer, geometry, material color, and Moka preview remain unchanged. No model recreation or game dependency was introduced.
 - Typecheck, build, and static validation pass: nine routes, 111 internal links, 39 image references, and 48,882 CAD triangles. No browser-interaction QA was performed for this change.
 
+Version **10** deployed successfully at **14:24 UTC**, September 10, 2026. Source: `2fd0cab3775f15d6683c3784bbb9d3f49f3b34fd`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_0c2aa6bcae208191a677019c4be69c96`. Deployment: `appgdep_6aa2bd999aa48191a9ed56aaae47b445`. Homepage scroll rotation is published at the existing owner-only URL, and the established Site tab received the homepage handoff.
+
 ## Original object correction — September 10, 2026
 
 - Josiah requested the actual lacrosse head and moka pot, without remaking either design. Removed both generated studio images, source PNGs, prompt files, and their frontend references.
