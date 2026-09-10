@@ -10,6 +10,10 @@
 - Typecheck, build, prerender, link/image/metadata checks, and mesh integrity checks pass: nine routes, 110 internal links, 41 image references, and all 48,882 CAD triangles. Main JavaScript is 214.28 KB (67.99 KB gzip), CSS 51.85 KB (11.05 KB gzip). The 2.21 MB geometry file loads only near the lacrosse viewer. No browser-interaction QA was performed in this pass; the Sites skill requires an explicit browser-testing request. Original geometry projections and generated product images were visually inspected outside the browser.
 - Owner-only publication uses the existing Site and preserves its access policy. The expired automation remains paused. See `object-assets.md` for provenance, prompts, source limitations, and the Moka follow-up.
 
+### Physical design publication receipt
+
+Version **8** deployed successfully at **13:31 UTC**, September 10. Source: `a026c4922d09588b5a6fe56cc20e89d726c1e2c6`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_c9b581bc9ae0819197dc1665fde3e81b`. Deployment: `appgdep_6aa2b13d492c8191ab1121816c6e5d4c`. The existing owner-only URL is unchanged, and the browser handoff is queued in the established Site tab. The two product-image studies and lacrosse turntable are published. Moka rotation remains pending its external parts or an assembled export.
+
 ## Review window
 
 Automation: `portfolio-craft-and-engineering-review`, attached to this task. Every five minutes through **2026-09-10 06:47 UTC / 02:47 AM Eastern**. The final eligible cycle should report and pause during the last five minutes. No edits after the deadline. An active turn should finish its coherent change before another review begins; inspect current task state and this log to avoid duplicate work.
