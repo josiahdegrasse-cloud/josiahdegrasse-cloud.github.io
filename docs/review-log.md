@@ -9,6 +9,10 @@
 - Typecheck, production build, and static checks pass: nine routes, 110 internal links, 39 image references, and 48,882 CAD triangles. Confirmed the generated image files and references are absent from the built publication. No browser-interaction QA was performed for this correction.
 - Updated project guidance to preserve original objects only. The previous studio-image entry below is historical and superseded.
 
+### Original object publication receipt
+
+Version **9** deployed successfully at **13:43 UTC**, September 10, 2026. Source: `0baced0051dd677263677667dd29ae0fadfcdf61`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_12820f011d2c8191b871f12fc2c01b22`. Deployment: `appgdep_6aa2b3ee3b408191ae6dbd385bd17a40`. The existing owner-only URL and audience are unchanged. Only original CAD previews, geometry, and drawing are displayed; the generated object interpretations are removed. The established Site tab received the live URL handoff.
+
 ## Physical product showcase — September 10, 2026
 
 - User supplied a lacrosse engineering drawing, the native SolidWorks part, and a moka pot assembly, requesting polished product images and scroll-based views.
