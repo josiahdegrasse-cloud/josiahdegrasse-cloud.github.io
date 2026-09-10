@@ -78,3 +78,13 @@ Version **2** deployed successfully at **2026-09-10 03:10 UTC** to the existing 
 ### Mobile layout publication receipt
 
 Version **3** deployed successfully at **03:38 UTC**, preserving owner-only access at the existing URL. Published source: `11d2471884ffeb128f668d7bfd8380dea45e501f`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_0603a61b2f4081919c7a585c764d0ff4`. Deployment: `appgdep_6aa226352f248191bba25f8605cc8fc0`. The normal browser handoff was skipped for this background cycle while the desktop is locked; local visual checks and terminal deployment success are verified. The pending mobile change is now complete. Next priorities are walkthrough usefulness and game keyboard/repeated-dialog behavior, using a fresh local test browser if needed. Avoid repeating completed layout checks without a new change or concern.
+
+## Game postcard keyboard and mobile review — 03:39 UTC
+
+- Reproduced a keyboard bug in the local browser: Space on the focused Postcard button triggered the game's global jump handling and prevented native button activation. The game now respects already-handled key events and ignores keyboard input originating from buttons, links, form fields, and editable content.
+- Repeatedly opened the real postcard using Enter and Space, closed it with Escape and its Close button, and checked focus restoration. Escape closes the postcard without opening the game pause menu. Tab reaches Save next; the Pause button also works with Space. Returning to the main portfolio succeeds.
+- Captured and downloaded an actual PNG, checking its file signature and dimensions. Desktop and 320-pixel camera captures are valid and the browser reports no uncaught runtime errors.
+- The initial 320-pixel screenshot exposed a tall image pushing Save below the visible dialog. Capped the mobile preview height, preserved the whole image with letterboxing, and separated its caption from Save. Both controls fit without scrolling at 320 × 900 and 320 × 568. Inspected the resulting screenshots.
+- Corrected a CSS specificity issue that allowed the game's yellow focus ring to override the darker postcard focus color on its pale background. Verified the computed focus outline and visible screenshot.
+- TypeScript, all 22 existing tests, the production build, whitespace checks, and the static checker pass. No new main-page feature or factual claim was added.
+- Evidence: `/tmp/portfolio-qa/game-keyboard-review.cjs`, `game-keyboard-results.json`, `game-postcard-keyboard-*.png`, and `game-downloaded-postcard.png`. These are local headless browser checks, not a full cross-browser or hardware gamepad audit.

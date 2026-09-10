@@ -784,10 +784,14 @@
 .game-postcard > img { display: block; width: 100%; height: auto; }
 .game-postcard footer { display: flex; justify-content: space-between; gap: 24px; align-items: center; margin-top: 20px; font-size: 13px; }
 .game-postcard footer a { display: inline-flex; gap: 10px; align-items: center; min-height: 44px; white-space: nowrap; color: #773f43; text-decoration: underline; text-underline-offset: 4px; }
-.game-postcard :focus-visible { outline: 2px solid #773f43; outline-offset: 4px; }
+.pq4-game .game-postcard :focus-visible { outline: 2px solid #773f43; outline-offset: 4px; }
 .pq4-hud-actions .pq4-portfolio-return { color: inherit; display: inline-flex; gap: 6px; align-items: center; min-height: 44px; text-decoration: none; font-size: 13px; padding: 8px 12px; background: #171818c7; border: 1px solid #ffffff40; border-radius: 8px; }
 .pq4-start-return { position: absolute; top: 24px; left: 24px; color: #fff4e1; text-decoration: none; border-bottom: 1px solid #fff4e180; padding: 10px 0; font-size: 14px; z-index: 2; }
 @media (max-width:700px) { .game-postcard { padding: 16px; } .game-postcard h2 { font-size: 28px; } .game-postcard footer { display: block; } .game-postcard footer a { margin-top: 10px; } .pq4-hud-actions { flex-wrap: wrap; justify-content: flex-end; } .pq4-start-return { top: 12px; left: 20px; } }
+@media (max-width:700px) {
+ .game-postcard > img { max-height: 45svh; object-fit: contain; background: #eeeae5; }
+ .game-postcard footer > span { display: block; }
+}
 .game-postcard { margin: auto; inset: 0; }
 @media (max-width:760px) {
  .pq4-hud { grid-template-columns: minmax(0, 1fr); gap: 12px; }

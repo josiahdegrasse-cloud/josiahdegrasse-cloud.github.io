@@ -633,7 +633,9 @@ export function PortfolioGame({
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (pausedRef.current || document.hidden) return;
+      if (pausedRef.current || document.hidden || event.defaultPrevented) return;
+      // Keep native keyboard activation and text editing available in the HUD.
+      if (event.target instanceof Element && event.target.closest("button, a, input, select, textarea, [contenteditable]")) return;
       if (!openingComplete && event.code !== "Escape") {
         skipOpening();
         return;
