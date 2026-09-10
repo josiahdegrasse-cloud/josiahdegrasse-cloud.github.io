@@ -88,3 +88,7 @@ Version **3** deployed successfully at **03:38 UTC**, preserving owner-only acce
 - Corrected a CSS specificity issue that allowed the game's yellow focus ring to override the darker postcard focus color on its pale background. Verified the computed focus outline and visible screenshot.
 - TypeScript, all 22 existing tests, the production build, whitespace checks, and the static checker pass. No new main-page feature or factual claim was added.
 - Evidence: `/tmp/portfolio-qa/game-keyboard-review.cjs`, `game-keyboard-results.json`, `game-postcard-keyboard-*.png`, and `game-downloaded-postcard.png`. These are local headless browser checks, not a full cross-browser or hardware gamepad audit.
+
+### Game controls publication receipt
+
+Version **4** deployed successfully at **03:48 UTC**, with owner-only access verified before publication. Source: `8ae41e6ac856b395c017ef3500ccc4741b24e7e3`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_70b7207481688191adb92ee908699157`. Deployment: `appgdep_6aa22888ddc0819187a256b1cba42d01`. Background browser handoff skipped; the existing private URL is unchanged. The local server is stopped after publication. Next bounded review should assess the NFI walkthrough's explanatory value before adding more screens or imagery; the camera's tested keyboard/mobile issues are resolved.
