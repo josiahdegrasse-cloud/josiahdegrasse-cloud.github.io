@@ -59,10 +59,18 @@ The share image is now a real 1200×630 homepage capture. New screenshot and bro
 
 Version **2** deployed successfully at **2026-09-10 03:10 UTC** to the existing owner-only site: https://josiah-design-portfolio.henrydegrasse.chatgpt.site. Published implementation commit: `cf082780df29aab2b6a053d357ea7b9941e125b3`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_cc73ffdcaea481919d09b3b88c2833db`. Deployment: `appgdep_6aa21f9458d08191927c7afdf63940cb`. Site display title updated to “Josiah deGrasse — AI Engineer · Human Factors.” The review window remains active; inspect this publication before starting the next bounded improvement.
 
-## Mobile project reading order — 03:12–03:21 UTC
+## Mobile project reading order — 03:12–03:19 UTC
 
 - Measured the published homepage at 375 × 900: the first NFI image begins at approximately 1,162 pixels from the document top; the project begins at 670 pixels. The title is followed by substantial copy before the actual artifact appears.
 - Prepared a bounded change in `src/design-home.tsx` and `src/design-editorial.css`: project title, media, then supporting copy in the document and mobile layout. The desktop grid keeps title/copy beside the media. Tablet spacing rules were adjusted for the new grid.
 - TypeScript, production build, and whitespace checks pass. The static checker validates the eight prerendered pages, internal links, image paths, metadata, résumé, sitemap, and 404.
 - **Pending visual verification; not published.** The Mac locked before the updated preview could be inspected; CUA reported that automatic unlock failed and requires the user to unlock it. No after-change position or responsive visual result has been claimed. The live site remains version 2.
 - Next cycle: check whether browser access is restored. Reuse the existing preview tab; verify project order, appearance, first-image position, and document overflow at 320/375/430/768/1024/1440 pixels. Publish only after that review. If still locked, avoid repeating the same user notification; independent source or evidence work may continue. Do not create additional unreviewed visual changes.
+
+### Review resumed with a separate local test browser — 03:34–03:40 UTC
+
+- The signed-in desktop browser remains unavailable while the Mac is locked. The bundled Playwright library can run a fresh, headless Chromium process against the local development server without accessing the user's browser profile or unlocking the desktop. Installed its headless browser runtime in the standard Playwright cache; project dependencies and lockfile are unchanged.
+- The prepared layout passes browser checks at 320/375/430/768/1024/1440 pixels: no horizontal document overflow, no broken images or uncaught runtime errors, and correct title/media/copy order. Desktop title/copy remain beside the media without overlap. Loaded lazy images before capturing full-page screenshots.
+- At 375 × 900 the first NFI image starts at 837 pixels, approximately 325 pixels earlier than the published baseline of 1,162 pixels. This is a layout measurement, not a user-performance result.
+- Inspected the mobile first screen and mobile/tablet/desktop full-page screenshots. The project artifact arrives earlier, evidence captions stay attached, and supporting copy remains readable. Local visual verification is complete; the change is ready for private publication.
+- Evidence: `/tmp/portfolio-qa/mobile-order-results.json`, `/tmp/portfolio-qa/mobile-order-*.png`, and `/tmp/portfolio-qa/mobile-order-review.cjs`. Future local UI checks may use this isolated test browser while the desktop is locked. Signed-in production UI checks still require the normal browser. Do not access or copy the user's browser profile.
