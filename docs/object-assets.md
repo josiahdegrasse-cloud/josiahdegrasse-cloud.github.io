@@ -1,17 +1,10 @@
 # Physical design showcase
 
-## Studio images
+## Original designs only
 
-Created with the built-in image-generation tool, one request per object. Each image is an AI studio interpretation of Josiah's supplied CAD work. They are not photographs of manufactured products or exact CAD renders. Captions in the portfolio make this distinction; the original geometry and reference material are shown separately.
+Josiah explicitly requested the actual lacrosse head and moka pot, without remaking them. The AI studio interpretations and their prompt files have been removed from the current checkout and publication. Their prior existence is recorded in Git history only. Do not generate replacement product images or approximate the geometry.
 
-| Object        | Original PNG                                | Website image                                | Exact prompt                                |
-| ------------- | ------------------------------------------- | -------------------------------------------- | ------------------------------------------- |
-| Lacrosse head | `output/product-images/lacrosse-studio.png` | `public/images/objects/lacrosse-studio.webp` | `output/product-images/lacrosse-prompt.txt` |
-| Moka pot      | `output/product-images/moka-studio.png`     | `public/images/objects/moka-studio.webp`     | `output/product-images/moka-prompt.txt`     |
-
-Both originals are 1536×1024. WebP copies preserve dimensions and use quality 88 compression, reducing page assets to approximately 42 KB and 79 KB. Original PNGs remain available in the workspace and are excluded from the deployed static output.
-
-Lacrosse reference: Josiah's five-view `Lacrosse head.pdf`. Generated hole spacing, strut junctions, and socket-rim details vary from the model. Moka reference: the actual saved 640×480 preview extracted from `MOKA POT.SLDASM`. The generated aluminum finish, handle thickness, attachments, and small seam details are illustrative. No generated dimensions or performance claims are used.
+The gallery uses each native PreviewPNG unchanged at its actual 640×480 aspect ratio. The lacrosse page leads with the saved model geometry and its original Nylon 101 base color (RGB 0.79607844, 0.8235294, 0.9372549), read from the native appearance records. Display lighting is provided by the viewer. Moka uses the unchanged saved assembly preview, preserving its transparent CAD display state and original handle and lid details.
 
 ## Original CAD material
 
@@ -34,7 +27,7 @@ The supplied assembly references three external parts, which were not included o
 - `MOKA Top.SLDPRT`
 - `MOKA lid.SLDPRT`
 
-It contains the saved preview, part placements and bounds, but no complete supported standalone mesh. The public Moka page therefore uses studio imagery and the original assembly view. Its exact 360-degree view remains dependent on these parts or an assembled STEP/GLB export. Do not substitute invented geometry or a rotating flat image and call it the original model.
+It contains the saved preview, part placements and bounds, but no complete supported standalone mesh. The public Moka page therefore uses only the original assembly view. Its exact 360-degree view remains dependent on these parts or an assembled STEP/GLB export. Do not substitute invented geometry or a rotating flat image and call it the original model.
 
 ## Interaction
 

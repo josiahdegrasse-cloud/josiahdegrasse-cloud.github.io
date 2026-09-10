@@ -1,5 +1,14 @@
 # Portfolio review log
 
+## Original object correction — September 10, 2026
+
+- Josiah requested the actual lacrosse head and moka pot, without remaking either design. Removed both generated studio images, source PNGs, prompt files, and their frontend references.
+- The Objects gallery now uses unchanged native SolidWorks previews at their original 640×480 aspect ratio. Verified both previews byte-for-byte against the extracted PreviewPNG streams and the build copies.
+- The lacrosse page leads with its existing original display mesh. The viewer now uses the saved Nylon 101 base color from native appearance records; display lighting is supplied by the viewer. The mesh and original drawing are unchanged.
+- Moka leads with its original assembly preview, retaining the actual handle, lid, and transparent CAD display state. Its exact turntable still requires the three missing component parts or an assembled STEP/GLB export.
+- Typecheck, production build, and static checks pass: nine routes, 110 internal links, 39 image references, and 48,882 CAD triangles. Confirmed the generated image files and references are absent from the built publication. No browser-interaction QA was performed for this correction.
+- Updated project guidance to preserve original objects only. The previous studio-image entry below is historical and superseded.
+
 ## Physical product showcase — September 10, 2026
 
 - User supplied a lacrosse engineering drawing, the native SolidWorks part, and a moka pot assembly, requesting polished product images and scroll-based views.

@@ -14,16 +14,16 @@ export const objects = [
     name: "Lacrosse head",
     number: "01",
     detail: "Nylon / Form & construction",
-    image: "/images/objects/lacrosse-studio.webp",
-    alt: "Studio visualization of an unstrung ivory lacrosse head with diagonal sidewall supports.",
+    image: "/images/objects/lacrosse-source.png",
+    alt: "Original saved SolidWorks view of my lacrosse head, showing its scoop, stringing holes, and sidewall structure.",
   },
   {
     id: "moka-pot",
     name: "Moka pot",
     number: "02",
     detail: "SolidWorks / Assembly study",
-    image: "/images/objects/moka-studio.webp",
-    alt: "Studio visualization of a faceted metal moka pot with an angular handle.",
+    image: "/images/objects/moka-source.png",
+    alt: "Original saved SolidWorks view of my moka pot assembly, including its faceted chambers, lid, and handle.",
   },
 ];
 
@@ -45,8 +45,8 @@ export function ObjectGallery() {
               <img
                 src={object.image}
                 alt={object.alt}
-                width={1536}
-                height={1024}
+                width={640}
+                height={480}
                 loading="lazy"
               />
               <span aria-hidden="true">
@@ -62,8 +62,7 @@ export function ObjectGallery() {
         ))}
       </div>
       <p className="object-gallery-credit">
-        AI studio interpretations of my CAD studies. Original geometry and
-        source views inside.
+        Original SolidWorks models and drawings.
       </p>
     </section>
   );
@@ -90,20 +89,20 @@ export function ObjectCaseStudy({ id }: { id: "lacrosse" | "moka-pot" }) {
           </div>
           <span className="folio">{object.detail}</span>
         </header>
-        <figure className="object-studio">
-          <img
-            src={object.image}
-            alt={object.alt}
-            width={1536}
-            height={1024}
-            loading="eager"
-          />
-          <figcaption>
-            AI studio interpretation of my CAD study. Lighting, finish, and
-            small details are illustrative.
-          </figcaption>
-        </figure>
-        {lacrosse && <CadTurntable />}
+        {lacrosse ? (
+          <CadTurntable />
+        ) : (
+          <div className="object-original-preview">
+            <ImageFigure
+              src={object.image}
+              alt={object.alt}
+              width={640}
+              height={480}
+              priority
+              caption="Original saved SolidWorks assembly view. Transparent surfaces are part of the saved CAD display."
+            />
+          </div>
+        )}
         <section className="object-notes" aria-label="Design details">
           {(lacrosse
             ? [
@@ -148,20 +147,15 @@ export function ObjectCaseStudy({ id }: { id: "lacrosse" | "moka-pot" }) {
             </div>
           ))}
         </section>
-        <section className="object-source" aria-labelledby="source-title">
-          <div className="object-source-heading">
-            <p className="eyebrow">From the model</p>
-            <h2 id="source-title">
-              {lacrosse
-                ? "The drawing behind the form."
-                : "The original assembly."}
-            </h2>
-            <p>
-              {lacrosse
-                ? "Isometric, front, side, top, and bottom views from my Shooter Head v9 drawing."
-                : "The saved SolidWorks view shows the assembled form and internal center column. Transparent surfaces belong to the CAD display."}
-            </p>
-            {lacrosse && (
+        {lacrosse && (
+          <section className="object-source" aria-labelledby="source-title">
+            <div className="object-source-heading">
+              <p className="eyebrow">From the model</p>
+              <h2 id="source-title">The drawing behind the form.</h2>
+              <p>
+                Isometric, front, side, top, and bottom views from my Shooter
+                Head v9 drawing.
+              </p>
               <a
                 className="text-link"
                 href="/drawings/lacrosse-head.pdf"
@@ -170,28 +164,16 @@ export function ObjectCaseStudy({ id }: { id: "lacrosse" | "moka-pot" }) {
               >
                 Open the drawing <ArrowUpRight size={18} />
               </a>
-            )}
-          </div>
-          <ImageFigure
-            src={
-              lacrosse
-                ? "/images/objects/lacrosse-drawing.png"
-                : "/images/objects/moka-source.png"
-            }
-            width={lacrosse ? 2400 : 640}
-            height={lacrosse ? 1698 : 480}
-            alt={
-              lacrosse
-                ? "Josiah deGrasse’s original Shooter Head v9 engineering drawing showing five views."
-                : "Original preview extracted from Josiah’s SolidWorks moka pot assembly."
-            }
-            caption={
-              lacrosse
-                ? "Original drawing · Shooter Head v9 · Josiah deGrasse"
-                : "Original saved assembly preview · SolidWorks"
-            }
-          />
-        </section>
+            </div>
+            <ImageFigure
+              src="/images/objects/lacrosse-drawing.png"
+              width={2400}
+              height={1698}
+              alt="Josiah deGrasse’s original Shooter Head v9 engineering drawing showing five views."
+              caption="Original drawing · Shooter Head v9 · Josiah deGrasse"
+            />
+          </section>
+        )}
         <NextProject
           href={lacrosse ? "/work/moka-pot" : "/work/lacrosse"}
           title={lacrosse ? "Moka pot" : "Lacrosse head"}

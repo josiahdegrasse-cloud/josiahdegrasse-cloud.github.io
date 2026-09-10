@@ -10,11 +10,15 @@
 .object-card-image {
   position: relative;
   overflow: hidden;
-  background: #252422;
+  background: #fff;
+  border: 1px solid var(--line);
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
 }
 .object-card-image img {
   display: block;
-  width: 100%;
+  width: min(100%, 640px);
   height: auto;
   transition: transform 0.6s ease;
 }
@@ -22,7 +26,7 @@
   position: absolute;
   right: 20px;
   bottom: 20px;
-  color: #fff;
+  color: var(--ink);
 }
 .object-card:hover img {
   transform: scale(1.035);
@@ -73,22 +77,23 @@
   font-size: 1rem;
   line-height: 1.75;
 }
-.object-studio {
+.object-original-preview {
+  padding: 28px 0 12px;
+}
+.object-original-preview .image-figure {
   margin: 0;
 }
-.object-studio > img {
-  display: block;
-  width: 100%;
-  height: auto;
+.object-original-preview .figure-button {
+  background: #fff;
+  border: 1px solid var(--line);
 }
-.object-studio figcaption {
-  color: var(--muted);
-  font-size: 0.75rem;
-  line-height: 1.6;
-  padding-top: 12px;
+.object-original-preview .figure-button img {
+  max-width: 640px;
+  width: 100%;
+  margin-inline: auto;
 }
 .cad-scroll-section {
-  margin-top: 90px;
+  margin-top: 24px;
 }
 .cad-scroll-section.is-scroll-driven {
   min-height: 190vh;
@@ -276,7 +281,7 @@
     padding: 36px 0;
   }
   .cad-scroll-section {
-    margin-top: 56px;
+    margin-top: 20px;
   }
   .cad-stage-heading > .folio {
     display: none;

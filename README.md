@@ -29,7 +29,7 @@ npm run preview
 
 See [asset provenance](docs/asset-checklist.md), [handoff](docs/design-handoff.md), [research](docs/ui-ux-research.md), and [review history](docs/review-log.md).
 
-The Objects gallery pairs studio interpretations with original CAD references. The lacrosse page includes a scroll-controlled WebGL turntable from the supplied SolidWorks display mesh, with manual angle/tilt controls and reduced-motion support. See [object assets and exact prompts](docs/object-assets.md) for provenance and the missing Moka component files required for its turntable.
+The Objects gallery uses the original saved CAD previews. The lacrosse page leads with a scroll-controlled WebGL turntable from the supplied SolidWorks display mesh and native Nylon 101 base color, with manual angle/tilt controls and reduced-motion support. Moka uses its unchanged saved assembly view. See [object asset provenance](docs/object-assets.md) for sources and the missing Moka component files required for its turntable. Use only original models and images; do not generate reinterpretations of these objects.
 
 NFI images are genuine interface captures with synthetic demonstration data. The current cover shows sensory charts and coconut cheddar prototypes. Sample metrics are not project outcomes. Red Hat uses the team's actual Figma Make prototypes and original report artifacts, with research methods, iteration history, and individual team roles supported by the final report and presentation. Removed game source remains recoverable in Git history.
 

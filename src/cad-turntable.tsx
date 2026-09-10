@@ -25,8 +25,9 @@ void main() {
   float bounce = max(dot(n, fill), 0.0);
   float spec = pow(max(dot(n, normalize(key + vec3(0.0, 0.0, 1.0))), 0.0), 38.0);
   float rim = pow(1.0 - abs(n.z), 3.0);
-  vec3 ivory = vec3(0.89, 0.87, 0.82);
-  vec3 lit = ivory * (0.24 + 0.7 * diffuse + 0.18 * bounce) + vec3(0.16 * spec + 0.07 * rim);
+  // Saved Nylon 101 appearance from the supplied SolidWorks part.
+  vec3 nylon = vec3(0.79607844, 0.8235294, 0.9372549);
+  vec3 lit = nylon * (0.24 + 0.7 * diffuse + 0.18 * bounce) + vec3(0.16 * spec + 0.07 * rim);
   color = vec4(pow(lit, vec3(0.8)), 1.0);
 }`;
 

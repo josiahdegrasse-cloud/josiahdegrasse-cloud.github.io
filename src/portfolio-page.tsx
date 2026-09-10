@@ -30,7 +30,7 @@ const titles: Record<string, [string, string]> = {
   ],
   "moka-pot": [
     "Moka pot — Assembly study",
-    "A SolidWorks study in facets, proportion, and assembly, with studio imagery and the original CAD preview.",
+    "A SolidWorks study in facets, proportion, and assembly, shown in its original saved CAD view.",
   ],
   helfrich: [
     "Helfrich Brothers — Manufacturing design",
