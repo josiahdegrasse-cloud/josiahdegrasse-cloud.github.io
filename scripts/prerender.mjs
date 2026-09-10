@@ -89,11 +89,11 @@ try {
     let html = template
       .replace(/<title>.*?<\/title>/s, `<title>${escape(title)}</title>`)
       .replace(
-        /\s*<meta (?:name="(?:description|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g,
+        /\s*<meta\s+(?:name="(?:description|twitter:[^"]+)"|property="og:[^"]+")[^>]*>/g,
         "",
       )
       .replace(
-        /<link rel="canonical"[^>]*>/,
+        /<link\s+rel="canonical"[^>]*>/,
         `<link rel="canonical" href="${origin}${path}" />`,
       );
     const head = `<meta name="description" content="${escape(description)}"/><meta property="og:type" content="website"/><meta property="og:title" content="${escape(title)}"/><meta property="og:description" content="${escape(description)}"/><meta property="og:url" content="${origin}${path}"/><meta name="twitter:title" content="${escape(title)}"/><meta name="twitter:description" content="${escape(description)}"/><meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}"/>${image ? `<meta property="og:image" content="${origin}${image}"/><meta name="twitter:image" content="${origin}${image}"/>` : ""}`;
