@@ -7,6 +7,8 @@
 - Added the actual HeadTap cover and music-profile image to its case study. No local-only URL is exposed to visitors, and no app code, data source, or HeadTap hosting was changed. The temporary typographic cover was replaced before publication.
 - Portfolio source compilation, build, and static checks pass: nine routes, 113 internal links, 44 image references, and the original 48,882 CAD triangles. Calculated ink, muted text, and orange contrast on cream, soft cream, and white exceeds 4.5:1. Source-app screenshots were inspected to obtain authentic assets; no portfolio browser QA was performed.
 
+Version **11** deployed successfully at **14:35 UTC**, September 10, 2026. Source: `6b602929e4d63b55b2a6121222e543eaf8d78525`. Saved version: `appgprj_6aa20d64b7988191b321490d2049b49f~appgver_2d958bcd27288191889afb6375d71739`. Deployment: `appgdep_6aa2c00c14108191b5b35d4787e65b77`. The cream/orange portfolio, original HeadTap screens, featured project order, and white homepage lacrosse display without controls are published at the unchanged owner-only URL. The established Site tab received the homepage handoff.
+
 ## Clean homepage object display — September 10, 2026
 
 - User requested no visible rotation bar and a white background. Removed the entire controls overlay from the homepage lacrosse viewer and gave its stage a white background matching the Moka image frame.
