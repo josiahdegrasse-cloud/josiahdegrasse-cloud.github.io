@@ -29,17 +29,13 @@ const titles: Record<string, [string, string]> = {
     "Lacrosse head — Physical design",
     "A nylon lacrosse head study with original CAD geometry and a scroll-controlled turntable.",
   ],
-  "moka-pot": [
-    "Moka pot — Assembly study",
-    "A SolidWorks study in facets, proportion, and assembly, shown in its original saved CAD view.",
-  ],
   helfrich: [
     "Helfrich Brothers — Manufacturing design",
     "Precision, clear communication, and design for the factory floor.",
   ],
   about: [
     "About Josiah",
-    "Human Factors, AI product design, and a maker’s curiosity.",
+    "AI Product Engineer at New Food Innovation and Human Factors Engineering graduate from Tufts University.",
   ],
   resume: ["Résumé", profile.title],
   home: [
@@ -130,8 +126,7 @@ export function PortfolioPage() {
   }, [key, path, project]);
   if (project === "nfi") return <NfiCaseStudy />;
   if (project === "red-hat") return <RedHatCaseStudy />;
-  if (project === "lacrosse" || project === "moka-pot")
-    return <ObjectCaseStudy id={project} />;
+  if (project === "lacrosse") return <ObjectCaseStudy />;
   if (project && ["headtap", "helfrich"].includes(project))
     return <SecondaryProject id={project} />;
   if (home) return <DesignHome />;

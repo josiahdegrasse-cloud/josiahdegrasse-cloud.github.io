@@ -22,7 +22,6 @@ const routes = [
   "/resume",
   "/work/headtap",
   "/work/lacrosse",
-  "/work/moka-pot",
   "/work/helfrich",
 ];
 let links = 0,

@@ -15,24 +15,18 @@ export function AboutPage() {
     <Layout page="about">
       <div className="container">
         <header className="about-hero">
-          <p className="eyebrow">A little about me</p>
-          <h1>
-            Engineer, designer,
-            <br /> <em>and hands-on maker.</em>
-          </h1>
+          <p className="eyebrow">Josiah deGrasse</p>
+          <h1>About me.</h1>
           <div className="about-intro">
-            <span className="about-signature">Josiah.</span>
-            <div>
-              <p>
-                I’m Josiah, an AI Product Engineer at New Food Innovation and a
-                Human Factors Engineering graduate from Tufts University.
-              </p>
-              <p>
-                I work across research, interface design, and implementation.
-                Recently, that’s meant building tools for food scientists and
-                studying enterprise AI workflows with Red Hat.
-              </p>
-            </div>
+            <p>
+              I’m an AI Product Engineer at New Food Innovation and a Human
+              Factors Engineering graduate from Tufts. I design interfaces,
+              write code, and test products with the people who use them.
+            </p>
+            <p>
+              My work includes research tools for food scientists, AI deployment
+              workflows with Red Hat, and HeadTap, a music discovery app.
+            </p>
           </div>
         </header>
         <section className="about-background">
@@ -58,11 +52,11 @@ export function AboutPage() {
             </div>
             <div>
               <span>03 / Tools & practice</span>
-              <h2>From prototype to product</h2>
+              <h2>Design & development</h2>
               <p>
                 Figma for interfaces and prototypes. React, TypeScript, and AI
-                development tools for implementation. CAD for the things that
-                need to exist off screen.
+                development tools for implementation. SolidWorks for physical
+                design.
               </p>
             </div>
           </div>
@@ -80,15 +74,17 @@ export function AboutPage() {
             <figcaption>On the field with Tufts lacrosse.</figcaption>
           </figure>
           <div>
-            <p className="eyebrow">Away from the screen</p>
-            <h2>Off the clock.</h2>
+            <h2>Outside work</h2>
             <p>
-              Coffee, lacrosse, sewing, surfing/snowboarding, and cheese. I
-              played college lacrosse, helped start a team newspaper, and coach
-              younger players.
+              I played lacrosse at Tufts and now coach younger players. I also
+              helped start the team newspaper.
+            </p>
+            <p>
+              Interests: coffee, lacrosse, sewing, surfing/snowboarding, and
+              cheese.
             </p>
             <a className="text-link" href={sitePath("/work/lacrosse")}>
-              Made for the field <ArrowUpRight size={18} />
+              Lacrosse head project <ArrowUpRight size={18} />
             </a>
           </div>
         </section>

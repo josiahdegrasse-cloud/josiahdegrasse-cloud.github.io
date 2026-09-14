@@ -1601,25 +1601,15 @@ a {
   padding: 72px 0;
 }
 .about-hero h1 {
+  font-family: var(--sans);
+  font-weight: 500;
   font-size: clamp(3rem, 5.5vw, 5.5rem);
   line-height: 1.07;
   margin: 28px 0 64px;
   letter-spacing: -0.045em;
 }
-.about-hero h1 em {
-  color: var(--accent-ink);
-}
 .about-intro {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 48px;
-}
-.about-signature {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 3.5rem;
-  color: var(--accent-ink);
-  align-self: end;
+  max-width: 68ch;
 }
 .about-intro p {
   max-width: 62ch;
@@ -1675,11 +1665,14 @@ a {
   margin-top: 12px;
 }
 .personal-section h2 {
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -0.045em;
   font-size: 2.7rem;
   margin: 20px 0;
 }
 .personal-section p:not(.eyebrow) {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   margin: 16px 0;
 }
 .personal-section .text-link {
@@ -1853,16 +1846,6 @@ a {
   .about-hero h1 {
     font-size: clamp(2.5rem, 8.8vw, 4rem);
     margin: 24px 0 36px;
-  }
-  .about-hero h1 br {
-    display: none;
-  }
-  .about-intro {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .about-signature {
-    font-size: 2.5rem;
   }
   .about-intro p {
     font-size: 1rem;

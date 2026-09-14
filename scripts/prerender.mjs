@@ -53,7 +53,7 @@ try {
       other.AboutPage,
       {},
       "About Josiah — Josiah deGrasse",
-      "Human Factors, AI product design, and a maker’s curiosity.",
+      "AI Product Engineer at New Food Innovation and Human Factors Engineering graduate from Tufts University.",
       "/images/lacrosse/lacrosse-action.webp",
     ],
     [
@@ -73,17 +73,10 @@ try {
     [
       "/work/lacrosse",
       objects.ObjectCaseStudy,
-      { id: "lacrosse" },
+      {},
       "Lacrosse head — Physical design — Josiah deGrasse",
       "A nylon lacrosse head study with original CAD geometry and a scroll-controlled turntable.",
       "/images/lacrosse/lacrosse-head-cad.webp",
-    ],
-    [
-      "/work/moka-pot",
-      objects.ObjectCaseStudy,
-      { id: "moka-pot" },
-      "Moka pot — Assembly study — Josiah deGrasse",
-      "A SolidWorks study in facets, proportion, and assembly, shown in its original saved CAD view.",
     ],
     [
       "/work/helfrich",
@@ -133,9 +126,10 @@ try {
     ["/play", "/"],
     ["/portfolio/play", "/"],
     ["/portfolio/about", "/about"],
-    ...["nfi", "red-hat", "headtap", "lacrosse", "moka-pot", "helfrich"].map(
-      (id) => [`/portfolio/projects/${id}`, `/work/${id}`],
-    ),
+    ...["nfi", "red-hat", "headtap", "lacrosse", "helfrich"].map((id) => [
+      `/portfolio/projects/${id}`,
+      `/work/${id}`,
+    ]),
   ]) {
     const dest = join("dist", old, "index.html");
     await mkdir(dirname(dest), { recursive: true });

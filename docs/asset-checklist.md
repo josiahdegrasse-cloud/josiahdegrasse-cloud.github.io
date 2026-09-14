@@ -44,7 +44,7 @@ Source supplied by Josiah: `http://127.0.0.1:3000`, September 10, 2026. The app 
 
 ## Prioritized missing evidence
 
-The [physical design showcase](object-assets.md) uses only the supplied lacrosse drawing, unchanged native CAD previews, and the original lacrosse display mesh with its saved Nylon 101 base color. The AI interpretations were removed at Josiah's request. Moka's exact turntable still requires its three referenced component parts or an assembled STEP/GLB export. Fabrication and field-test outcomes remain undocumented.
+The [physical design showcase](object-assets.md) uses only the supplied lacrosse drawing, unchanged native CAD previews, and the original lacrosse display mesh with its saved Nylon 101 base color. The AI interpretations were removed at Josiah's request. The Moka project and its public preview were removed at Josiah's request on September 14, 2026; its source assembly is unchanged. Fabrication and field-test outcomes remain undocumented.
 
 1. **NFI research documentation:** participant count, tested tasks, think-aloud/session notes if used, improvement count, observations and revisions. The 100% task completion result was confirmed by Josiah, but the sample size and improvement count were not supplied. Do not infer them from synthetic panel counts in product screenshots.
 2. **NFI matched before/after:** the same task and screen in the earlier and revised product, with dates and clear annotations explaining the change.

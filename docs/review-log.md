@@ -1,5 +1,13 @@
 # Portfolio review log
 
+## Remove Moka and simplify About — September 14, 2026
+
+- Removed the Moka project, public preview, route, compatibility alias, and metadata. Original source files remain untouched. The lacrosse project now links onward to Helfrich Brothers.
+- Reworked the homepage physical-design section into one lacrosse feature, with the original white scroll-driven viewer beside its description and stacked content on mobile.
+- Rewrote homepage and About copy in direct language about work, education, coaching, and interests. Removed the decorative signature and maker tagline, and changed the About title to plain sans-serif type.
+- Both GitHub deployment bases passed typechecking/build/static validation: eight pages, 101 internal links, 41 image references, and the original 48,882 CAD triangles. Checked the generated pages and bundle for retired Moka content and confirmed the revised About copy, interests, and NFI → Red Hat → HeadTap order. No browser QA was performed.
+- Publication targets the user's primary GitHub root address and its existing project-path mirror.
+
 ## Primary GitHub root address — September 14, 2026
 
 - User requested the portfolio at `https://josiahdegrasse-cloud.github.io`, without the project-path suffix. The user-site repository already existed and published an older September 2 portfolio from `gh-pages`.

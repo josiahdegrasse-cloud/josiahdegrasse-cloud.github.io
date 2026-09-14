@@ -44,7 +44,9 @@ HeadTap is now featured third on the homepage and has original product screens i
 
 ## Verification and remaining evidence
 
-The physical-design showcase includes an Objects gallery, a dedicated `/work/moka-pot` route, and the lacrosse CAD turntable. Josiah explicitly rejected remade objects: use only his original geometry, saved previews, and drawing. The AI interpretations and prompt files have been removed. See `object-assets.md` for source provenance, extraction, and limitations. The site has nine prerendered routes. The lacrosse page leads with original saved mesh data and its native Nylon 101 base color, with manual rotation/tilt and reduced-motion support. It adds no Three.js dependency. Moka uses its unchanged saved assembly preview; exact rotation requires the three missing component files or an assembled export.
+The physical-design showcase now features only the lacrosse CAD turntable. Moka was removed from the gallery, routes, metadata, and public assets at Josiah's request on September 14, 2026. The homepage uses a single feature with the white, scroll-driven model beside its description; mobile stacks the content. Josiah explicitly rejected remade objects: use only his original geometry, saved preview, and drawing. See `object-assets.md` for source provenance and extraction. The site has eight prerendered routes. The lacrosse page preserves its original saved mesh and native Nylon 101 base color, manual rotation/tilt, and reduced-motion support. It adds no Three.js dependency.
+
+Homepage and About copy use direct descriptions of work, education, coaching, and interests. The About header uses sans-serif type without the decorative signature or maker tagline.
 
 See the latest entry in `review-log.md` for checks and publication receipts. `npm test` runs typechecking, build, prerendering, and static validation; browser tests cover responsive layouts, retired-link recovery, interactions, and automated accessibility scans.
 

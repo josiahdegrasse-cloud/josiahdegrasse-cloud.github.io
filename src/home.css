@@ -197,8 +197,11 @@
   max-width: 15ch;
 }
 .home-about p:not(.eyebrow) {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   max-width: 41ch;
+}
+.home-about p + p {
+  margin-top: 16px;
 }
 .home-about .text-link {
   margin-top: 18px;

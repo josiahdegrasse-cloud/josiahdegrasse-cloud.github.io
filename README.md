@@ -1,6 +1,6 @@
 # Josiah deGrasse — Portfolio
 
-An AI engineering and product portfolio built with React and Vite. NFI, Red Hat, and HeadTap are featured projects; lacrosse, Moka, and Helfrich provide additional design work. The presentation uses cream-white surfaces, restrained orange accents, large project previews, a short introduction, and real product imagery.
+An AI engineering and product portfolio built with React and Vite. NFI, Red Hat, and HeadTap are featured projects; lacrosse and Helfrich provide additional design work. The presentation uses cream-white surfaces, restrained orange accents, large project previews, a short introduction, and real product imagery.
 
 ## Develop
 
@@ -11,13 +11,13 @@ npm test
 npm run preview
 ```
 
-`npm test` runs TypeScript, the production build, prerendering, generated-site validation, and CAD mesh integrity checks. `npm run build` builds without the additional checks. Build creates static HTML for nine routes, their metadata, compatibility aliases, and sitemap. Interactions hydrate in the browser.
+`npm test` runs TypeScript, the production build, prerendering, generated-site validation, and CAD mesh integrity checks. `npm run build` builds without the additional checks. Build creates static HTML for eight routes, their metadata, compatibility aliases, and sitemap. Interactions hydrate in the browser.
 
 ## Routes
 
 - `/`: selected work
 - `/work/nfi`, `/work/red-hat`: featured studies
-- `/work/lacrosse`, `/work/moka-pot`: physical design studies
+- `/work/lacrosse`: physical design study
 - `/work/headtap`: featured independent music discovery app
 - `/work/helfrich`: manufacturing project
 - `/about`, `/resume`
@@ -30,7 +30,7 @@ npm run preview
 
 See [asset provenance](docs/asset-checklist.md), [handoff](docs/design-handoff.md), [research](docs/ui-ux-research.md), and [review history](docs/review-log.md).
 
-The homepage Objects gallery rotates the original lacrosse mesh as the card passes through the viewport; Moka uses its original saved CAD preview. The homepage viewer has a white background and no visible controls, with automatic motion disabled for reduced-motion preferences. The lacrosse page leads with a scroll-controlled WebGL turntable from the supplied SolidWorks display mesh and native Nylon 101 base color, with manual angle/tilt controls and reduced-motion support. Moka uses its unchanged saved assembly view. See [object asset provenance](docs/object-assets.md) for sources and the missing Moka component files required for its turntable. Use only original models and images; do not generate reinterpretations of these objects.
+The homepage physical-design feature rotates the original lacrosse mesh as the card passes through the viewport. Its viewer has a white background and no visible controls, with automatic motion disabled for reduced-motion preferences. The lacrosse page leads with a scroll-controlled WebGL turntable from the supplied SolidWorks display mesh and native Nylon 101 base color, with manual angle/tilt controls and reduced-motion support. See [object asset provenance](docs/object-assets.md). Use only original models and images; do not generate reinterpretations. The Moka project was removed at Josiah's request on September 14, 2026.
 
 NFI images are genuine interface captures with synthetic demonstration data. The current cover shows sensory charts and coconut cheddar prototypes. Sample metrics are not project outcomes. Red Hat uses the team's actual Figma Make prototypes and original report artifacts, with research methods, iteration history, and individual team roles supported by the final report and presentation. Removed game source remains recoverable in Git history.
 

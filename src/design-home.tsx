@@ -159,11 +159,14 @@ export function DesignHome() {
             />
           </a>
           <div>
-            <p className="eyebrow">Off screen</p>
-            <h2 id="about-heading">Off the clock.</h2>
+            <h2 id="about-heading">About me</h2>
             <p>
-              Coffee, lacrosse, sewing, surfing/snowboarding, and cheese. I
-              played lacrosse at Tufts; now I coach.
+              I build AI products at New Food Innovation. I studied Human
+              Factors Engineering at Tufts, played lacrosse, and now coach.
+            </p>
+            <p>
+              Outside work: coffee, lacrosse, sewing, surfing/snowboarding, and
+              cheese.
             </p>
             <a className="text-link" href={sitePath("/about")}>
               More about me <ArrowUpRight size={18} />
