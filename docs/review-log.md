@@ -6,6 +6,8 @@
 - Added the `root-pages` remote and merged the old root repository's history while retaining the current portfolio tree. No force push or history deletion is required. The shared workflow selects `/` for the root repository and the project prefix for the original repository.
 - The root repository is being switched to the current build-and-deploy workflow. Its public visibility and HTTPS remain. This request changes GitHub hosting; no Sites deployment or design changes are needed.
 
+Root deployment succeeded from `761aa222ca6778b6f6fa680a97c897a86d3d07c2`: workflow run `34898182119` on `josiahdegrasse-cloud.github.io`; the original project-path workflow `34898183425` also succeeded. Live HTTP checks confirmed the root homepage serves the current portfolio, uses the root canonical URL, and contains the expected project order and interests. The HeadTap route and lacrosse mesh return HTTP 200 at root-relative URLs. The user's existing GitHub Pages tab was handed off to https://josiahdegrasse-cloud.github.io/. Both pushes were fast-forwards, and previous root-site history and the legacy `gh-pages` branch remain recoverable.
+
 ## GitHub Pages, project order, and interests — September 10, 2026
 
 - User requested GitHub Pages hosting in addition to Sites, the order NFI → Red Hat → HeadTap, and the interest list coffee, lacrosse, sewing, surfing/snowboarding, and cheese. Updated homepage, About, résumé content, and its PDF aliases. The regenerated one-page résumé was visually inspected.
