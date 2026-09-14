@@ -7,6 +7,8 @@
 - Both GitHub bases passed static validation: eight pages, 101 internal links, 43 image references, and 48,882 original CAD triangles. The four-step NFI tour uses four columns on desktop and two on mobile. Typechecking and the final root build also pass after that layout adjustment. Product source screenshots were inspected; no portfolio browser QA was performed.
 - The HeadTap app was changing during capture, so used a temporary source copy and production preview to obtain stable screenshots. No source product files, real accounts, or remote product data were changed. Replaced older HeadTap public screenshots; retained provenance in this log and Git history.
 
+The project-path mirror deployed `60b4f0031b4237ac21740b86df8e98349abfe469` successfully in run `34905625618`. The root build passed, but deployment run `34905622995` hit an inconsistent Pages lock naming the previously successful `34d4162` deployment. The old Pages status and workflow both report success. A retry, the documented Pages cancellation endpoint (HTTP 204), and a second retry did not clear the lock. A fresh publication commit is being attempted; no Pages settings, permissions, visibility, or prior live content have been changed.
+
 ## Remove Moka and simplify About — September 14, 2026
 
 - Removed the Moka project, public preview, route, compatibility alias, and metadata. Original source files remain untouched. The lacrosse project now links onward to Helfrich Brothers.
