@@ -8,6 +8,8 @@
 - Both GitHub deployment bases passed typechecking/build/static validation: eight pages, 101 internal links, 41 image references, and the original 48,882 CAD triangles. Checked the generated pages and bundle for retired Moka content and confirmed the revised About copy, interests, and NFI → Red Hat → HeadTap order. No browser QA was performed.
 - Publication targets the user's primary GitHub root address and its existing project-path mirror.
 
+Both GitHub deployments succeeded from `34d41627c9dfd0f6e8f03519d3e6ad31a1798084`: root workflow `34903583749` and project-path workflow `34903585710`. Live HTTP checks confirmed the updated homepage, About, and lacrosse pages return 200 on both hosts, contain no Moka content, and the retired Moka route returns 404. The existing GitHub Pages tab received the root URL handoff.
+
 ## Primary GitHub root address — September 14, 2026
 
 - User requested the portfolio at `https://josiahdegrasse-cloud.github.io`, without the project-path suffix. The user-site repository already existed and published an older September 2 portfolio from `gh-pages`.
