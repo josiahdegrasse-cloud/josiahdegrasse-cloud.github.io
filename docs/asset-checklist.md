@@ -8,7 +8,8 @@ Red Hat assets come from the team's actual Figma Make prototypes and the final r
 
 | Asset                                                | Source                                                                        | Use                                            |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------- |
-| `public/images/nfi/nfi-sensory-profile.png`          | Live synthetic Sensory demo, captured 2026-09-10; unaltered 1280×720 viewport | Homepage, NFI cover, sensory profile tour      |
+| `public/images/nfi/nfi-liking-results.jpg` | Live synthetic Sensory demo, captured 2026-09-14; unaltered 1280×720 viewport | Homepage primary image, case hero, first walkthrough step |
+| `public/images/nfi/nfi-sensory-profile.png`          | Live synthetic Sensory demo, captured 2026-09-10; unaltered 1280×720 viewport | Homepage detail image, sensory profile tour      |
 | `public/images/nfi/nfi-decision.webp`                | Sensory-Platform `docs/assets/sensory-platform-desktop-decision.jpg`          | Decision interaction                           |
 | `public/images/nfi/nfi-insights.webp`                | Sensory-Platform `docs/assets/sensory-platform-desktop-insights.jpg`          | Prototype comparison                           |
 | `public/images/nfi/nfi-concepts.webp`                | Sensory-Platform `docs/assets/sensory-platform-desktop-concept-results.jpg`   | Concept validation                             |
@@ -37,10 +38,12 @@ Red Hat primary sources supplied September 10:
 
 ## HeadTap source screens
 
-- `public/images/headtap/headtap-concerts.png`: unchanged 1280×720 viewport capture of the working local app's concert recommendation cards; used in the featured homepage slot and case study. Captured with New York as a sample search, with sample-event buttons visible.
-- `public/images/headtap/headtap-profile.png`: unchanged 1280×720 viewport capture of the same app's music-personality screen; used in the case study.
+- `public/images/headtap/headtap-music-dna.jpg`: unchanged 1280×720 capture of the current app's orange listener profile, musical DNA, and sample library statistics. Homepage primary image and case-study hero.
+- `public/images/headtap/headtap-discovery.jpg`: unchanged 1280×720 capture of current concert cards, including match explanations, save controls, and artist feedback. Homepage detail image and case-study flow.
 
-Source supplied by Josiah: `http://127.0.0.1:3000`, September 10, 2026. The app labels its music and concerts as demonstration data. Artist matches, prices, venues, and dates are sample UI content, not verified live listings or measured product results. No generated HeadTap interface or substitute brand image is used.
+Captured September 14, 2026 from the user-provided HeadTap working tree. A temporary copy was built and served locally to keep screenshots stable while the original app was being edited. The capture used Demo Mode, New York as a sample location, Best Match sorting, and the familiar-favorites end of the discovery control. No source app files were changed. Earlier September 10 screenshots were replaced and removed from the publication.
+
+The music and concerts are sample data, not live listings or measured product results. No real Spotify account was used. All source screenshots retain their rendered interface; no generated product UI or retouching is used. The paired homepage images are arranged with CSS and stack on narrow screens. Their demo qualifiers remain below the covers and beside case-study images.
 
 ## Prioritized missing evidence
 

@@ -30,7 +30,7 @@ These informed composition and tone; no reference-site imagery, biography, or pr
 
 ## NFI imagery
 
-`public/images/nfi/nfi-sensory-profile.png` is an unaltered 1280×720 screenshot of the live synthetic Sensory demo, captured September 10. It shows the radar chart and five sensory intensity ratings with two coconut cheddar prototypes. It now leads the homepage, NFI case study, and walkthrough. The capture is 74 KB and retains the actual UI. The original Decision Review capture remains in its relevant study section and tour step.
+The NFI cover pairs a new September 14 capture, `nfi-liking-results.jpg`, with the original `nfi-sensory-profile.png`. The new capture shows Coconut Cheddar v2's liking chart, confidence intervals, five score summaries, and both project samples in the selector. The radar image shows the baseline sample. Both are actual 1280×720 demo screens. The case hero and first walkthrough step use the new capture; the sensory profile, decision, and report-review steps remain available. Sample scores are not project outcomes.
 
 ## Red Hat imagery
 
@@ -40,7 +40,7 @@ The case study credits Josiah as UX Designer in a five-person team. Discovery in
 
 ## HeadTap imagery
 
-HeadTap is now featured third on the homepage and has original product screens in its case study. `headtap-concerts.png` and `headtap-profile.png` are unchanged 1280×720 captures from the user-provided local app at port 3000 on September 10. The app explicitly runs in demo mode with sample music and concert listings. Preserve these qualifiers. The local URL is not a public demo link and must not be placed in visitor-facing navigation. No HeadTap hosting or app code was changed.
+HeadTap remains third on the homepage. Its refreshed cover pairs `headtap-music-dna.jpg` and `headtap-discovery.jpg`, captured September 14 from a temporary build of the current user-supplied local app. The orange profile leads, with concert cards as a second image. The case study uses the same fresh images at full width. Preserve the sample-data labels; no actual account or live event data was used. These captures do not deploy or modify the HeadTap app. The older screenshots were removed from the published assets.
 
 ## Verification and remaining evidence
 

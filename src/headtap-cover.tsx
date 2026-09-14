@@ -8,14 +8,26 @@ export function HeadTapCover() {
         <span>HeadTap / Live music discovery</span>
         <span>Independent product</span>
       </div>
-      <img
-        src={sitePath("/images/headtap/headtap-concerts.png")}
-        alt="HeadTap’s original concert discovery interface, showing sample artist matches, venues, dates, and prices."
-        width={1280}
-        height={720}
-        loading="lazy"
-        decoding="async"
-      />
+      <div className="project-screen-pair">
+        <img
+          className="project-screen-primary"
+          src={sitePath("/images/headtap/headtap-music-dna.jpg")}
+          alt="HeadTap’s orange music profile with a sample listener personality, musical DNA, and library statistics."
+          width={1280}
+          height={720}
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          className="project-screen-detail"
+          src={sitePath("/images/headtap/headtap-discovery.jpg")}
+          alt="HeadTap’s updated concert cards with match explanations, save controls, and artist feedback. Sample events."
+          width={1280}
+          height={720}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <span className="headtap-cover-open" aria-hidden="true">
         ↗
       </span>

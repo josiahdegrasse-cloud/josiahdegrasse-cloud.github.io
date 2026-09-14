@@ -1,5 +1,12 @@
 # Portfolio review log
 
+## Stronger NFI and HeadTap imagery — September 14, 2026
+
+- User requested better images for both products. Captured NFI's current liking-results chart and two current HeadTap views: music DNA and concert discovery. All three are original 1280×720 screenshots, inspected individually and kept unaltered. Data is synthetic/sample content.
+- Homepage covers pair the NFI results with its existing radar chart, and HeadTap's orange profile with its updated concert cards. Screens stack on mobile. Case-study heroes and detail images now use the fresh captures; the NFI walkthrough adds a liking-results step.
+- Both GitHub bases passed static validation: eight pages, 101 internal links, 43 image references, and 48,882 original CAD triangles. The four-step NFI tour uses four columns on desktop and two on mobile. Typechecking and the final root build also pass after that layout adjustment. Product source screenshots were inspected; no portfolio browser QA was performed.
+- The HeadTap app was changing during capture, so used a temporary source copy and production preview to obtain stable screenshots. No source product files, real accounts, or remote product data were changed. Replaced older HeadTap public screenshots; retained provenance in this log and Git history.
+
 ## Remove Moka and simplify About — September 14, 2026
 
 - Removed the Moka project, public preview, route, compatibility alias, and metadata. Original source files remain untouched. The lacrosse project now links onward to Helfrich Brothers.

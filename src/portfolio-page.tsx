@@ -101,7 +101,7 @@ export function PortfolioPage() {
     setMeta("name", "twitter:description", description);
     const image =
       key === "nfi"
-        ? "/images/nfi/nfi-sensory-profile.png"
+        ? "/images/nfi/nfi-liking-results.jpg"
         : key === "red-hat"
           ? "/images/red-hat/capstone-deployments.png"
           : key === "lacrosse"

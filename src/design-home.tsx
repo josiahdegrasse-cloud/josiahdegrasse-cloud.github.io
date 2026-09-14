@@ -63,14 +63,23 @@ export function DesignHome() {
                       <span>NFI / Sensory Platform</span>
                       <span>Sensory analysis</span>
                     </div>
-                    <div className="nfi-screen-composition">
+                    <div className="project-screen-pair">
                       <img
-                        className="nfi-main-screen"
+                        className="project-screen-primary"
                         src={sitePath(project.image)}
                         alt={project.alt}
                         width={1280}
                         height={720}
                         loading="eager"
+                        decoding="async"
+                      />
+                      <img
+                        className="project-screen-detail"
+                        src={sitePath("/images/nfi/nfi-sensory-profile.png")}
+                        alt="A second NFI screen showing the baseline sample’s sensory radar chart and intensity ratings."
+                        width={1280}
+                        height={720}
+                        loading="lazy"
                         decoding="async"
                       />
                     </div>

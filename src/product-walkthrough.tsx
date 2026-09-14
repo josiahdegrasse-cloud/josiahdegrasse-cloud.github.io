@@ -9,6 +9,14 @@ export type WalkthroughStep = {
 };
 const nfiSteps: WalkthroughStep[] = [
   {
+    title: "Read the results",
+    image: "nfi-liking-results.jpg",
+    alt: "NFI’s liking results with five charted dimensions and their scores for the creamier coconut cheddar prototype.",
+    description:
+      "The prototype selector stays beside the results. Liking scores, response counts, and descriptive confidence intervals let the reader inspect each dimension before reviewing a decision.",
+    focus: "See the scores and their context together.",
+  },
+  {
     title: "Compare the evidence",
     image: "nfi-sensory-profile.png",
     alt: "NFI Insights showing a sensory radar chart, five intensity ratings, and two coconut cheddar prototypes.",
@@ -63,6 +71,7 @@ export function ProductWalkthrough({
       </div>
       <div
         className="walkthrough-steps"
+        data-step-count={steps.length}
         role="group"
         aria-label="Walkthrough steps"
       >

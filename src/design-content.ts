@@ -26,8 +26,8 @@ export const selectedWork = [
     year: "2026 — ongoing",
     description:
       "A research workspace for food scientists, from sensory results and supporting literature to product decisions.",
-    image: "/images/nfi/nfi-sensory-profile.png",
-    alt: "NFI sensory analysis with a radar chart, intensity ratings, and two coconut cheddar prototypes.",
+    image: "/images/nfi/nfi-liking-results.jpg",
+    alt: "NFI’s actual analysis workspace with liking scores, confidence intervals, and two coconut cheddar prototypes.",
   },
   {
     id: "red-hat",

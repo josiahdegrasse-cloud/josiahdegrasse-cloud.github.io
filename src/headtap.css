@@ -9,13 +9,6 @@
   font-size: 0.875rem;
   color: var(--muted);
 }
-.headtap-cover img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 30px auto 18px;
-  border: 1px solid var(--line);
-}
 .headtap-cover-open {
   display: block;
   text-align: right;
@@ -28,8 +21,5 @@
   }
   .headtap-cover-top > span:last-child {
     display: none;
-  }
-  .headtap-cover img {
-    margin-block: 26px 22px;
   }
 }

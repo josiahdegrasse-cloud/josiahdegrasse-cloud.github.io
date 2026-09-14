@@ -87,29 +87,31 @@
   color: var(--muted);
   font-size: 0.75rem;
 }
-.nfi-screen-composition {
+.project-screen-pair {
   position: relative;
-  padding: 28px 0 14px;
+  padding: 0 0 13%;
   max-width: 1040px;
-  margin: 0 auto;
+  margin: 28px auto 18px;
 }
-.nfi-screen-composition img {
+.project-screen-pair img {
   display: block;
   height: auto;
   border: 1px solid var(--line);
   box-shadow: 0 12px 30px #35261b14;
 }
-.nfi-main-screen {
-  width: 100%;
-  transition: transform 0.3s ease;
+.project-screen-primary {
+  width: 88%;
+}
+.project-screen-detail {
+  position: absolute;
+  width: 48%;
+  right: 0;
+  bottom: 0;
 }
 .stage-open {
   display: flex;
   justify-content: flex-end;
   margin-top: 4px;
-}
-.work-card-visual:hover .nfi-main-screen {
-  transform: translateY(-4px);
 }
 .work-card-visual:focus-visible {
   outline: 3px solid var(--accent);
@@ -239,6 +241,17 @@
   }
 }
 @media (max-width: 700px) {
+  .project-screen-pair {
+    display: grid;
+    gap: 16px;
+    padding-bottom: 0;
+    margin-block: 22px 18px;
+  }
+  .project-screen-primary,
+  .project-screen-detail {
+    position: static;
+    width: 100%;
+  }
   .home-intro {
     padding: 32px 0 34px;
   }
@@ -286,12 +299,6 @@
   }
   .stage-label > span:last-child {
     display: none;
-  }
-  .nfi-screen-composition {
-    padding: 20px 0 22px;
-  }
-  .nfi-main-screen {
-    width: 100%;
   }
   .stage-open {
     position: static;
@@ -365,15 +372,6 @@
     border-top: 1px solid var(--line);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .nfi-main-screen {
-    transition: none;
-  }
-  .work-card-visual:hover .nfi-main-screen {
-    transform: none;
-  }
-}
-
 .redhat-project-stage {
   background: var(--soft);
   padding: 28px 40px 26px;

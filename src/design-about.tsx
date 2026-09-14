@@ -113,8 +113,8 @@ const experiments: Record<
     category: "Music discovery",
     role: "Founder / Product Design",
     date: "2025",
-    image: "/images/headtap/headtap-concerts.png",
-    alt: "Original HeadTap concert recommendations with sample artist matches, venue details, dates, and prices.",
+    image: "/images/headtap/headtap-music-dna.jpg",
+    alt: "HeadTap’s orange sample music profile, musical DNA, and listening-library statistics.",
     caption:
       "Captured from the working HeadTap app. Sample music and concerts; these are not live event listings.",
     sections: [
@@ -225,9 +225,9 @@ export function SecondaryProject({ id }: { id: string }) {
             <p>{s.body}</p>
             {id === "headtap" && i === 1 && (
               <ImageFigure
-                src={sitePath("/images/headtap/headtap-profile.png")}
-                alt="HeadTap’s original music profile screen showing a sample listener personality."
-                caption="Original HeadTap music profile · Sample listening history."
+                src={sitePath("/images/headtap/headtap-discovery.jpg")}
+                alt="HeadTap’s current concert cards with match explanations, saved-concert controls, and artist feedback."
+                caption="Actual HeadTap concert discovery · Sample music and events, not live listings."
                 width={1280}
                 height={720}
               />

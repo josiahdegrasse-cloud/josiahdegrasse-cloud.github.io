@@ -179,9 +179,9 @@ export function NfiCaseStudy() {
         <ImageFigure
           priority
           theme="green"
-          src={sitePath("/images/nfi/nfi-sensory-profile.png")}
-          alt="NFI sensory analysis with a radar chart and intensity ratings for a coconut cheddar prototype, alongside the two project samples."
-          caption="The Sensory Platform’s intensity profile and prototype selector. Synthetic demonstration data."
+          src={sitePath("/images/nfi/nfi-liking-results.jpg")}
+          alt="NFI’s prototype analysis showing five liking dimensions, confidence intervals, and score summaries for Coconut Cheddar v2."
+          caption="The Sensory Platform’s liking results and prototype selector. Actual application, synthetic demonstration data."
         />
         <CaseSection
           id="context"

@@ -175,6 +175,9 @@
   grid-template-columns: repeat(3, 1fr);
   border-block: 1px solid var(--line);
 }
+.walkthrough-steps[data-step-count="4"] {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 .walkthrough-steps button {
   min-height: 60px;
   padding: 16px 20px;
@@ -246,6 +249,9 @@
   color: var(--accent-ink);
 }
 @media (max-width: 700px) {
+  .walkthrough-steps[data-step-count="4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .product-walkthrough {
     scroll-margin-top: 0;
   }
