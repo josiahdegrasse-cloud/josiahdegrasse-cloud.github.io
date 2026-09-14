@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      VITE_SITE_BASE: /josiah-portfolio/
+      VITE_SITE_BASE: ${{ github.event.repository.name == 'josiahdegrasse-cloud.github.io' && '/' || '/josiah-portfolio/' }}
       VITE_SITE_ORIGIN: https://josiahdegrasse-cloud.github.io
     steps:
       - uses: actions/checkout@v6

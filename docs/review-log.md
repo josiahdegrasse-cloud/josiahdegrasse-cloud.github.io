@@ -1,5 +1,11 @@
 # Portfolio review log
 
+## Primary GitHub root address — September 14, 2026
+
+- User requested the portfolio at `https://josiahdegrasse-cloud.github.io`, without the project-path suffix. The user-site repository already existed and published an older September 2 portfolio from `gh-pages`.
+- Added the `root-pages` remote and merged the old root repository's history while retaining the current portfolio tree. No force push or history deletion is required. The shared workflow selects `/` for the root repository and the project prefix for the original repository.
+- The root repository is being switched to the current build-and-deploy workflow. Its public visibility and HTTPS remain. This request changes GitHub hosting; no Sites deployment or design changes are needed.
+
 ## GitHub Pages, project order, and interests — September 10, 2026
 
 - User requested GitHub Pages hosting in addition to Sites, the order NFI → Red Hat → HeadTap, and the interest list coffee, lacrosse, sewing, surfing/snowboarding, and cheese. Updated homepage, About, résumé content, and its PDF aliases. The regenerated one-page résumé was visually inspected.

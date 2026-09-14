@@ -54,6 +54,6 @@ The four-hour scheduled review window ended September 10 at 06:47 UTC and is pau
 
 ## Additional hosting and interests
 
-GitHub Pages is configured through `.github/workflows/pages.yml` on the existing public `josiahdegrasse-cloud/josiah-portfolio` repository. It publishes pushes to `main` with the repository base path. Keep `sitePath` and `routePath` handling for native links, assets, and client routes; SSR, canonicals, sitemap, and robots use the same deployment environment. Sites builds continue using the default root path.
+The primary public URL is https://josiahdegrasse-cloud.github.io/. Its existing public `josiahdegrasse-cloud/josiahdegrasse-cloud.github.io` repository is the `root-pages` remote. GitHub Pages is configured through `.github/workflows/pages.yml` on both that root repository and the original `josiahdegrasse-cloud/josiah-portfolio` repository. It publishes pushes to `main` with `/` for the root repository and `/josiah-portfolio/` for the original repository. Keep `sitePath` and `routePath` handling for native links, assets, and client routes; SSR, canonicals, sitemap, and robots use the same deployment environment. Sites builds continue using the default root path.
 
 Josiah's current interest list is coffee, lacrosse, sewing, surfing/snowboarding, and cheese. Use it consistently across the homepage, About, and both résumé formats.

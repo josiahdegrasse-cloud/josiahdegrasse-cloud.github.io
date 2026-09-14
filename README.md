@@ -38,4 +38,8 @@ For another deployment origin, update `profile.origin`, the origin in `scripts/p
 
 ## GitHub Pages
 
-GitHub Pages also serves the portfolio at https://josiahdegrasse-cloud.github.io/josiah-portfolio/. The Pages workflow builds and publishes every push to `main`. `VITE_SITE_BASE=/josiah-portfolio/` and `VITE_SITE_ORIGIN=https://josiahdegrasse-cloud.github.io` configure links, images, fonts, the CAD model, routing, and social/canonical metadata. The normal build continues to target Sites at the root path. Run `npm test` with either environment to validate its static output.
+Primary public URL: https://josiahdegrasse-cloud.github.io/.
+
+The `root-pages` remote points to `josiahdegrasse-cloud/josiahdegrasse-cloud.github.io`. Its Pages workflow builds and publishes `main` at the root URL. The original `origin` remote points to `josiahdegrasse-cloud/josiah-portfolio`; that repository continues to publish at `/josiah-portfolio/`. The shared workflow selects the correct base path from the repository name, with `VITE_SITE_ORIGIN=https://josiahdegrasse-cloud.github.io` for both. Push source updates to `root-pages` `main` to update the primary public site.
+
+Links, images, fonts, the CAD model, routing, and social/canonical metadata honor the deployment base. The normal build continues to target Sites at its root path. Run `npm test` with either deployment environment to validate its static output.
