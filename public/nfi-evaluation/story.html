@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Making food-science retrieval measurable · NFI</title><style>body{margin:0;background:#faf9f5;color:#163c31;font:17px/1.75 system-ui}main{max-width:850px;padding:48px 24px;margin:auto}h1{font-size:clamp(32px,5vw,54px);line-height:1.13;letter-spacing:-.04em}h2{margin-top:40px;line-height:1.3}a{color:#16614b}pre{background:#eeeee6;padding:18px;overflow:auto;font-size:13px}table{border-collapse:collapse;font-size:14px;display:block;overflow:auto}th,td{padding:10px;border:1px solid #ced7cc}nav{font-size:14px;display:flex;gap:20px;flex-wrap:wrap}img{max-width:100%}video{width:100%}</style><main><nav><a href="../work/nfi">NFI case study</a><a href="index.html">Evaluation dashboard</a><a href="method.html">Method</a><a href="sources.html">Sources</a></nav><h1>Making food-science retrieval measurable</h1>
+<p>NFI's Sensory Platform connects food-product evidence, sensory studies and
+commercialization decisions. Its research service retrieves literature to
+support those workflows. The engineering challenge is not simply returning a
+plausible paragraph. A useful result must preserve its source, remain appropriate
+for the product category, and avoid turning general scientific context into a
+claim about a particular NFI formulation.</p>
+<p>The system already had a substantial foundation: section-aware parent/child
+chunks, MiniLM embeddings, PostgreSQL retrieval, citations, tenant controls and
+an Evidence Assist boundary. What it lacked was a repeatable way to compare
+retrieval choices and expose regressions.</p>
+<p>I added a preliminary benchmark of 48 source-derived questions over 12 public
+food-science abstracts, with development and held-out questions separated by
+source paper. These are AI-authored labels awaiting expert review. The portable
+runner uses the production chunker and search path with exact cosine retrieval
+and BM25. That makes local comparisons reproducible without access to private
+NFI documents, while keeping the limits explicit: the production database uses
+pgvector and PostgreSQL full-text search, and these scores do not measure answer
+accuracy or hosted performance.</p>
+<p>The benchmark helped expose two implementation problems. First, a sort applied
+after reciprocal rank fusion included semantic distance. It could undo the
+keyword contribution. Second, multiple child chunks from one paper could each
+add a vote, giving long documents an unintended advantage. The corrected pipeline
+preserves fused ordering within governance tiers and gives each document one vote
+per retriever. Explicitly labeled abstracts also remain eligible when they
+contain both an introductory aim and findings.</p>
+<p>On the 24 held-out pilot questions, semantic retrieval found the labeled paper
+in the top three for 19 questions, compared with 20 for hybrid retrieval. Adding
+bounded user-question context brought that count to 24. Six questions in each
+split are scripted referential follow-ups, so this gain should not be presented
+as proof of general conversational performance. A local cross-encoder improved
+mean reciprocal rank from 0.958 to 1.000 for the context-enabled configuration,
+but increased latency. It remains optional rather than becoming a default on
+the strength of this small sample.</p>
+<p>The evaluation workflow retains individual results, model revisions, dataset
+hashes and timings. CI checks the development set against a frozen baseline.
+An offline dashboard makes misses and retrieved passages inspectable. Separately,
+answer-review packets bind human and optional local-model judgments to exact
+answers. Missing reviews cannot pass the hallucination gate. This prevents a
+retrieval percentage from being relabeled as factual accuracy.</p>
+<p>The next evidence milestone is a representative NFI-reviewed set covering real
+questions, conflicting papers and questions the corpus cannot answer. That set
+will support human/model judge calibration and production-index comparisons.
+The lesson from this work is concrete: useful evaluation changes implementation
+decisions, and a feature earns its default setting through measured benefit.</p>
+</main></html>

@@ -395,3 +395,16 @@
 .object-card-title svg {
   color: var(--accent);
 }
+
+.nfi-evaluation-scope { background: #f3eee5; border-left: 3px solid var(--accent); padding: 18px 22px; margin: 24px 0; }
+.nfi-evaluation-scope p { margin: 8px 0 0; font-size: .9375rem; }
+.nfi-evaluation-table-wrap { overflow-x: auto; margin: 24px 0; }
+.nfi-evaluation-table { width: 100%; border-collapse: collapse; text-align: left; font-size: .9375rem; }
+.nfi-evaluation-table caption { text-align: left; margin-bottom: 12px; font-size: .8125rem; color: var(--muted); }
+.nfi-evaluation-table th, .nfi-evaluation-table td { padding: 13px 12px; border-bottom: 1px solid var(--line); }
+.nfi-evaluation-table thead th { font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; }
+.nfi-evaluation-table tbody th { font-weight: 500; }
+.nfi-evaluation-table td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nfi-evaluation-links { display: flex; flex-wrap: wrap; gap: 16px 28px; margin: 24px 0; }
+.nfi-evaluation .nfi-evaluation-method { font-size: .875rem; line-height: 1.7; }
+@media (max-width: 600px) { .nfi-evaluation-table th, .nfi-evaluation-table td { padding: 12px 7px; } }

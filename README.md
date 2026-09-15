@@ -43,3 +43,7 @@ Primary public URL: https://josiahdegrasse-cloud.github.io/.
 The `root-pages` remote points to `josiahdegrasse-cloud/josiahdegrasse-cloud.github.io`. Its Pages workflow builds and publishes `main` at the root URL. The original `origin` remote points to `josiahdegrasse-cloud/josiah-portfolio`; that repository continues to publish at `/josiah-portfolio/`. The shared workflow selects the correct base path from the repository name, with `VITE_SITE_ORIGIN=https://josiahdegrasse-cloud.github.io` for both. Push source updates to `root-pages` `main` to update the primary public site.
 
 Links, images, fonts, the CAD model, routing, and social/canonical metadata honor the deployment base. The normal build continues to target Sites at its root path. Run `npm test` with either deployment environment to validate its static output.
+
+## NFI evaluation evidence
+
+The NFI study links to `/nfi-evaluation/`: an interactive dashboard, engineering story, decisions, method, CC-BY source attribution, raw pilot data, and a two-minute captioned screenshot walkthrough. The 48 questions are AI-authored and split by paper into 24 development and 24 held-out queries. Results measure retrieval on a portable adapter over public abstracts, not production answer accuracy. RAG changes remain under review; expert answer scoring and live-corpus evaluation are outstanding.

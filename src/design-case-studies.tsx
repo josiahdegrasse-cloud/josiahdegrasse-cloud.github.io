@@ -134,6 +134,7 @@ export function NfiCaseStudy() {
         items={[
           ["context", "Context"],
           ["walkthrough", "Walkthrough"],
+          ["evaluation", "RAG evaluation"],
           ["decisions", "Design"],
           ["testing", "Testing"],
           ["reflection", "Reflection"],
@@ -410,6 +411,49 @@ export function NfiCaseStudy() {
           >
             Explore the implementation <ArrowUpRight size={18} />
           </a>
+        </section>
+        <section className="implementation-note nfi-evaluation" id="evaluation" aria-labelledby="evaluation-heading">
+          <p className="eyebrow">Engineering evidence · September 2026</p>
+          <h2 id="evaluation-heading">Making retrieval measurable.</h2>
+          <p>
+            I added a reproducible evaluation workflow to NFI’s research service,
+            comparing semantic search, hybrid retrieval, follow-up context and a
+            local cross-encoder. Testing exposed two ranking bugs: a second sort
+            could undo hybrid ordering, and repeated chunks gave long papers extra votes.
+          </p>
+          <div className="nfi-evaluation-scope">
+            <strong>Preliminary open-literature pilot</strong>
+            <p>48 AI-authored questions over 12 public abstracts. The 24 held-out
+              questions use different source papers from the development set and
+              include six scripted follow-ups. Labels await expert review. These
+              are retrieval results, not production answer-accuracy claims.</p>
+          </div>
+          <div className="nfi-evaluation-table-wrap">
+            <table className="nfi-evaluation-table">
+              <caption>Held-out pilot · relevant paper retrieved in the top three</caption>
+              <thead><tr><th scope="col">Configuration</th><th scope="col">Source found</th><th scope="col">MRR@3</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Semantic</th><td>19 / 24</td><td>0.771</td></tr>
+                <tr><th scope="row">Hybrid</th><td>20 / 24</td><td>0.785</td></tr>
+                <tr><th scope="row">Hybrid + context</th><td>24 / 24</td><td>0.958</td></tr>
+                <tr><th scope="row">Hybrid + context + reranker</th><td>24 / 24</td><td>1.000</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="nfi-evaluation-method">MRR rewards finding the labeled paper nearer the top.
+            This portable benchmark uses exact cosine and BM25 through the production
+            chunking and search code; the deployed database uses pgvector and PostgreSQL
+            full-text search. The reranker improves ordering here but adds latency, so it stays optional.</p>
+          <div className="nfi-evaluation-links">
+            <a className="text-link" href={sitePath("/nfi-evaluation/index.html")}>Inspect the evaluation <ArrowUpRight size={18} /></a>
+            <a className="text-link" href={sitePath("/nfi-evaluation/story.html")}>Read the engineering case study <ArrowUpRight size={18} /></a>
+            <a className="text-link" href={sitePath("/nfi-evaluation/decisions.html")}>Engineering decisions <ArrowUpRight size={18} /></a>
+            <a className="text-link" href={sitePath("/nfi-evaluation/walkthrough.html")}>Two-minute evidence walkthrough <ArrowUpRight size={18} /></a>
+          </div>
+          <p className="nfi-evaluation-method">Release status: RAG changes are under review. Next evidence milestone: NFI-reviewed questions and answers,
+            human/model judge agreement, and evaluation against the production corpus.
+            The answer-review pipeline rejects missing or stale reviews; no measured
+            hallucination rate is claimed yet.</p>
         </section>
         <CaseSection
           id="exploration"

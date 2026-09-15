@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RAG engineering decisions · NFI</title><style>body{margin:0;background:#faf9f5;color:#163c31;font:17px/1.75 system-ui}main{max-width:850px;padding:48px 24px;margin:auto}h1{font-size:clamp(32px,5vw,54px);line-height:1.13;letter-spacing:-.04em}h2{margin-top:40px;line-height:1.3}a{color:#16614b}pre{background:#eeeee6;padding:18px;overflow:auto;font-size:13px}table{border-collapse:collapse;font-size:14px;display:block;overflow:auto}th,td{padding:10px;border:1px solid #ced7cc}nav{font-size:14px;display:flex;gap:20px;flex-wrap:wrap}img{max-width:100%}video{width:100%}</style><main><nav><a href="../work/nfi">NFI case study</a><a href="index.html">Evaluation dashboard</a><a href="method.html">Method</a><a href="sources.html">Sources</a></nav><h1>RAG engineering decisions</h1>
+<h2>Keep NFI's domain and governance</h2>
+<p>The product answers food-development questions using literature and canonical
+project evidence. Retrieval ranking does not replace review status, licensing,
+tenant scope, claim permissions or human approval. Existing schema and access
+contracts are preserved; this work requires no database migration.</p>
+<h2>Preserve hybrid ordering within governance tiers</h2>
+<p>The previous second sort included semantic distance and could undo reciprocal
+rank fusion. The new stable sort keeps approval, peer-review and evidence-type
+priority while preserving fused order within the same tier. A document now
+contributes at most one vote per retriever, regardless of its child-chunk count.
+This avoids rewarding long papers simply because they have more indexed chunks.</p>
+<h2>Preserve abstracts as evidence candidates</h2>
+<p>An abstract may state its aim and findings together. Explicitly labeled abstracts
+are no longer rejected simply for containing an introductory phrase. Bibliography
+and citation-density checks still apply. This does not mark a paper approved.</p>
+<h2>PostgreSQL full-text remains the production lexical backend</h2>
+<p>The offline pilot uses BM25 with exact cosine so it runs without production
+credentials. Production uses <code>ts_rank_cd</code> plus pgvector HNSW. No claim is made that
+these are identical. Replacing the production lexical index solely to match a
+portfolio checklist would introduce an unmeasured migration.</p>
+<h2>Make the cross-encoder optional</h2>
+<p>A pinned local ONNX cross-encoder avoids sending literature to another provider.
+Model and tokenizer hashes are checked before use, and model downloads are an
+explicit provisioning step. Enable with <code>RAG_RERANKER_DIR</code> only on a suitably
+provisioned host. It improves ordering in the small pilot, but increases latency
+and adds roughly another 90 MB model. It stays disabled by default, especially
+in the size-constrained Vercel deployment.</p>
+<h2>Resolve follow-ups without trusting generated history</h2>
+<p>The API accepts up to six previous user questions, each at most 1,500 characters.
+Referential follow-ups carry the last explicit user topic into retrieval. This
+is transparent deterministic expansion, not a claim of general conversational
+understanding. New standalone questions do not automatically inherit history.
+The response exposes <code>retrieval_query</code>; human feedback can identify wrong topic
+resolution before considering a more expensive LLM rewriter.</p>
+<h2>Separate retrieval tests from answer truth</h2>
+<p>Hit rate, MRR and nDCG test retrieval. They cannot establish faithfulness or a
+hallucination rate. Answer review binds named annotations to exact answer hashes;
+empty or stale reviews fail. The local-model judge is optional and compared with
+humans rather than treated as ground truth. The public pilot remains explicitly
+unreviewed until a domain expert supplies labels.</p>
+<h2>Require real citation markers after synthesis</h2>
+<p>Verified source sentences do not guarantee that generated prose remains factual.
+Synthesis without a citation or with an unknown source ID now falls back to the
+existing deterministic path. The code no longer assigns every prompt source to
+uncited prose. Valid citation IDs still do not prove entailment; answer review
+remains necessary.</p>
+</main></html>

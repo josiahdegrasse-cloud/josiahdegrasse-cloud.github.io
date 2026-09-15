@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:20.000
+NFI RAG: measuring retrieval on a small public-literature pilot. Changes are under review; this is not a production accuracy claim.
+
+00:00:20.000 --> 00:00:40.000
+The dashboard exposes both evaluation splits, configuration comparisons, source labels, and retrieved passages.
+
+00:00:40.000 --> 00:01:00.000
+On 24 held-out questions, hybrid retrieved the labeled paper in the top three for 20. Context expansion reached 24; reranking improved order.
+
+00:01:00.000 --> 00:01:20.000
+One failure: a vague follow-up lost the earlier gluten-free bread topic. Hybrid retrieval returned papers other than the labeled source.
+
+00:01:20.000 --> 00:01:40.000
+Bounded context expansion restored the prior user topic. The same question then retrieved the labeled paper first.
+
+00:01:40.000 --> 00:02:00.000
+Trade-offs: preserve source governance, keep reranking optional, and require expert review before reporting answer quality. Next: live-corpus evaluation.

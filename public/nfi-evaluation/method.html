@@ -1,0 +1,156 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NFI retrieval evaluation · NFI</title><style>body{margin:0;background:#faf9f5;color:#163c31;font:17px/1.75 system-ui}main{max-width:850px;padding:48px 24px;margin:auto}h1{font-size:clamp(32px,5vw,54px);line-height:1.13;letter-spacing:-.04em}h2{margin-top:40px;line-height:1.3}a{color:#16614b}pre{background:#eeeee6;padding:18px;overflow:auto;font-size:13px}table{border-collapse:collapse;font-size:14px;display:block;overflow:auto}th,td{padding:10px;border:1px solid #ced7cc}nav{font-size:14px;display:flex;gap:20px;flex-wrap:wrap}img{max-width:100%}video{width:100%}</style><main><nav><a href="../work/nfi">NFI case study</a><a href="index.html">Evaluation dashboard</a><a href="method.html">Method</a><a href="sources.html">Sources</a></nav><h1>NFI retrieval evaluation</h1>
+<h2>What this establishes</h2>
+<p>This is a <strong>preliminary open-literature retrieval pilot</strong>, not an accuracy claim
+for NFI production answers. The frozen dataset contains 12 CC-BY abstracts and
+48 AI-authored, source-derived questions. None has been reviewed by an NFI
+scientist. Six papers supply 24 development questions; six different papers
+supply 24 held-out questions. All documents remain searchable. Each split has
+18 standalone questions and six deliberately referential follow-ups.</p>
+<p>Labels and source groups were fixed before the first retrieval run. During
+browser QA, abstract HTML normalization was corrected to preserve mathematical
+less-than signs and inline typography. Labels, splits and ranking parameters
+were unchanged; the final artifacts and baseline use the corrected corpus. Development
+runs exposed duplicate-document votes and abstract filtering behavior. Held-out
+labels were not used to change ranking parameters. Repeated artifact-generation
+runs do not turn this small pilot into an independent replication.</p>
+<h2>Reproduce</h2>
+<pre><code class="language-sh">pip install -e '.[dev]'
+python -m rag_food.benchmark --split dev --output run.json --baseline benchmarks/dev-baseline.json
+python scripts/provision_reranker.py /absolute/path/to/reranker
+python -m rag_food.benchmark --split heldout --reranker /absolute/path/to/reranker --output heldout.json
+python scripts/render_evaluation_dashboard.py benchmarks/results/dev.json benchmarks/results/heldout.json --output dashboard.html
+</code></pre>
+<p>The portable adapter runs the production chunker and search/ranking path with
+real, revision-pinned MiniLM ONNX embeddings, exact cosine search and BM25.
+Production uses pgvector HNSW and PostgreSQL <code>ts_rank_cd</code>, not this BM25 adapter.
+This experiment isolates ranking behavior; it does not measure production
+corpus coverage, approximate-index recall, concurrent load or hosted latency.
+A full production evaluation must rerun reviewed queries against that index.</p>
+<p>Six configurations isolate semantic, lexical, hybrid, query-context and
+cross-encoder effects. Context resolution carries the previous user topic into
+referential questions; it is deterministic context expansion, not an LLM
+rewrite. No assistant-generated claims are used as context. The reranker is
+<code>cross-encoder/ms-marco-MiniLM-L6-v2</code>, revision
+<code>233902d25c440f23af6f7d6e94d2946bac0bee0a</code>; provisioning records artifact hashes.
+The server does not download models on request.</p>
+<h2>Results: held-out pilot</h2>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th style="text-align:right">Relevant source in top 3</th>
+<th style="text-align:right">MRR@3</th>
+<th style="text-align:right">nDCG@3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semantic</td>
+<td style="text-align:right">19/24</td>
+<td style="text-align:right">0.771</td>
+<td style="text-align:right">0.776</td>
+</tr>
+<tr>
+<td>BM25</td>
+<td style="text-align:right">20/24</td>
+<td style="text-align:right">0.806</td>
+<td style="text-align:right">0.813</td>
+</tr>
+<tr>
+<td>Hybrid</td>
+<td style="text-align:right">20/24</td>
+<td style="text-align:right">0.785</td>
+<td style="text-align:right">0.797</td>
+</tr>
+<tr>
+<td>Hybrid + context</td>
+<td style="text-align:right">24/24</td>
+<td style="text-align:right">0.958</td>
+<td style="text-align:right">0.969</td>
+</tr>
+<tr>
+<td>Hybrid + reranker</td>
+<td style="text-align:right">20/24</td>
+<td style="text-align:right">0.785</td>
+<td style="text-align:right">0.797</td>
+</tr>
+<tr>
+<td>Hybrid + context + reranker</td>
+<td style="text-align:right">24/24</td>
+<td style="text-align:right">1.000</td>
+<td style="text-align:right">1.000</td>
+</tr>
+</tbody>
+</table>
+<p>The six scripted follow-ups explain much of context expansion's gain. This is
+an intentionally small diagnostic suite with one labeled relevant paper per
+question. Additional papers could also be relevant. Precision@3 is therefore
+not a scientific relevance assessment of every returned passage. The raw JSON
+retains all queries, expected/returned source IDs, metrics, timings, model
+revision, dataset digest and code digest. The dashboard exposes misses rather
+than hiding them behind averages.</p>
+<p>The cross-encoder improved ordering for two context-enabled held-out cases but
+increased warm local latency. It remains <strong>off by default</strong>. Production enablement
+requires a representative, human-reviewed benchmark and hosted resource checks.</p>
+<h2>Human and model answer evaluation</h2>
+<pre><code class="language-sh">python -m rag_food.answer_evaluation prepare --run benchmarks/results/heldout.json --dataset benchmarks/open-literature-v1.json --output answer-review.json
+# Optional local Ollama judge. The selected model must already be installed.
+python -m rag_food.answer_evaluation judge --tasks answer-review.json --model YOUR_LOCAL_MODEL --output judge.json
+python -m rag_food.answer_evaluation score --tasks answer-review.json --human human.json --judge judge.json --output quality.json --max-hallucination .05
+</code></pre>
+<p>The review packet runs the production deterministic <code>professional_cited</code> answer
+builder. It does not evaluate the separate browser Llama writer. A human review
+file has <code>kind: &quot;human&quot;</code>, a named <code>reviewer</code>, and one <code>records</code> entry per task:</p>
+<pre><code class="language-json">{
+  &quot;caseId&quot;: &quot;copy from task&quot;,
+  &quot;answerSha256&quot;: &quot;copy from task&quot;,
+  &quot;claims&quot;: [&quot;supported&quot;, &quot;unsupported&quot;, &quot;unverifiable&quot;],
+  &quot;context_relevance&quot;: [true, false, false],
+  &quot;answer_relevance&quot;: 0.5,
+  &quot;rationale&quot;: &quot;Explain each unsupported claim and any ambiguity.&quot;
+}
+</code></pre>
+<p>Each claim label corresponds to a factual assertion in the actual answer; do
+not copy the three example labels literally. Review all visible prose, not
+just the opening summary. Context labels follow retrieved-context order.
+The CLI scores faithfulness, context precision, answer relevance and the share
+of unsupported/unverifiable claims. It reports human-versus-model differences
+larger than 0.2. These are differences between reviewers, not a claim that the
+model judge is calibrated. Claim-free answers have no faithfulness score.</p>
+<p>Missing reviews, unknown case IDs, stale answer hashes, absent explanations,
+invalid scores or incomplete claim coverage cannot pass the human quality gate.
+The local judge retries failed/malformed responses at most three times and then
+fails the run. No human labels or judge results have been fabricated.</p>
+<h2>CI and release boundaries</h2>
+<p><code>RAG evaluation / retrieval-regression</code> runs the development suite on pushes
+and PRs and fails on a metric decline greater than 0.02. It also refuses to
+compare different dataset hashes, splits, k values or embedding revisions.
+Results are retained as CI artifacts for 90 days. Make this status required in
+branch protection to enforce it at merge time; a workflow alone does not prove
+merge blocking. The held-out split is kept outside routine optimization CI.</p>
+<p>The human answer-quality command is ready, but is not a passing production gate
+until real reviews exist. Do not wire empty annotations into CI. On a reviewed
+release, run the command against the exact answer packet, retain <code>quality.json</code>,
+and require that job before release. The default 5% threshold is an explicit
+example policy requiring NFI agreement, not a measured current hallucination rate.</p>
+<h2>Remaining evidence needed</h2>
+<ul>
+<li>NFI-reviewed queries, answer references and relevance labels on the real corpus.</li>
+<li>Unanswerable, ambiguous, conflicting-source and natural multi-turn cases.</li>
+<li>Human/model agreement measurements and documented disagreements.</li>
+<li>Live PostgreSQL, authorization and production latency checks for the release.</li>
+<li>Real report usage and failures over time; no 30-day operating record is claimed.</li>
+</ul>
+<h2>Run against the production index</h2>
+<p><code>scripts/evaluate_live_retrieval.py</code> replays a reviewed dataset through the existing
+<code>/api/search</code> endpoint without modifying the index. Use real production document
+IDs in relevance labels. Supply <code>NFI_EVAL_BEARER_TOKEN</code> or <code>NFI_EVAL_API_KEY</code> through
+the environment, then run:</p>
+<pre><code class="language-sh">python scripts/evaluate_live_retrieval.py --url https://YOUR_RESEARCH_HOST --tenant-id YOUR_TENANT --dataset /private/reviewed-cases.json --output /private/live-results.json
+</code></pre>
+<p>The output records source IDs and scores, not document excerpts or credentials.
+It is a separate live-service measurement and is not interchangeable with the
+portable six-configuration ablation. No live results have been recorded for this
+release. A manual <code>Reviewed answer quality</code> workflow is also available; it requires
+actual review files and fails if they are absent, stale or over the threshold.</p>
+</main></html>
