@@ -68,14 +68,14 @@ export function DesignHome() {
                         className="project-screen-primary"
                         src={sitePath(project.image)}
                         alt={project.alt}
-                        width={1280}
-                        height={720}
+                        width={2630}
+                        height={1550}
                         loading="eager"
                         decoding="async"
                       />
                       <img
                         className="project-screen-detail"
-                        src={sitePath("/images/nfi/nfi-sensory-profile.png")}
+                        src={sitePath("/images/nfi/nfi-spider-fresh.jpg")}
                         alt="A second NFI screen showing the baseline sample’s sensory radar chart and intensity ratings."
                         width={1280}
                         height={720}

@@ -113,10 +113,10 @@ const experiments: Record<
     category: "Music discovery",
     role: "Founder / Product Design",
     date: "2025",
-    image: "/images/headtap/headtap-discovery.jpg",
-    alt: "HeadTap concert recommendations with match explanations, venue details, and save controls. Sample events.",
+    image: "/images/headtap/headtap-landing-supplied.png",
+    alt: "HeadTap’s landing page with Spotify connection and demo-mode entry points.",
     caption:
-      "Captured from the working HeadTap app. Sample music and concerts; these are not live event listings.",
+      "HeadTap landing-page screenshot supplied by Josiah. The supporting app view uses sample music and events.",
     sections: [
       {
         title: "Good shows were getting lost in the noise.",
@@ -209,8 +209,8 @@ export function SecondaryProject({ id }: { id: string }) {
             src={sitePath(p.image)}
             alt={p.alt!}
             caption={p.caption!}
-            width={id === "headtap" ? 1280 : 1154}
-            height={id === "headtap" ? 720 : 982}
+            width={id === "headtap" ? 2630 : 1154}
+            height={id === "headtap" ? 1550 : 982}
             priority
           />
         )}
@@ -225,11 +225,11 @@ export function SecondaryProject({ id }: { id: string }) {
             <p>{s.body}</p>
             {id === "headtap" && i === 1 && (
               <ImageFigure
-                src={sitePath("/images/headtap/headtap-music-dna.jpg")}
-                alt="HeadTap’s sample listener profile showing musical DNA and library statistics."
-                caption="The listener profile behind discovery · Sample music data."
-                width={1280}
-                height={720}
+                src={sitePath("/images/headtap/headtap-recommendations-fresh.jpg")}
+                alt="HeadTap’s current concert shortlist with match explanations, a fictional discovery, prices, and save controls."
+                caption="Fresh capture of the working app · Sample music and events, including a labeled fictional artist."
+                width={1440}
+                height={1000}
               />
             )}
           </CaseSection>

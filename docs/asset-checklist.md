@@ -72,3 +72,12 @@ Save the optimized file under its project folder. Replace the `AssetPlaceholder`
 ## September 15 cover selection
 
 Selected existing, unchanged product captures for clearer project storytelling: NFI leads with decision review (homepage and case hero), Red Hat with deployment diagnostics (homepage; YAML review remains the case hero), and HeadTap with concert discovery (homepage and case hero), supported by its listener profile. No new captures, retouching, or synthetic UI were created. Older capture entries above record original placement. Homepage summaries now distinguish the problem, Josiah’s contribution, and the current project state.
+
+## September 15 final image selection — supplied covers and fresh supporting captures
+
+- `nfi-signin-supplied.png`: Josiah’s supplied September 14, 9:25:48 PM screenshot, copied unchanged (2630×1550). NFI homepage primary and case hero.
+- `headtap-landing-supplied.png`: Josiah’s supplied September 14, 9:24:13 PM screenshot, copied unchanged (2630×1550). HeadTap homepage primary and case hero.
+- `nfi-spider-fresh.jpg`: fresh, unchanged 1280×720 viewport from the public Sensory demo, Insights, Coconut Cheddar v1 baseline. Shows the spider chart and five intensity ratings. Synthetic demo data despite in-app live-panel labels. Homepage supporting screen and walkthrough.
+- `headtap-recommendations-fresh.jpg`: fresh, unchanged 1440×1000 viewport from the current local HeadTap app in Demo Mode. New York, Any time, 25 miles, Any price, A bit of both, Soonest first. Shows two familiar artists and the explicitly fictional Neon Current example, with explanations and save controls. Homepage supporting screen and case detail.
+
+No product source edits, real account connections, generated UI, retouching, or remote data writes. Unselected capture drafts were removed. These placements supersede the earlier cover choices above.

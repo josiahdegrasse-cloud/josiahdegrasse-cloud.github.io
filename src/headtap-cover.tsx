@@ -11,19 +11,19 @@ export function HeadTapCover() {
       <div className="project-screen-pair">
         <img
           className="project-screen-primary"
-          src={sitePath("/images/headtap/headtap-discovery.jpg")}
-          alt="HeadTap’s concert recommendations with match explanations, save controls, and artist feedback. Sample events."
-          width={1280}
-          height={720}
+          src={sitePath("/images/headtap/headtap-landing-supplied.png")}
+          alt="HeadTap’s landing page introducing personalized concert discovery with Spotify connection and demo entry points."
+          width={2630}
+          height={1550}
           loading="lazy"
           decoding="async"
         />
         <img
           className="project-screen-detail"
-          src={sitePath("/images/headtap/headtap-music-dna.jpg")}
-          alt="HeadTap’s orange listener profile, musical DNA, and sample library statistics."
-          width={1280}
-          height={720}
+          src={sitePath("/images/headtap/headtap-recommendations-fresh.jpg")}
+          alt="HeadTap’s current sample recommendations with familiar artists, a fictional discovery, match reasons, and save controls."
+          width={1440}
+          height={1000}
           loading="lazy"
           decoding="async"
         />

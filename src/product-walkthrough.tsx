@@ -18,7 +18,7 @@ const nfiSteps: WalkthroughStep[] = [
   },
   {
     title: "Compare the evidence",
-    image: "nfi-sensory-profile.png",
+    image: "nfi-spider-fresh.jpg",
     alt: "NFI Insights showing a sensory radar chart, five intensity ratings, and two coconut cheddar prototypes.",
     description:
       "The prototype selector sits beside a sensory profile. A radar chart and labeled ratings show firmness, tanginess, cheesiness, creaminess, and graininess for the selected sample.",

@@ -26,10 +26,10 @@ export const selectedWork = [
     year: "2026 — ongoing",
     description:
       "Food scientists need to connect sensory tests, research, and consumer feedback before deciding what to develop next. I design the workspace that brings that evidence into a reviewable product decision.",
-    image: "/images/nfi/nfi-decision.webp",
+    image: "/images/nfi/nfi-signin-supplied.png",
     contribution: "Product workflows, evidence presentation, AI review patterns, and retrieval evaluation.",
     status: "Ongoing product work. The application is shown with synthetic data; the retrieval pilot is documented separately.",
-    alt: "NFI’s decision review showing a GO recommendation, evidence limits, and a comparison between two demonstration prototypes.",
+    alt: "NFI’s sign-in screen introducing the sensory intelligence platform and its evidence-to-decision workflow.",
   },
   {
     id: "red-hat",

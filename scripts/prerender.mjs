@@ -38,7 +38,7 @@ try {
       {},
       "Designing an AI-assisted decision system for food scientists — Josiah deGrasse",
       "New Food Innovation: Human Factors, AI-assisted workflows, and evidence-based decision support.",
-      "/images/nfi/nfi-decision.webp",
+      "/images/nfi/nfi-signin-supplied.png",
     ],
     [
       "/work/red-hat",

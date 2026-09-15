@@ -181,9 +181,11 @@ export function NfiCaseStudy() {
         <ImageFigure
           priority
           theme="green"
-          src={sitePath("/images/nfi/nfi-decision.webp")}
-          alt="NFI decision review comparing two prototypes and showing a recommendation, decision threshold, and evidence limitations."
-          caption="The decision scientists are working toward: advance, adjust, or stop a prototype. This actual application screen shows synthetic data and explicitly notes that instrument QC evidence was not collected."
+          src={sitePath("/images/nfi/nfi-signin-supplied.png")}
+          width={2630}
+          height={1550}
+          alt="NFI’s workspace sign-in page introducing the sensory intelligence platform."
+          caption="The Sensory Platform’s entry point. Original screenshot supplied by Josiah; workflow and sensory evidence appear in the screen tour below."
         />
         <CaseSection
           id="context"
