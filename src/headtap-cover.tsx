@@ -11,8 +11,8 @@ export function HeadTapCover() {
       <div className="project-screen-pair">
         <img
           className="project-screen-primary"
-          src={sitePath("/images/headtap/headtap-music-dna.jpg")}
-          alt="HeadTap’s orange music profile with a sample listener personality, musical DNA, and library statistics."
+          src={sitePath("/images/headtap/headtap-discovery.jpg")}
+          alt="HeadTap’s concert recommendations with match explanations, save controls, and artist feedback. Sample events."
           width={1280}
           height={720}
           loading="lazy"
@@ -20,8 +20,8 @@ export function HeadTapCover() {
         />
         <img
           className="project-screen-detail"
-          src={sitePath("/images/headtap/headtap-discovery.jpg")}
-          alt="HeadTap’s updated concert cards with match explanations, save controls, and artist feedback. Sample events."
+          src={sitePath("/images/headtap/headtap-music-dna.jpg")}
+          alt="HeadTap’s orange listener profile, musical DNA, and sample library statistics."
           width={1280}
           height={720}
           loading="lazy"

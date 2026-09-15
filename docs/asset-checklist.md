@@ -68,3 +68,7 @@ The [physical design showcase](object-assets.md) uses only the supplied lacrosse
 ## Replacing an asset
 
 Save the optimized file under its project folder. Replace the `AssetPlaceholder` with `ImageFigure` using an accurate alt, source/context caption, and the actual width/height (default 1280×720). Use original artifacts only. Keep layout dimensions stable and below-the-fold images lazy-loaded. The enlarged-image dialog provides a scrollable original-resolution view on small screens.
+
+## September 15 cover selection
+
+Selected existing, unchanged product captures for clearer project storytelling: NFI leads with decision review (homepage and case hero), Red Hat with deployment diagnostics (homepage; YAML review remains the case hero), and HeadTap with concert discovery (homepage and case hero), supported by its listener profile. No new captures, retouching, or synthetic UI were created. Older capture entries above record original placement. Homepage summaries now distinguish the problem, Josiah’s contribution, and the current project state.

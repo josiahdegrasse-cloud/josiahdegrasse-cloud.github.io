@@ -61,7 +61,7 @@ export function DesignHome() {
                   <div className="nfi-project-stage">
                     <div className="stage-label">
                       <span>NFI / Sensory Platform</span>
-                      <span>Sensory analysis</span>
+                      <span>Evidence → decision</span>
                     </div>
                     <div className="project-screen-pair">
                       <img
@@ -95,7 +95,7 @@ export function DesignHome() {
                     </div>
                     <img
                       src={sitePath(redHatProject.cover)}
-                      alt="The team’s OpenShift AI capstone prototype showing running, active, and failed model deployments."
+                      alt="The team’s OpenShift AI prototype explaining an out-of-memory deployment failure through a diagnostic checklist."
                       width={1280}
                       height={720}
                       loading="lazy"
@@ -120,6 +120,10 @@ export function DesignHome() {
                 </div>
                 <div className="work-card-summary">
                   <p>{project.description}</p>
+                  <dl className="work-rundown">
+                    <div><dt>My work</dt><dd>{project.contribution}</dd></div>
+                    <div><dt>Current state</dt><dd>{project.status}</dd></div>
+                  </dl>
                   <a
                     className="text-link"
                     href={sitePath(`/work/${project.id}`)}

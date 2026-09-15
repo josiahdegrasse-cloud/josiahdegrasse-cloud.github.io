@@ -14,7 +14,7 @@ export const redHatProject = {
   prototypeV3: "https://dress-arc-94202943.figma.site/",
   notebook:
     "https://app.notion.com/p/Spring-2026-Tufts-x-Red-Hat-Senior-Capstone-2fb8dccc334380f89579c04e5669bc1c",
-  cover: "/images/red-hat/capstone-deployments.png",
+  cover: "/images/red-hat/capstone-diagnostics.png",
 };
 export const selectedWork = [
   {
@@ -25,9 +25,11 @@ export const selectedWork = [
     category: "AI product engineering",
     year: "2026 — ongoing",
     description:
-      "A research workspace for food scientists, from sensory results and supporting literature to product decisions.",
-    image: "/images/nfi/nfi-liking-results.jpg",
-    alt: "NFI’s actual analysis workspace with liking scores, confidence intervals, and two coconut cheddar prototypes.",
+      "Food scientists need to connect sensory tests, research, and consumer feedback before deciding what to develop next. I design the workspace that brings that evidence into a reviewable product decision.",
+    image: "/images/nfi/nfi-decision.webp",
+    contribution: "Product workflows, evidence presentation, AI review patterns, and retrieval evaluation.",
+    status: "Ongoing product work. The application is shown with synthetic data; the retrieval pilot is documented separately.",
+    alt: "NFI’s decision review showing a GO recommendation, evidence limits, and a comparison between two demonstration prototypes.",
   },
   {
     id: "red-hat",
@@ -35,9 +37,11 @@ export const selectedWork = [
     title: "Red Hat OpenShift AI",
     subtitle: "Less friction. More control.",
     category: "UX research & prototyping",
+    contribution: "UX design and prototype iteration alongside two researchers, a project manager, and another designer.",
+    status: "Eight discovery interviews and two feedback rounds informed the final prototype. Implementation remained a next step.",
     year: "2026",
     description:
-      "A Tufts capstone with Red Hat: deployment diagnostics, reviewable YAML changes, and hardware presets shaped by two rounds of feedback.",
+      "When an AI deployment fails, engineers need to understand why and what to change. Our five-person Tufts team designed a workflow that connects failure diagnostics, logs, and reviewable fixes inside OpenShift AI.",
   },
   {
     id: "headtap",
@@ -45,9 +49,11 @@ export const selectedWork = [
     title: "HeadTap",
     subtitle: "The next show starts with your taste.",
     category: "Founder / Product design",
+    contribution: "Product concept, listener profiles, concert discovery, and the save-and-feedback flow.",
+    status: "Working app demonstrated with sample music and events. Recommendation quality still needs testing with real listeners.",
     year: "2025",
     description:
-      "An independent app that turns listening taste into a shortlist of live shows. Music profiles, concert matches, and practical filters in one place.",
+      "Finding a show should start with your music taste, then narrow by the details that make going possible. I created HeadTap to connect listener profiles with concert recommendations, match explanations, and a saved shortlist.",
   },
 ];
 export const secondaryWork = [

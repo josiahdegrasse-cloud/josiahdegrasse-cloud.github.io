@@ -148,9 +148,10 @@ export function NfiCaseStudy() {
             <br /> <em>for food scientists.</em>
           </h1>
           <p className="case-deck">
-            Sensory data, scientific research, and consumer feedback each tell
-            part of the story. I designed a connected workflow to help teams see
-            the evidence and decide what comes next.
+            Food scientists need to decide which prototype to advance, what to
+            change, and whether the evidence is strong enough. At New Food
+            Innovation, I design workflows that connect sensory results,
+            supporting research, and explicit human review.
           </p>
           <Metadata
             items={[
@@ -169,7 +170,7 @@ export function NfiCaseStudy() {
             ],
             [
               "My contribution",
-              "Information architecture, decision interfaces, AI review patterns, and iterative product design.",
+              "I structure the path from results to decisions, design evidence and review interfaces, and evaluate retrieval on a separate public-abstract pilot.",
             ],
             [
               "Current state",
@@ -180,9 +181,9 @@ export function NfiCaseStudy() {
         <ImageFigure
           priority
           theme="green"
-          src={sitePath("/images/nfi/nfi-liking-results.jpg")}
-          alt="NFI’s prototype analysis showing five liking dimensions, confidence intervals, and score summaries for Coconut Cheddar v2."
-          caption="The Sensory Platform’s liking results and prototype selector. Actual application, synthetic demonstration data."
+          src={sitePath("/images/nfi/nfi-decision.webp")}
+          alt="NFI decision review comparing two prototypes and showing a recommendation, decision threshold, and evidence limitations."
+          caption="The decision scientists are working toward: advance, adjust, or stop a prototype. This actual application screen shows synthetic data and explicitly notes that instrument QC evidence was not collected."
         />
         <CaseSection
           id="context"
@@ -720,9 +721,10 @@ export function RedHatCaseStudy() {
             <em>easier to debug.</em>
           </h1>
           <p className="case-deck">
-            A five-person Tufts capstone with Red Hat. We brought deployment
-            status, logs, and suggested fixes into one workflow, then refined it
-            with engineers and product leadership.
+            A failed deployment sent engineers between consoles, logs, and outside
+            tools. As a UX designer on a five-person Tufts capstone, I helped
+            turn that fragmented process into a diagnostic workflow with
+            understandable errors and changes people can review before applying.
           </p>
           <Metadata
             items={[

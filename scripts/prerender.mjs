@@ -38,7 +38,7 @@ try {
       {},
       "Designing an AI-assisted decision system for food scientists — Josiah deGrasse",
       "New Food Innovation: Human Factors, AI-assisted workflows, and evidence-based decision support.",
-      "/images/nfi/nfi-liking-results.jpg",
+      "/images/nfi/nfi-decision.webp",
     ],
     [
       "/work/red-hat",
@@ -46,7 +46,7 @@ try {
       {},
       "Red Hat OpenShift AI — Making deployments easier to debug — Josiah deGrasse",
       "A Tufts capstone with Red Hat: eight discovery interviews, two feedback rounds, and prototypes for diagnostics, YAML review, and editable hardware presets.",
-      "/images/red-hat/capstone-deployments.png",
+      "/images/red-hat/capstone-diagnostics.png",
     ],
     [
       "/about",

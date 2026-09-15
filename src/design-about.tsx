@@ -113,8 +113,8 @@ const experiments: Record<
     category: "Music discovery",
     role: "Founder / Product Design",
     date: "2025",
-    image: "/images/headtap/headtap-music-dna.jpg",
-    alt: "HeadTap’s orange sample music profile, musical DNA, and listening-library statistics.",
+    image: "/images/headtap/headtap-discovery.jpg",
+    alt: "HeadTap concert recommendations with match explanations, venue details, and save controls. Sample events.",
     caption:
       "Captured from the working HeadTap app. Sample music and concerts; these are not live event listings.",
     sections: [
@@ -124,7 +124,7 @@ const experiments: Record<
       },
       {
         title: "Design around taste, time, and place.",
-        body: "HeadTap brings a music profile and concert discovery into one flow. The profile groups listening patterns into artists, genres, and musical traits; the concert view presents matches with venue, date, and price information. Search, sorting, and filters help narrow the shortlist.",
+        body: "As founder and product designer, I shaped the path from understanding a listener’s taste to choosing a show. Music profiles organize artists, genres, and musical traits. Concert cards explain the match and show venue, date, and price; saving and artist feedback help people build a shortlist and express what interests them.",
       },
       {
         title: "A working flow, with clear boundaries.",
@@ -225,9 +225,9 @@ export function SecondaryProject({ id }: { id: string }) {
             <p>{s.body}</p>
             {id === "headtap" && i === 1 && (
               <ImageFigure
-                src={sitePath("/images/headtap/headtap-discovery.jpg")}
-                alt="HeadTap’s current concert cards with match explanations, saved-concert controls, and artist feedback."
-                caption="Actual HeadTap concert discovery · Sample music and events, not live listings."
+                src={sitePath("/images/headtap/headtap-music-dna.jpg")}
+                alt="HeadTap’s sample listener profile showing musical DNA and library statistics."
+                caption="The listener profile behind discovery · Sample music data."
                 width={1280}
                 height={720}
               />
