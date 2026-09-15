@@ -393,6 +393,84 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* Product screens move like physical panels, with the interface face-on mid-scroll. */
+.scroll-project-visual {
+  --scroll-position: 0;
+  --panel-direction: 1;
+  --panel-tilt: 14deg;
+  --panel-travel: 32px;
+  --detail-travel: -46px;
+  --detail-tilt: -9deg;
+}
+.work-card-red-hat .scroll-project-visual {
+  --panel-direction: -1;
+}
+.scroll-project-visual > :is(.nfi-project-stage, .redhat-project-stage, .headtap-cover) {
+  position: relative;
+  overflow: hidden;
+  perspective: 1400px;
+  border-radius: 12px;
+  isolation: isolate;
+}
+.scroll-project-visual .nfi-project-stage {
+  background: radial-gradient(ellipse at 75% 30%, #fcfffc, #e4eee5);
+}
+.scroll-project-visual .redhat-project-stage {
+  background: radial-gradient(ellipse at 25% 20%, #fff8f6, #efdfdb);
+}
+.scroll-project-visual .headtap-cover {
+  background: radial-gradient(ellipse at 75% 25%, #fff9ef, #f1dfc6);
+}
+.scroll-project-visual .project-screen-pair {
+  perspective: 1400px;
+  padding-top: 16px;
+  margin-block: 38px 24px;
+}
+.scroll-project-visual :is(.project-screen-primary, .redhat-project-stage > img) {
+  transform: translateY(calc(var(--scroll-position) * var(--panel-travel)))
+    rotateX(calc(var(--scroll-position) * var(--panel-tilt)))
+    rotateY(calc(var(--scroll-position) * var(--panel-tilt) * var(--panel-direction)));
+  transform-origin: 50% 55%;
+  border-radius: 7px;
+  box-shadow: 0 28px 48px -24px #29251f55, 0 4px 12px #29251f12;
+}
+.scroll-project-visual .project-screen-detail {
+  transform: translateY(calc(var(--scroll-position) * var(--detail-travel)))
+    rotateY(calc(var(--scroll-position) * var(--detail-tilt)));
+  transform-origin: 50% 60%;
+  border-radius: 7px;
+  box-shadow: 0 22px 42px -16px #29251f66, 0 4px 12px #29251f12;
+}
+.scroll-project-visual .redhat-project-stage > img {
+  width: 94%;
+  margin-block: 58px 48px;
+}
+.scroll-project-visual:focus-visible {
+  --scroll-position: 0 !important;
+}
+@media (max-width: 700px) {
+  .scroll-project-visual {
+    --panel-tilt: 6deg;
+    --panel-travel: 12px;
+    --detail-travel: -12px;
+    --detail-tilt: -4deg;
+  }
+  .scroll-project-visual .project-screen-pair {
+    margin-block: 22px 18px;
+    padding-top: 8px;
+    gap: 24px;
+  }
+  .scroll-project-visual .redhat-project-stage > img {
+    width: 100%;
+    margin-block: 30px 26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-project-visual :is(.project-screen-primary, .project-screen-detail, .redhat-project-stage > img) {
+    transform: none;
+  }
+}
 @media (max-width: 700px) {
   .redhat-project-stage {
     padding: 18px 14px 23px;
