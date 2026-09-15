@@ -396,12 +396,99 @@
 
 /* Product screens move like physical panels, with the interface face-on mid-scroll. */
 .scroll-project-visual {
-  --scroll-position: 0;
   --panel-direction: 1;
   --panel-tilt: 14deg;
   --panel-travel: 32px;
   --detail-travel: -46px;
   --detail-tilt: -9deg;
+}
+.project-scroll-track {
+  --scroll-position: 0;
+  --scene-turn: 0deg;
+  --scene-entry: 0;
+  --scene-progress: 0;
+}
+.project-scroll-progress { display: none; }
+@media (min-width: 800px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) {
+  .project-scroll-track[data-scroll-scene] {
+    height: 175vh;
+    height: 175svh;
+  }
+  [data-scroll-scene] .scroll-project-visual {
+    position: sticky;
+    top: 100px;
+    display: block;
+  }
+  [data-scroll-scene] .scroll-project-visual > :is(.nfi-project-stage, .redhat-project-stage, .headtap-cover) {
+    height: min(72svh, 780px);
+    min-height: 380px;
+    perspective: 1100px;
+    border-radius: 4px;
+  }
+  [data-scroll-scene] .scroll-project-visual .project-screen-pair {
+    position: absolute;
+    inset: 16% 7% 12%;
+    padding: 0;
+    margin: 0;
+    max-width: none;
+    perspective: 1100px;
+    transform-style: preserve-3d;
+  }
+  [data-scroll-scene] .scroll-project-visual .project-screen-primary {
+    width: 82%;
+    max-height: 92%;
+    object-fit: contain;
+    object-position: top left;
+    transform: translateX(calc(var(--scene-entry) * 9%))
+      rotateY(calc(var(--scene-turn) * var(--panel-direction)))
+      rotateX(calc(var(--scene-entry) * 10deg))
+      scale(calc(1 - var(--scene-entry) * .12));
+    transform-origin: 50% 50%;
+  }
+  [data-scroll-scene] .scroll-project-visual .project-screen-detail {
+    width: 49%;
+    max-height: 70%;
+    object-fit: contain;
+    transform: translate3d(calc(var(--scene-entry) * -48%), calc(var(--scene-entry) * -20%), 65px)
+      rotateY(calc(var(--scene-turn) * -.8))
+      rotateZ(calc(var(--scene-entry) * -6deg));
+  }
+  [data-scroll-scene] .scroll-project-visual .redhat-project-stage > img {
+    position: absolute;
+    top: 18%;
+    left: 7%;
+    width: 86%;
+    max-height: 70%;
+    object-fit: contain;
+    margin: 0;
+    transform: rotateY(calc(var(--scene-turn) * -1))
+      rotateX(calc(var(--scene-entry) * 12deg))
+      scale(calc(1 - var(--scene-entry) * .18));
+  }
+  [data-scroll-scene] :is(.stage-open, .headtap-cover-open) {
+    position: absolute;
+    bottom: 22px;
+    right: 32px;
+  }
+  [data-scroll-scene] .project-scroll-progress {
+    display: block;
+    position: absolute;
+    bottom: 28px;
+    left: 40px;
+    width: 90px;
+    height: 2px;
+    background: #29251f20;
+  }
+  .project-scroll-progress > span {
+    display: block;
+    height: 100%;
+    background: var(--ink);
+    transform: scaleX(var(--scene-progress));
+    transform-origin: left;
+  }
+  [data-scroll-scene] .scroll-project-visual:focus-visible img {
+    transform: none;
+  }
 }
 .work-card-red-hat .scroll-project-visual {
   --panel-direction: -1;
