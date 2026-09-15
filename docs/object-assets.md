@@ -38,3 +38,7 @@ It contains the saved preview, part placements and bounds, but no complete suppo
 The lacrosse page has a native WebGL2 turntable with a passive scroll listener, manual front/side/back/three-quarter buttons, rotation and tilt sliders, and a scroll-motion toggle. It draws on demand rather than running a continuous animation loop. It loads the mesh only near the viewport, limits pixel ratio to 2, releases GPU resources on unmount, and keeps an original-preview fallback when rendering is unavailable. Reduced-motion preferences disable automatic rotation and sticky scroll height while retaining manual controls. Short-height screens use normal document flow so controls remain reachable. The game remains removed; no Three.js dependency was restored.
 
 The homepage viewer rotates one complete turn over the card’s passage through the viewport, without sticky positioning or extra scroll height. The homepage viewer uses a white background with no visible rotation bar or other controls. Reduced-motion preferences keep the object still. The dedicated lacrosse page retains its existing scroll sequence and full angle controls.
+
+## Field photo — September 15, 2026
+
+Josiah supplied `IMG_6689.HEIC`. Converted to a browser-compatible JPEG with orientation applied, longest edge 1800px, and metadata removed; no retouching. `public/images/lacrosse/lacrosse-field-photo.jpg` appears beside the homepage model and in the lacrosse case study. The photo adds playing context; it is not described as proof of fabrication or testing of the CAD design.

@@ -19,6 +19,9 @@ export function ObjectGallery() {
       <article className="object-card">
         <CadTurntable compact />
         <div className="object-card-copy">
+          <a className="object-field-preview" href={sitePath("/work/lacrosse#on-the-field")} aria-label="View the lacrosse field photo">
+            <img src={sitePath("/images/lacrosse/lacrosse-field-photo.jpg")} width={1350} height={1800} loading="lazy" alt="A lacrosse player in a blue helmet holding a strung white head on the field." />
+          </a>
           <a className="object-card-title" href={sitePath("/work/lacrosse")}>
             <h3>Lacrosse head</h3>
             <ArrowUpRight size={22} />
@@ -55,6 +58,20 @@ export function ObjectCaseStudy() {
           <span className="folio">Nylon / Form & construction</span>
         </header>
         <CadTurntable />
+        <section className="object-field-section" id="on-the-field" aria-labelledby="field-title">
+          <div>
+            <p className="eyebrow">On the field</p>
+            <h2 id="field-title">A player’s perspective.</h2>
+            <p>Years of playing lacrosse shape how I think about the head’s form, stringing, and feel.</p>
+          </div>
+          <ImageFigure
+            src={sitePath("/images/lacrosse/lacrosse-field-photo.jpg")}
+            width={1350}
+            height={1800}
+            alt="A lacrosse player in a blue helmet holding a strung white head, with the field and stands behind him."
+            caption="On the field · Original photo supplied by Josiah."
+          />
+        </section>
         <section className="object-notes" aria-label="Design details">
           {[
             [

@@ -11,6 +11,13 @@
 .object-card-copy {
   max-width: 42ch;
 }
+.object-field-preview { display: block; max-width: 260px; margin-bottom: 24px; }
+.object-field-preview img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.object-field-section { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(28px, 6vw, 88px); margin: 64px 0; }
+.object-field-section h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; margin: 18px 0; }
+.object-field-section > div > p:last-child { max-width: 36ch; color: var(--muted); }
+.object-field-section .image-figure { margin: 0; }
+@media (max-width: 700px) { .object-field-section { grid-template-columns: 1fr; } }
 .object-card-title {
   display: flex;
   justify-content: space-between;
