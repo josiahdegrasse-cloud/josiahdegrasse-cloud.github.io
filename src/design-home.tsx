@@ -4,7 +4,6 @@ import { selectedWork, secondaryWork, redHatProject } from "./design-content";
 import { ObjectGallery } from "./design-objects";
 import { HeadTapCover } from "./headtap-cover";
 import "./home.css";
-import { ScrollProjectVisual } from "./scroll-project-visual";
 
 export function DesignHome() {
   return (
@@ -51,9 +50,10 @@ export function DesignHome() {
                   {project.number} / {project.year}
                 </span>
               </header>
-              <ScrollProjectVisual
+              <a
+                className="work-card-visual"
                 href={sitePath(`/work/${project.id}`)}
-                label={`View ${project.title} case study`}
+                aria-label={`View ${project.title} case study`}
               >
                 {project.id === "headtap" ? (
                   <HeadTapCover />
@@ -106,7 +106,7 @@ export function DesignHome() {
                     </span>
                   </div>
                 )}
-              </ScrollProjectVisual>
+              </a>
               <div className="work-card-details">
                 <div>
                   <p className="work-card-category">{project.category}</p>
